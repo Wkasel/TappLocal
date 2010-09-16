@@ -12,9 +12,9 @@
 #import "ResourceManager.h"
 #import "RMSTracker.h"
 #import "FBConnect.h"
-#import "TappLocalView.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
+#import "TappLocalView.h"
 
 @interface ConfirmedView : NSObject<FBSessionDelegate,ABPeoplePickerNavigationControllerDelegate> {
 	UIViewController* controller;

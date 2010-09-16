@@ -10,6 +10,7 @@
 #import "FontLabel.h"
 #import "ColorUtils.h"
 #import "ResourceManager.h"
+#import "TappLocalView.h"
 
 @interface HomeView : NSObject<UITableViewDelegate,UITableViewDataSource> {
 	UIViewController* controller;
@@ -27,6 +28,7 @@
 	
 	UIButton* nearby;
 	UIButton* flash;	
+	FontLabel* flashText;
 
 	FontLabel* boxtext;
 

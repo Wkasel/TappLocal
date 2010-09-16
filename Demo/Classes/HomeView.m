@@ -19,7 +19,7 @@
 	{
 		isBuilt = true;
 
-		mother = [[UIScrollView alloc]init];
+		mother = [[UIView alloc]init];
 		mother.frame = CGRectMake(0, 0, 320, 480);
 		mother.backgroundColor = [UIColor clearColor];
 		
@@ -65,6 +65,7 @@
 		table.delegate = self;
 		table.dataSource = self;
 		table.backgroundColor = [UIColor clearColor];
+		table.scrollEnabled = false;
 		[mother addSubview:table];
 		
 		nearby = [[UIButton alloc] initWithFrame: CGRectMake(320, 115, 65, 39)];
@@ -78,6 +79,15 @@
 		flash.alpha = 0.6;
 		[flash addTarget:self action:@selector(flashClick) forControlEvents:UIControlEventTouchUpInside];
 		[mother addSubview:flash];
+		
+		flashText = [[FontLabel alloc] initWithFrame:CGRectMake(10, 5, 300, 30) fontName:@"HelveticaNeue" pointSize:12.0f];
+		flashText.textColor = [ColorUtils colorFromRGB:@"000000"];
+		flashText.backgroundColor = nil;
+		flashText.opaque = NO;
+		flashText.numberOfLines = 2;
+		flashText.textAlignment = UITextAlignmentCenter;
+		flashText.text = @"support@tapplocal.com";
+		[flash addSubview:flashText];
 		
 		boxtext = [[FontLabel alloc] initWithFrame:CGRectMake(12, 382, 296, 40) fontName:@"HelveticaNeue" pointSize:7.0f];
 		boxtext.textColor = [ColorUtils colorFromRGB:@"000000"];
@@ -134,52 +144,59 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	if ([indexPath indexAtPosition:1]  == 0)
+	Coupon* temp = [((TappLocalViewController*)controller) getCurrentCoupon];
+	
+	if (temp != nil)
 	{
-		movingNearbyIn = !movingNearbyIn;
-		
-		[UIView beginAnimations:nil context:NULL]; {
-			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-			[UIView setAnimationDuration:1.0];
-			[UIView setAnimationDelegate:self];
-			if (movingNearbyIn) 
-			{
-				nearby.frame = CGRectMake(255,  115, 65, 39);
-			}
-			else 
-			{
-				nearby.frame = CGRectMake(320,  115, 65, 39);	
-			}
-
-		} [UIView commitAnimations];
+		if ([indexPath indexAtPosition:1]  == 0)
+		{
+			movingNearbyIn = !movingNearbyIn;
 			
-	}
-	else 
-	{
-		movingFlashIn = !movingFlashIn;
-		
-		[UIView beginAnimations:nil context:NULL]; {
-			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-			[UIView setAnimationDuration:1.0];
-			[UIView setAnimationDelegate:self];
-			if (movingFlashIn) 
-			{
-				flash.frame = CGRectMake(0, 425, 320, 35);
-				flash.hidden = FALSE;
+			[UIView beginAnimations:nil context:NULL]; {
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+				[UIView setAnimationDuration:1.0];
+				[UIView setAnimationDelegate:self];
+				if (movingNearbyIn) 
+				{
+					nearby.frame = CGRectMake(255,  115, 65, 39);
+				}
+				else 
+				{
+					nearby.frame = CGRectMake(320,  115, 65, 39);	
+				}
 				
-				[UIView setAnimationRepeatCount:2.0];
-				[UIView setAnimationRepeatAutoreverses:YES];
-				
-				flash.alpha = 1.0;
-			}
-			else 
-			{
-				flash.frame = CGRectMake(0, 460, 320, 35);
-				flash.alpha = 0.6;
-				flash.hidden = true;
-			}
+			} [UIView commitAnimations];
 			
-		} [UIView commitAnimations];
+		}
+		else 
+		{
+			flashText.text = [NSString stringWithFormat:@"%@ - %@", temp.title, temp.text];
+			
+			movingFlashIn = !movingFlashIn;
+			
+			[UIView beginAnimations:nil context:NULL]; {
+				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+				[UIView setAnimationDuration:1.0];
+				[UIView setAnimationDelegate:self];
+				if (movingFlashIn) 
+				{
+					flash.frame = CGRectMake(0, 425, 320, 35);
+					flash.hidden = FALSE;
+					
+					[UIView setAnimationRepeatCount:2.0];
+					[UIView setAnimationRepeatAutoreverses:YES];
+					
+					flash.alpha = 1.0;
+				}
+				else 
+				{
+					flash.frame = CGRectMake(0, 460, 320, 35);
+					flash.alpha = 0.6;
+					flash.hidden = true;
+				}
+				
+			} [UIView commitAnimations];
+		}
 	}
 }
 
@@ -208,7 +225,7 @@
 	flash.hidden = true;
 	movingFlashIn = false;
 	
-	[(TappLocalViewController*)controller setScreen:@"SCREEN_FLASH":false];
+	[(TappLocalViewController*)controller setScreen:@"SCREEN_DEAL":false];
 }
 
 @end

@@ -14,8 +14,8 @@
 #import <MapKit/MapKit.h>
 #import "MapStoreAnnotation.h"
 #import "TappLocalScreenProtocol.h"
-#import "TappLocalView.h"
 #import "Coupon.h"
+#import "TappLocalView.h"
 
 @interface MapView : NSObject<CLLocationManagerDelegate, MKMapViewDelegate> {
 	UIViewController* controller;
@@ -26,7 +26,7 @@
 	UINavigationBar* top;
 	UIButton* close;
 	
-	NSMutableArray* coupons;
+	Coupon* coupon;
 	
 	BOOL isBuilt;
 	BOOL placed;
@@ -36,6 +36,5 @@
 -(void) backClick;
 -(void) closeClick;
 -(void) merchantClick;
--(void) setCoupons:(NSMutableArray*) points;
 
 @end

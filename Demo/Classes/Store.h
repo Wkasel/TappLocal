@@ -10,21 +10,21 @@
 
 
 @interface Store : NSObject {
-	NSString* title;
+	int idstore;
+	float latitude;
+	float longitude;
+	NSString* name;
 	NSString* phone;
-	NSString* logo;
 	NSString* address;
-	NSString* mapname;
-	NSString* followname;
-	NSString* url;
 }
 
-@property(nonatomic, retain) NSString* title;
+@property(nonatomic, assign) int idstore;
+@property(nonatomic, assign) float latitude;
+@property(nonatomic, assign) float longitude;
+@property(nonatomic, retain) NSString* name;
 @property(nonatomic, retain) NSString* phone;
-@property(nonatomic, retain) NSString* logo;
 @property(nonatomic, retain) NSString* address;
-@property(nonatomic, retain) NSString* mapname;
-@property(nonatomic, retain) NSString* followname;
-@property(nonatomic, retain) NSString* url;
+
+
 
 @end

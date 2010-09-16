@@ -17,6 +17,8 @@
 {
 	controller = parent;
 	
+	coupon = [(TappLocalViewController*)controller getCurrentCoupon];
+	
 	if (!isBuilt)
 	{
 		isBuilt = true;
@@ -39,21 +41,30 @@
 		item.hidesBackButton = YES;
 		[top pushNavigationItem:item animated:NO];
 									
-		special = [[UIImageView alloc] initWithFrame: CGRectMake(62, 60, 193, 28)];
-		special.image = [[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:@"special_offer.png"]];
+		special = [[FontLabel alloc] initWithFrame:CGRectMake(62, 60, 193, 28) fontName:@"HelveticaNeue" pointSize:20.0f];
+		special.textColor = [ColorUtils colorFromRGB:@"747474"];
+		special.backgroundColor = nil;
+		special.opaque = NO;
+		special.textAlignment = UITextAlignmentCenter;
+		special.text = coupon.title;
 		[mother addSubview:special];
 		
-		merchantlogo = [[UIButton alloc] initWithFrame: CGRectMake(103, 95, 112, 120)];
-		[merchantlogo setBackgroundImage:[[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:@"merchant_logo.png"]] forState:UIControlStateNormal];
+		merchantlogoFrame = [[UIButton alloc] initWithFrame: CGRectMake(103, 95, 112, 120)];
+		[merchantlogoFrame setBackgroundImage:[[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:@"merchant_logo.png"]] forState:UIControlStateNormal];
+		[merchantlogoFrame addTarget:self action:@selector(merchantClick) forControlEvents:UIControlEventTouchUpInside];
+		[mother addSubview:merchantlogoFrame];
+		
+		merchantlogo = [[UIButton alloc] initWithFrame: CGRectMake(110, 110, 100, 100)];
+		[merchantlogo setBackgroundImage:[[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:coupon.logo]] forState:UIControlStateNormal];
 		[merchantlogo addTarget:self action:@selector(merchantClick) forControlEvents:UIControlEventTouchUpInside];
-		[mother addSubview:merchantlogo];
+		[mother addSubview:merchantlogo];		
 		
 		text1 = [[FontLabel alloc] initWithFrame:CGRectMake(65, 226, 190, 70) fontName:@"HelveticaNeue" pointSize:20.0f];
 		text1.textColor = [ColorUtils colorFromRGB:@"747474"];
 		text1.backgroundColor = nil;
 		text1.opaque = NO;
 		text1.textAlignment = UITextAlignmentCenter;
-		text1.text = @"BUY ONE MEAL, GET THE SECOND HALF OFF!";
+		text1.text = coupon.text;
 		text1.numberOfLines = 3;
 		[mother addSubview:text1];
 		
@@ -62,7 +73,7 @@
 		text2.backgroundColor = nil;
 		text2.opaque = NO;
 		text2.textAlignment = UITextAlignmentCenter;
-		text2.text = @"OFFER VALID THROUGH: 9/1";
+		text2.text = coupon.dates;
 		[mother addSubview:text2];
 		
 		text3 = [[FontLabel alloc] initWithFrame:CGRectMake(35, 322, 250, 20) fontName:@"HelveticaNeue" pointSize:10.0f];
@@ -70,7 +81,7 @@
 		text3.backgroundColor = nil;
 		text3.opaque = NO;
 		text3.textAlignment = UITextAlignmentCenter;
-		text3.text = @"*OFFER ONLY VALID AT 4TH & HOWARD LOCATION";
+		text3.text = coupon.location;
 		[mother addSubview:text3];
 		
 		directions = [[UIButton alloc] initWithFrame: CGRectMake(50, 355, 74, 31)];
@@ -126,7 +137,7 @@
 
 -(void) merchantClick
 {
-	[(TappLocalViewController*)controller setScreen:@"SCREEN_STORE_JOLLIBEE":false];
+	[(TappLocalViewController*)controller setScreen:@"SCREEN_STORE":false];
 }
 
 -(void) tapToUseClick
@@ -137,12 +148,12 @@
 
 -(void) directionsClick
 {
-	[(TappLocalViewController*)controller setScreen:@"SCREEN_SINGLEMAP_JOLLIBEE":false];
+	[(TappLocalViewController*)controller setScreen:@"SCREEN_SINGLEMAP":false];
 }
 
 -(void) moreDealsClick
 {
-	[(TappLocalViewController*)controller setScreen:@"SCREEN_MAP_JOLLIBEE":false];
+	[(TappLocalViewController*)controller setScreen:@"SCREEN_MAP":false];
 }
 
 -(void) likeClick
@@ -203,6 +214,5 @@
 {
 	[mother removeFromSuperview];
 }
-
 
 @end

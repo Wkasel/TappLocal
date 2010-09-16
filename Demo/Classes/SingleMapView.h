@@ -15,8 +15,8 @@
 #import <MapKit/MapKit.h>
 #import "MapStoreAnnotation.h"
 #import "TappLocalScreenProtocol.h"
-#import "TappLocalView.h"
 #import "Coupon.h"
+#import "TappLocalView.h"
 
 @interface SingleMapView : NSObject<MKMapViewDelegate> {
 	UIViewController* controller;
@@ -37,6 +37,5 @@
 -(void) backClick;
 -(void) closeClick;
 -(void) merchantClick;
--(void) setCoupon:(Coupon*) c;
 
 @end

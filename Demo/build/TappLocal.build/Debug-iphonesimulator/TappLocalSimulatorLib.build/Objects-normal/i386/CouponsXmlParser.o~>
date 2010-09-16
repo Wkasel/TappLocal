@@ -1,0 +1,4 @@
+In file included from /Users/guilhermecarvalho/TappLocal/Demo/Classes/XMLParser.h:12,
+                 from /Users/guilhermecarvalho/TappLocal/Demo/Classes/CouponsXmlParser.h:14,
+                 from /Users/guilhermecarvalho/TappLocal/Demo/Classes/CouponsXmlParser.m:9:
+/Users/guilhermecarvalho/TappLocal/Demo/Classes/TextUtils.h:16: error: expected ')' before 'CGFloat'

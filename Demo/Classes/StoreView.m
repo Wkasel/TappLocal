@@ -16,7 +16,7 @@
 {
 	controller = parent;
 	
-	controller = parent;
+	coupon = [(TappLocalViewController*)controller getCurrentCoupon];
 	
 	if (!isBuilt)
 	{
@@ -74,12 +74,12 @@
 		[mother addSubview:table];
 	}
 	
-	if (store.logo != nil)
-		[merchantlogo setBackgroundImage:[[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:store.logo]] forState:UIControlStateNormal];
+	if ([coupon getMerchant].logo != nil)
+		[merchantlogo setBackgroundImage:[[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:[coupon getMerchant].logo]] forState:UIControlStateNormal];
 	
-	merchantname.text = store.title;
+	merchantname.text = [coupon getMerchant].name;
 	
-	if ([RMSTracker load:store.followname] != nil)
+	if ([RMSTracker load:[coupon getMerchant].name] != nil)
 	{
 		[follow setBackgroundImage:[[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:@"following2.png"]] forState:UIControlStateNormal];		
 	}
@@ -128,7 +128,7 @@
 		number.backgroundColor = nil;
 		number.opaque = NO;
 		number.textAlignment = UITextAlignmentLeft;
-		number.text = store.phone;
+		number.text = [coupon getMerchant].phone;
 		[cell addSubview:number];
 		
 	}
@@ -150,7 +150,7 @@
 		url.backgroundColor = nil;
 		url.opaque = NO;
 		url.textAlignment = UITextAlignmentLeft;
-		url.text = store.url;
+		url.text = [coupon getMerchant].site;
 		[cell addSubview:url];
 		
 	}
@@ -174,7 +174,7 @@
 		street.backgroundColor = nil;
 		street.opaque = NO;
 		street.textAlignment = UITextAlignmentLeft;
-		street.text = store.address;
+		street.text = ((Store*)[[coupon getStores] objectAtIndex:0]).address;
 		[cell addSubview:street];
 	}
 	else if ([indexPath indexAtPosition:0]  == 3)
@@ -238,7 +238,7 @@
 	if ([indexPath indexAtPosition:0]  == 0)
 	{
 		//phone
-		NSMutableString *phone = [[store.phone mutableCopy] autorelease];
+		NSMutableString *phone = [[[coupon getMerchant].phone mutableCopy] autorelease];
 		[phone replaceOccurrencesOfString:@" " 
 							   withString:@"" 
 								  options:NSLiteralSearch 
@@ -261,21 +261,21 @@
 	else if ([indexPath indexAtPosition:0]  == 1)
 	{
 		//site
-		NSString *stringURL = store.url;
+		NSString *stringURL = [coupon getMerchant].site;
 		NSURL *url = [NSURL URLWithString:stringURL];
 		[[UIApplication sharedApplication] openURL:url];
 	}
 	else if ([indexPath indexAtPosition:0]  == 2)
 	{
 		//address
-		[(TappLocalViewController*)controller setScreen:store.mapname:false];
+		[(TappLocalViewController*)controller setScreen:@"SCREEN_SINGLEMAP":false];
 	}
 	else if ([indexPath indexAtPosition:0]  == 3)
 	{
 		if ([indexPath indexAtPosition:1]  == 0)
 		{
 			//directions
-			[(TappLocalViewController*)controller setScreen:store.mapname:false];
+			[(TappLocalViewController*)controller setScreen:@"SCREEN_SINGLEMAP":false];
 
 		}
 		else if ([indexPath indexAtPosition:1]  == 1)
@@ -324,14 +324,14 @@
 
 -(void) followClick
 {
-	if ([RMSTracker load:store.followname] != nil)
+	if ([RMSTracker load:[coupon getMerchant].name] != nil)
 	{
-		[RMSTracker deleteRecordstore:store.followname];
+		[RMSTracker deleteRecordstore:[coupon getMerchant].name];
 		[follow setBackgroundImage:[[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:@"follow2.png"]] forState:UIControlStateNormal];		
 	}
 	else
 	{
-		[RMSTracker saveString:store.followname :@"yes"];
+		[RMSTracker saveString:[coupon getMerchant].name :@"yes"];
 		[follow setBackgroundImage:[[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:@"following2.png"]] forState:UIControlStateNormal];
 	}
 }
@@ -358,13 +358,6 @@
 {
 	[mother removeFromSuperview];
 }
-
-
--(void) setStore:(Store*) s
-{
-	store = s;
-}
-
 
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person
 {

@@ -11,10 +11,37 @@
 
 @implementation Coupon
 
+@synthesize idcoupon;
+@synthesize agefrom;
+@synthesize ageto;
 @synthesize title;
 @synthesize text;
-@synthesize storename;
-@synthesize longitude;
-@synthesize latitude;
+@synthesize dates;
+@synthesize location;
+@synthesize logo;
+@synthesize sex;
+
+-(Merchant*) getMerchant
+{
+	return merchant;
+}
+
+-(void) setMerchant:(Merchant*) m
+{
+	merchant = m;
+}
+
+-(NSMutableArray*) getStores
+{
+	if (stores == nil)
+		stores = [[NSMutableArray alloc]init];
+	
+	return stores;
+}
+
+-(void) addStore:(Store*) s
+{
+	[[self getStores] addObject:s];
+}
 
 @end

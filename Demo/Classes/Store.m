@@ -11,12 +11,12 @@
 
 @implementation Store
 
-@synthesize title;
+@synthesize idstore;
+@synthesize latitude;
+@synthesize longitude;
+@synthesize name;
 @synthesize phone;
-@synthesize logo;
 @synthesize address;
-@synthesize mapname;
-@synthesize followname;
-@synthesize url;
+
 
 @end

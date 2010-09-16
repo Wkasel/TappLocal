@@ -12,10 +12,12 @@
 #import "ResourceManager.h"
 #import "FBConnect.h"
 #import "TappLocalScreenProtocol.h"
-#import "TappLocalView.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "Store.h"
+#import "Coupon.h"
+#import "Merchant.h"
+#import "TappLocalView.h"
 
 @interface StoreView : NSObject<UITableViewDelegate,UITableViewDataSource,FBSessionDelegate,ABPeoplePickerNavigationControllerDelegate> {
 	UIViewController* controller;
@@ -32,7 +34,7 @@
 	
 	UITableView* table;
 	
-	Store* store;
+	Coupon* coupon;
 	
 	BOOL isBuilt;
 }
@@ -42,5 +44,4 @@
 -(void) closeClick;
 -(void) followClick;
 -(void) facebookClick;
--(void) setStore:(Store*) s;
 @end

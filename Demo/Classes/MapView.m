@@ -16,6 +16,8 @@
 {
 	controller = parent;
 	
+	coupon = [(TappLocalViewController*)controller getCurrentCoupon];
+	
 	if (!isBuilt)
 	{
 		isBuilt = true;
@@ -67,13 +69,13 @@
 	}
 	
 	
-	for (int i=0; i<[coupons count]; i++)
+	for (int i=0; i<[[coupon getStores] count]; i++)
 	{
-		Coupon* coupon = (Coupon*)[coupons objectAtIndex:i];
+		Store* store = (Store*)[[coupon getStores] objectAtIndex:i];
 		
 		CLLocationCoordinate2D location;
-		location.latitude = coupon.latitude;
-		location.longitude = coupon.longitude;
+		location.latitude = store.latitude;
+		location.longitude = store.longitude;
 		MapStoreAnnotation* mark = [[MapStoreAnnotation alloc]initWithCoordinate:location title:coupon.title subtitle:coupon.text];
 		[map addAnnotation:mark];
 	}
@@ -93,12 +95,12 @@
 		float maxLat = 0;
 		float maxLong = 0;
 		
-		for (int i=0; i<[coupons count]; i++)
+		for (int i=0; i<[[coupon getStores] count]; i++)
 		{
-			Coupon* coupon = (Coupon*)[coupons objectAtIndex:i];		
+			Store* store = (Store*)[[coupon getStores] objectAtIndex:i];	
 			
-			float latD = coupon.latitude-newLocation.coordinate.latitude;
-			float lonD = coupon.longitude-newLocation.coordinate.longitude;
+			float latD = store.latitude-newLocation.coordinate.latitude;
+			float lonD = store.longitude-newLocation.coordinate.longitude;
 			
 			if (latD < 0)
 				latD *= -1.5;
@@ -158,7 +160,7 @@
 
 -(void) merchantClick
 {
-	[(TappLocalViewController*)controller setScreen:((Coupon*)[coupons objectAtIndex:0]).storename:false];
+	[(TappLocalViewController*)controller setScreen:@"SCREEN_STORE":false];
 }
 
 -(void) backClick
@@ -174,11 +176,6 @@
 -(void) removeFromSuperview
 {
 	[mother removeFromSuperview];
-}
-
--(void) setCoupons:(NSMutableArray*) points;
-{
-	coupons = points;
 }
 
 @end

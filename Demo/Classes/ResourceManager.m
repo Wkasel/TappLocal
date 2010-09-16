@@ -63,6 +63,13 @@
 		
 		return result;
 	}
+	else if ([filename hasPrefix:@"http://"])
+	{
+		NSURL *url = [NSURL URLWithString:filename];
+		NSMutableData *data = [NSMutableData dataWithContentsOfURL:url];
+		
+		return data;
+	}
 	
 	return nil;
 }

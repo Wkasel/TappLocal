@@ -17,25 +17,31 @@
 #import "RMSTracker.h"
 #import "StoreView.h"
 #import "SingleMapView.h"
-#import "FlashView.h"
-#import "TappLocalView.h"
 #import "ConfirmedView.h"
 #import "Coupon.h" 
-#import "Test.h"
+#import "CouponsXmlParser.h"
 
-@interface TappLocalViewController : UIViewController<UITabBarDelegate, UIAlertViewDelegate> {
+@interface TappLocalViewController : UIViewController<UITabBarDelegate, UIAlertViewDelegate, CLLocationManagerDelegate> {
 
 	DealView* dView;
 	HomeView* hView;
 	MapView* mView;
 	StoreView* sView;
 	SingleMapView* smView;
-	FlashView* fView;
 	ConfirmedView* cView;
+	NSString* lastXml;
+	
+	Coupon* currentCoupon;
+	BOOL working;
+	
+	float lastLatitude;
+	float lastLongitude;
 }
 
 -(void)setScreen:(NSString*) newScreen:(bool)isBack;
 -(void)closeCoupons;
+-(Coupon*)getCurrentCoupon;
+-(void)turnGpsOn;
 
 @end
 

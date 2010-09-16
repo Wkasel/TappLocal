@@ -87,12 +87,12 @@
 
 -(void) seemoreClick
 {
-	[(TappLocalViewController*)controller setScreen:@"SCREEN_MAP_JOLLIBEE":false];
+	[(TappLocalViewController*)controller setScreen:@"SCREEN_MAP":false];
 }
 
 -(void) moreoffersClick
 {
-	[(TappLocalViewController*)controller setScreen:@"SCREEN_MAP_JOLLIBEE":false];	
+	[(TappLocalViewController*)controller setScreen:@"SCREEN_MAP":false];	
 }
 
 -(void) sharefriendsClick

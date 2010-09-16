@@ -47,7 +47,6 @@
 		14730373121C58FB00D34F53 /* offer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730362121C58FB00D34F53 /* offer_bg.png */; };
 		14730374121C58FB00D34F53 /* save_deal.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730363121C58FB00D34F53 /* save_deal.png */; };
 		14730375121C58FB00D34F53 /* nearby.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730364121C58FB00D34F53 /* nearby.png */; };
-		14730376121C58FB00D34F53 /* special_offer.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730365121C58FB00D34F53 /* special_offer.png */; };
 		14730377121C58FB00D34F53 /* tap_to_use.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730366121C58FB00D34F53 /* tap_to_use.png */; };
 		14730378121C58FB00D34F53 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730367121C58FB00D34F53 /* bg.png */; };
 		14730379121C58FB00D34F53 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730368121C58FB00D34F53 /* logo.png */; };
@@ -72,21 +71,11 @@
 		14858BF8121E174A005EAB19 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 14858BED121E174A005EAB19 /* FBDialog.m */; };
 		14858CB2121E57C2005EAB19 /* SingleMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14858CB1121E57C2005EAB19 /* SingleMapView.m */; };
 		1485C23512021BCA009FA21A /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1485C23412021BCA009FA21A /* Entitlements.plist */; };
-		1491F6A61226E6220083BD68 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 1491F51B1226D9830083BD68 /* Test.m */; };
-		1491F6E81226F30D0083BD68 /* Test.h in Headers */ = {isa = PBXBuildFile; fileRef = 1491F6E71226F30D0083BD68 /* Test.h */; };
-		1491F71D1226F57B0083BD68 /* Test.h in Headers */ = {isa = PBXBuildFile; fileRef = 1491F6E71226F30D0083BD68 /* Test.h */; };
-		1491F71F1226F57B0083BD68 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 1491F51B1226D9830083BD68 /* Test.m */; };
-		1491F7491227145D0083BD68 /* Test2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1491F7471227145D0083BD68 /* Test2.h */; };
-		1491F74A1227145D0083BD68 /* Test2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1491F7481227145D0083BD68 /* Test2.m */; };
-		1491F74B1227145D0083BD68 /* Test2.h in Headers */ = {isa = PBXBuildFile; fileRef = 1491F7471227145D0083BD68 /* Test2.h */; };
-		1491F74C1227145D0083BD68 /* Test2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1491F7481227145D0083BD68 /* Test2.m */; };
-		149435F7121EE70A008C45B7 /* FlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 149435F6121EE70A008C45B7 /* FlashView.m */; };
 		14943601121EE821008C45B7 /* bg_flash.png in Resources */ = {isa = PBXBuildFile; fileRef = 149435FE121EE821008C45B7 /* bg_flash.png */; };
 		14943602121EE821008C45B7 /* bring.png in Resources */ = {isa = PBXBuildFile; fileRef = 149435FF121EE821008C45B7 /* bring.png */; };
 		14943603121EE821008C45B7 /* remind_me.png in Resources */ = {isa = PBXBuildFile; fileRef = 14943600121EE821008C45B7 /* remind_me.png */; };
 		1497A08D12219BD0001FD040 /* seemore.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A08812219BD0001FD040 /* seemore.png */; };
 		1497A09012219BD0001FD040 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A08B12219BD0001FD040 /* share.png */; };
-		1497A1901221A977001FD040 /* TappLocalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497A18F1221A977001FD040 /* TappLocalView.m */; };
 		1497A1C81221AA77001FD040 /* ConfirmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497A1C71221AA77001FD040 /* ConfirmedView.m */; };
 		1497A2E41221B9F7001FD040 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1497A2E31221B9F7001FD040 /* AddressBook.framework */; };
 		1497A2E61221B9F7001FD040 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1497A2E51221B9F7001FD040 /* AddressBookUI.framework */; };
@@ -95,6 +84,7 @@
 		1497A3C01221D05B001FD040 /* following2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A3BB1221D05B001FD040 /* following2.png */; };
 		1497A3C11221D05B001FD040 /* followmerchant.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A3BC1221D05B001FD040 /* followmerchant.png */; };
 		1497A3C21221D05B001FD040 /* moreoffers.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A3BD1221D05B001FD040 /* moreoffers.png */; };
+		14A0E44F124170D600525707 /* TappLocalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A0E4261241702400525707 /* TappLocalView.m */; };
 		14A53A0211F9F7DA00A2097E /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A539FD11F9F7DA00A2097E /* CacheManager.m */; };
 		14A53A0311F9F7DA00A2097E /* ResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A539FF11F9F7DA00A2097E /* ResourceManager.m */; };
 		14A53A0411F9F7DA00A2097E /* RMSTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A53A0111F9F7DA00A2097E /* RMSTracker.m */; };
@@ -105,6 +95,9 @@
 		14A53A1411F9F80E00A2097E /* TextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A53A0F11F9F80E00A2097E /* TextUtils.m */; };
 		14A53A2711F9F84D00A2097E /* NSDataBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A53A2611F9F84D00A2097E /* NSDataBase64.m */; };
 		14A53B1311FA2E5A00A2097E /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A53B1211FA2E5A00A2097E /* ColorUtils.m */; };
+		14ABE791124053D10031D489 /* CouponsXmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ABE74F124052040031D489 /* CouponsXmlParser.m */; };
+		14ABE792124053DF0031D489 /* coupons.xml in Resources */ = {isa = PBXBuildFile; fileRef = 14ABE73012404D3C0031D489 /* coupons.xml */; };
+		14ABE8AB124062730031D489 /* Merchant.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ABE690124009610031D489 /* Merchant.m */; };
 		1D3623260D0F684500981E51 /* TappLocalAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TappLocalAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -180,7 +173,6 @@
 		14730362121C58FB00D34F53 /* offer_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = offer_bg.png; path = Resources/offer_bg.png; sourceTree = "<group>"; };
 		14730363121C58FB00D34F53 /* save_deal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = save_deal.png; path = Resources/save_deal.png; sourceTree = "<group>"; };
 		14730364121C58FB00D34F53 /* nearby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nearby.png; path = Resources/nearby.png; sourceTree = "<group>"; };
-		14730365121C58FB00D34F53 /* special_offer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = special_offer.png; path = Resources/special_offer.png; sourceTree = "<group>"; };
 		14730366121C58FB00D34F53 /* tap_to_use.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tap_to_use.png; path = Resources/tap_to_use.png; sourceTree = "<group>"; };
 		14730367121C58FB00D34F53 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = Resources/bg.png; sourceTree = "<group>"; };
 		14730368121C58FB00D34F53 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/logo.png; sourceTree = "<group>"; };
@@ -222,21 +214,11 @@
 		14858CB0121E57C2005EAB19 /* SingleMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleMapView.h; sourceTree = "<group>"; };
 		14858CB1121E57C2005EAB19 /* SingleMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleMapView.m; sourceTree = "<group>"; };
 		1485C23412021BCA009FA21A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		1491F51B1226D9830083BD68 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
-		1491F6AB1226E6220083BD68 /* libTappLocalDeviceLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTappLocalDeviceLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1491F6E71226F30D0083BD68 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Test.h; path = "TappLocal headers/Test.h"; sourceTree = SOURCE_ROOT; };
-		1491F7241226F57B0083BD68 /* libTappLocalSimulatorLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTappLocalSimulatorLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1491F7471227145D0083BD68 /* Test2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test2.h; sourceTree = "<group>"; };
-		1491F7481227145D0083BD68 /* Test2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test2.m; sourceTree = "<group>"; };
-		149435F5121EE70A008C45B7 /* FlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashView.h; sourceTree = "<group>"; };
-		149435F6121EE70A008C45B7 /* FlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashView.m; sourceTree = "<group>"; };
 		149435FE121EE821008C45B7 /* bg_flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_flash.png; path = Resources/bg_flash.png; sourceTree = "<group>"; };
 		149435FF121EE821008C45B7 /* bring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bring.png; path = Resources/bring.png; sourceTree = "<group>"; };
 		14943600121EE821008C45B7 /* remind_me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = remind_me.png; path = Resources/remind_me.png; sourceTree = "<group>"; };
 		1497A08812219BD0001FD040 /* seemore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seemore.png; sourceTree = "<group>"; };
 		1497A08B12219BD0001FD040 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
-		1497A18E1221A977001FD040 /* TappLocalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TappLocalView.h; sourceTree = "<group>"; };
-		1497A18F1221A977001FD040 /* TappLocalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TappLocalView.m; sourceTree = "<group>"; };
 		1497A1C61221AA77001FD040 /* ConfirmedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmedView.h; sourceTree = "<group>"; };
 		1497A1C71221AA77001FD040 /* ConfirmedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmedView.m; sourceTree = "<group>"; };
 		1497A2E31221B9F7001FD040 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -246,6 +228,8 @@
 		1497A3BB1221D05B001FD040 /* following2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = following2.png; path = Resources/following2.png; sourceTree = "<group>"; };
 		1497A3BC1221D05B001FD040 /* followmerchant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = followmerchant.png; path = Resources/followmerchant.png; sourceTree = "<group>"; };
 		1497A3BD1221D05B001FD040 /* moreoffers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moreoffers.png; path = Resources/moreoffers.png; sourceTree = "<group>"; };
+		14A0E4251241702400525707 /* TappLocalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TappLocalView.h; sourceTree = "<group>"; };
+		14A0E4261241702400525707 /* TappLocalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TappLocalView.m; sourceTree = "<group>"; };
 		14A539FC11F9F7DA00A2097E /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
 		14A539FD11F9F7DA00A2097E /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
 		14A539FE11F9F7DA00A2097E /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
@@ -266,6 +250,11 @@
 		14A53A2611F9F84D00A2097E /* NSDataBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataBase64.m; sourceTree = "<group>"; };
 		14A53B1111FA2E5A00A2097E /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
 		14A53B1211FA2E5A00A2097E /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
+		14ABE68F124009610031D489 /* Merchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Merchant.h; sourceTree = "<group>"; };
+		14ABE690124009610031D489 /* Merchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Merchant.m; sourceTree = "<group>"; };
+		14ABE73012404D3C0031D489 /* coupons.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = coupons.xml; sourceTree = "<group>"; };
+		14ABE74E124052040031D489 /* CouponsXmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponsXmlParser.h; sourceTree = "<group>"; };
+		14ABE74F124052040031D489 /* CouponsXmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponsXmlParser.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TappLocalAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TappLocalAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* TappLocalAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TappLocalAppDelegate.m; sourceTree = "<group>"; };
@@ -281,20 +270,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1491F6A71226E6220083BD68 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1491F7201226F57B0083BD68 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,7 +294,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1491F4EA1226D60B0083BD68 /* TappLocal */,
 				14858BD5121E1749005EAB19 /* FBConnect */,
 				1439D19311F1002D00409DFF /* FontClasses */,
 				146ABF8411FF1EBC00E4BC44 /* JSON */,
@@ -329,16 +303,18 @@
 				1D3623250D0F684500981E51 /* TappLocalAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* TappLocalViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* TappLocalViewController.m */,
-				1497A1C61221AA77001FD040 /* ConfirmedView.h */,
-				1497A1C71221AA77001FD040 /* ConfirmedView.m */,
+				14ABE74E124052040031D489 /* CouponsXmlParser.h */,
+				14ABE74F124052040031D489 /* CouponsXmlParser.m */,
 				147ED6E112223B280040349B /* Coupon.h */,
 				147ED6E212223B280040349B /* Coupon.m */,
+				14ABE68F124009610031D489 /* Merchant.h */,
+				14ABE690124009610031D489 /* Merchant.m */,
 				147ED77F122247380040349B /* Store.h */,
 				147ED780122247380040349B /* Store.m */,
+				1497A1C61221AA77001FD040 /* ConfirmedView.h */,
+				1497A1C71221AA77001FD040 /* ConfirmedView.m */,
 				1470DE57120130040070A21B /* DealView.h */,
 				1470DE58120130040070A21B /* DealView.m */,
-				149435F5121EE70A008C45B7 /* FlashView.h */,
-				149435F6121EE70A008C45B7 /* FlashView.m */,
 				1470DFD5120140070070A21B /* HomeView.h */,
 				1470DFD6120140070070A21B /* HomeView.m */,
 				148589C2121DB474005EAB19 /* MapStoreAnnotation.h */,
@@ -349,8 +325,8 @@
 				14858CB1121E57C2005EAB19 /* SingleMapView.m */,
 				1473038C121C5ADD00D34F53 /* StoreView.h */,
 				1473038D121C5ADD00D34F53 /* StoreView.m */,
-				1497A18E1221A977001FD040 /* TappLocalView.h */,
-				1497A18F1221A977001FD040 /* TappLocalView.m */,
+				14A0E4251241702400525707 /* TappLocalView.h */,
+				14A0E4261241702400525707 /* TappLocalView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -457,17 +433,6 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
-		1491F4EA1226D60B0083BD68 /* TappLocal */ = {
-			isa = PBXGroup;
-			children = (
-				1491F6E71226F30D0083BD68 /* Test.h */,
-				1491F51B1226D9830083BD68 /* Test.m */,
-				1491F7471227145D0083BD68 /* Test2.h */,
-				1491F7481227145D0083BD68 /* Test2.m */,
-			);
-			name = TappLocal;
-			sourceTree = "<group>";
-		};
 		14A53A4111FA0C4600A2097E /* Konkix */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,8 +464,6 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* TappLocal.app */,
-				1491F6AB1226E6220083BD68 /* libTappLocalDeviceLib.a */,
-				1491F7241226F57B0083BD68 /* libTappLocalSimulatorLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -530,6 +493,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				14ABE73012404D3C0031D489 /* coupons.xml */,
+				147278DA121C6DC1001FCBBA /* HelveticaNeue.ttf */,
+				1473035B121C58FB00D34F53 /* Helvetica-Bold.ttf */,
+				1473035C121C58FB00D34F53 /* HelveticaBold.ttf */,
+				1473035D121C58FB00D34F53 /* HelveticaNeueBold.ttf */,
 				1497A3B91221D05B001FD040 /* confirmed.png */,
 				1497A3BA1221D05B001FD040 /* follow2.png */,
 				1497A3BB1221D05B001FD040 /* following2.png */,
@@ -541,14 +509,10 @@
 				149435FF121EE821008C45B7 /* bring.png */,
 				14943600121EE821008C45B7 /* remind_me.png */,
 				14751B5A121CA53800944076 /* back.png */,
-				147278DA121C6DC1001FCBBA /* HelveticaNeue.ttf */,
 				14730358121C58FB00D34F53 /* already_used.png */,
 				14730367121C58FB00D34F53 /* bg.png */,
 				14730359121C58FB00D34F53 /* directions.png */,
 				1473035A121C58FB00D34F53 /* flash.png */,
-				1473035B121C58FB00D34F53 /* Helvetica-Bold.ttf */,
-				1473035C121C58FB00D34F53 /* HelveticaBold.ttf */,
-				1473035D121C58FB00D34F53 /* HelveticaNeueBold.ttf */,
 				1473035E121C58FB00D34F53 /* Icon.png */,
 				14730360121C58FB00D34F53 /* merchant_logo.png */,
 				14751BFD121CC8A200944076 /* merchant_logo2.png */,
@@ -556,7 +520,6 @@
 				14730362121C58FB00D34F53 /* offer_bg.png */,
 				14730363121C58FB00D34F53 /* save_deal.png */,
 				14730364121C58FB00D34F53 /* nearby.png */,
-				14730365121C58FB00D34F53 /* special_offer.png */,
 				14730366121C58FB00D34F53 /* tap_to_use.png */,
 				14730368121C58FB00D34F53 /* logo.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -585,62 +548,7 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		1491F6A31226E6220083BD68 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1491F6E81226F30D0083BD68 /* Test.h in Headers */,
-				1491F7491227145D0083BD68 /* Test2.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1491F71C1226F57B0083BD68 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1491F71D1226F57B0083BD68 /* Test.h in Headers */,
-				1491F74B1227145D0083BD68 /* Test2.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		1491F6A21226E6220083BD68 /* TappLocalDeviceLib */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1491F6A81226E6220083BD68 /* Build configuration list for PBXNativeTarget "TappLocalDeviceLib" */;
-			buildPhases = (
-				1491F6A31226E6220083BD68 /* Headers */,
-				1491F6A51226E6220083BD68 /* Sources */,
-				1491F6A71226E6220083BD68 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TappLocalDeviceLib;
-			productName = TappLocalLib;
-			productReference = 1491F6AB1226E6220083BD68 /* libTappLocalDeviceLib.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		1491F71B1226F57B0083BD68 /* TappLocalSimulatorLib */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1491F7211226F57B0083BD68 /* Build configuration list for PBXNativeTarget "TappLocalSimulatorLib" */;
-			buildPhases = (
-				1491F71C1226F57B0083BD68 /* Headers */,
-				1491F71E1226F57B0083BD68 /* Sources */,
-				1491F7201226F57B0083BD68 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TappLocalSimulatorLib;
-			productName = TappLocalLib;
-			productReference = 1491F7241226F57B0083BD68 /* libTappLocalSimulatorLib.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		1D6058900D05DD3D006BFB54 /* TappLocal */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TappLocal" */;
@@ -671,8 +579,6 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* TappLocal */,
-				1491F6A21226E6220083BD68 /* TappLocalDeviceLib */,
-				1491F71B1226F57B0083BD68 /* TappLocalSimulatorLib */,
 			);
 		};
 /* End PBXProject section */
@@ -682,66 +588,51 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				1485C23512021BCA009FA21A /* Entitlements.plist in Resources */,
-				14730369121C58FB00D34F53 /* already_used.png in Resources */,
-				1473036A121C58FB00D34F53 /* directions.png in Resources */,
-				1473036B121C58FB00D34F53 /* flash.png in Resources */,
-				1473036C121C58FB00D34F53 /* Helvetica-Bold.ttf in Resources */,
-				1473036D121C58FB00D34F53 /* HelveticaBold.ttf in Resources */,
-				1473036E121C58FB00D34F53 /* HelveticaNeueBold.ttf in Resources */,
-				1473036F121C58FB00D34F53 /* Icon.png in Resources */,
-				14730371121C58FB00D34F53 /* merchant_logo.png in Resources */,
-				14730372121C58FB00D34F53 /* more_details.png in Resources */,
-				14730373121C58FB00D34F53 /* offer_bg.png in Resources */,
-				14730374121C58FB00D34F53 /* save_deal.png in Resources */,
-				14730375121C58FB00D34F53 /* nearby.png in Resources */,
-				14730376121C58FB00D34F53 /* special_offer.png in Resources */,
-				14730377121C58FB00D34F53 /* tap_to_use.png in Resources */,
-				14730378121C58FB00D34F53 /* bg.png in Resources */,
-				14730379121C58FB00D34F53 /* logo.png in Resources */,
-				147278DB121C6DC1001FCBBA /* HelveticaNeue.ttf in Resources */,
-				14751B5B121CA53800944076 /* back.png in Resources */,
-				14751BFE121CC8A200944076 /* merchant_logo2.png in Resources */,
-				14858BEE121E174A005EAB19 /* FBDialog.bundle in Resources */,
-				14943601121EE821008C45B7 /* bg_flash.png in Resources */,
-				14943602121EE821008C45B7 /* bring.png in Resources */,
-				14943603121EE821008C45B7 /* remind_me.png in Resources */,
-				1497A08D12219BD0001FD040 /* seemore.png in Resources */,
-				1497A09012219BD0001FD040 /* share.png in Resources */,
 				1497A3BE1221D05B001FD040 /* confirmed.png in Resources */,
 				1497A3BF1221D05B001FD040 /* follow2.png in Resources */,
 				1497A3C01221D05B001FD040 /* following2.png in Resources */,
 				1497A3C11221D05B001FD040 /* followmerchant.png in Resources */,
 				1497A3C21221D05B001FD040 /* moreoffers.png in Resources */,
+				1497A08D12219BD0001FD040 /* seemore.png in Resources */,
+				1497A09012219BD0001FD040 /* share.png in Resources */,
+				14943601121EE821008C45B7 /* bg_flash.png in Resources */,
+				14943602121EE821008C45B7 /* bring.png in Resources */,
+				14943603121EE821008C45B7 /* remind_me.png in Resources */,
+				14751B5B121CA53800944076 /* back.png in Resources */,
+				14730369121C58FB00D34F53 /* already_used.png in Resources */,
+				14730378121C58FB00D34F53 /* bg.png in Resources */,
+				1473036A121C58FB00D34F53 /* directions.png in Resources */,
+				1473036B121C58FB00D34F53 /* flash.png in Resources */,
+				1473036F121C58FB00D34F53 /* Icon.png in Resources */,
+				14730371121C58FB00D34F53 /* merchant_logo.png in Resources */,
+				14751BFE121CC8A200944076 /* merchant_logo2.png in Resources */,
+				14730372121C58FB00D34F53 /* more_details.png in Resources */,
+				14730373121C58FB00D34F53 /* offer_bg.png in Resources */,
+				14730374121C58FB00D34F53 /* save_deal.png in Resources */,
+				14730375121C58FB00D34F53 /* nearby.png in Resources */,
+				14730377121C58FB00D34F53 /* tap_to_use.png in Resources */,
+				14730379121C58FB00D34F53 /* logo.png in Resources */,
+				14ABE792124053DF0031D489 /* coupons.xml in Resources */,
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				1485C23512021BCA009FA21A /* Entitlements.plist in Resources */,
+				1473036C121C58FB00D34F53 /* Helvetica-Bold.ttf in Resources */,
+				1473036D121C58FB00D34F53 /* HelveticaBold.ttf in Resources */,
+				1473036E121C58FB00D34F53 /* HelveticaNeueBold.ttf in Resources */,
+				147278DB121C6DC1001FCBBA /* HelveticaNeue.ttf in Resources */,
+				14858BEE121E174A005EAB19 /* FBDialog.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1491F6A51226E6220083BD68 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1491F6A61226E6220083BD68 /* Test.m in Sources */,
-				1491F74A1227145D0083BD68 /* Test2.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1491F71E1226F57B0083BD68 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1491F71F1226F57B0083BD68 /* Test.m in Sources */,
-				1491F74C1227145D0083BD68 /* Test2.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A0E44F124170D600525707 /* TappLocalView.m in Sources */,
+				14ABE8AB124062730031D489 /* Merchant.m in Sources */,
+				14ABE791124053D10031D489 /* CouponsXmlParser.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* TappLocalAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* TappLocalViewController.m in Sources */,
@@ -791,8 +682,6 @@
 				14858BF7121E174A005EAB19 /* FBLoginDialog.m in Sources */,
 				14858BF8121E174A005EAB19 /* FBDialog.m in Sources */,
 				14858CB2121E57C2005EAB19 /* SingleMapView.m in Sources */,
-				149435F7121EE70A008C45B7 /* FlashView.m in Sources */,
-				1497A1901221A977001FD040 /* TappLocalView.m in Sources */,
 				1497A1C81221AA77001FD040 /* ConfirmedView.m in Sources */,
 				147ED6E312223B280040349B /* Coupon.m in Sources */,
 				147ED781122247380040349B /* Store.m in Sources */,
@@ -802,79 +691,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1491F6A91226E6220083BD68 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ADDITIONAL_SDKS = "";
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_LDFLAGS = "-ObjC";
-				PREBINDING = NO;
-				PRODUCT_NAME = TappLocalDeviceLib;
-				SDKROOT = iphoneos3.0;
-				VALID_ARCHS = "x86_64 i386";
-			};
-			name = Debug;
-		};
-		1491F6AA1226E6220083BD68 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ADDITIONAL_SDKS = "";
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				OTHER_LDFLAGS = "-ObjC";
-				PREBINDING = NO;
-				PRODUCT_NAME = TappLocalDeviceLib;
-				SDKROOT = iphoneos3.0;
-				VALID_ARCHS = "x86_64 i386";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		1491F7221226F57B0083BD68 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ADDITIONAL_SDKS = "";
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_LDFLAGS = "-ObjC";
-				PREBINDING = NO;
-				PRODUCT_NAME = TappLocalSimulatorLib;
-				SDKROOT = iphonesimulator3.0;
-				VALID_ARCHS = "x86_64 i386";
-			};
-			name = Debug;
-		};
-		1491F7231226F57B0083BD68 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ADDITIONAL_SDKS = "";
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				OTHER_LDFLAGS = "-ObjC";
-				PREBINDING = NO;
-				PRODUCT_NAME = TappLocalSimulatorLib;
-				SDKROOT = iphonesimulator3.0;
-				VALID_ARCHS = "x86_64 i386";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Guilherme Carvalho";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guilherme Carvalho";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Guilherme Carvalho (YUCE7QXPDT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Guilherme Carvalho (YUCE7QXPDT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../Desktop/Objective-XML-5.2/MPWXmlKit/build/Development\"",
@@ -892,8 +715,8 @@
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = TappLocal;
-				PROVISIONING_PROFILE = "EF6FEE37-0357-43B6-9BEC-12CD3E7EE1A9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF6FEE37-0357-43B6-9BEC-12CD3E7EE1A9";
+				PROVISIONING_PROFILE = "F25320DA-2D58-4FC2-86B8-5B7D685663CA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F25320DA-2D58-4FC2-86B8-5B7D685663CA";
 			};
 			name = Debug;
 		};
@@ -902,8 +725,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Guilherme Carvalho";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guilherme Carvalho";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Guilherme Carvalho (YUCE7QXPDT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Guilherme Carvalho (YUCE7QXPDT)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../Desktop/Objective-XML-5.2/MPWXmlKit/build/Development\"",
@@ -919,8 +742,8 @@
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = TappLocal;
-				PROVISIONING_PROFILE = "EF6FEE37-0357-43B6-9BEC-12CD3E7EE1A9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF6FEE37-0357-43B6-9BEC-12CD3E7EE1A9";
+				PROVISIONING_PROFILE = "F25320DA-2D58-4FC2-86B8-5B7D685663CA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F25320DA-2D58-4FC2-86B8-5B7D685663CA";
 			};
 			name = Release;
 		};
@@ -929,8 +752,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Guilherme Carvalho";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guilherme Carvalho";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Guilherme Carvalho (YUCE7QXPDT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Guilherme Carvalho (YUCE7QXPDT)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -938,8 +761,8 @@
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				LIBRARY_SEARCH_PATHS = "";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "EF6FEE37-0357-43B6-9BEC-12CD3E7EE1A9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF6FEE37-0357-43B6-9BEC-12CD3E7EE1A9";
+				PROVISIONING_PROFILE = "F25320DA-2D58-4FC2-86B8-5B7D685663CA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F25320DA-2D58-4FC2-86B8-5B7D685663CA";
 				SDKROOT = iphoneos3.0;
 				USER_HEADER_SEARCH_PATHS = /usr/include/libxml2;
 			};
@@ -950,8 +773,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Guilherme Carvalho";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Guilherme Carvalho";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Guilherme Carvalho (YUCE7QXPDT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Guilherme Carvalho (YUCE7QXPDT)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -959,8 +782,8 @@
 				HEADER_SEARCH_PATHS = "/usr/include/libxml2/**";
 				LIBRARY_SEARCH_PATHS = "";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "EF6FEE37-0357-43B6-9BEC-12CD3E7EE1A9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "EF6FEE37-0357-43B6-9BEC-12CD3E7EE1A9";
+				PROVISIONING_PROFILE = "F25320DA-2D58-4FC2-86B8-5B7D685663CA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F25320DA-2D58-4FC2-86B8-5B7D685663CA";
 				SDKROOT = iphoneos3.0;
 				USER_HEADER_SEARCH_PATHS = /usr/include/libxml2;
 			};
@@ -969,24 +792,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1491F6A81226E6220083BD68 /* Build configuration list for PBXNativeTarget "TappLocalDeviceLib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1491F6A91226E6220083BD68 /* Debug */,
-				1491F6AA1226E6220083BD68 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1491F7211226F57B0083BD68 /* Build configuration list for PBXNativeTarget "TappLocalSimulatorLib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1491F7221226F57B0083BD68 /* Debug */,
-				1491F7231226F57B0083BD68 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TappLocal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

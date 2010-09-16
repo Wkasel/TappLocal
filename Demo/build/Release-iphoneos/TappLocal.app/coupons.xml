@@ -1,0 +1,47 @@
+<coupons>
+	<coupon>
+		<id>1</id>
+		<logo>http://72.47.200.205/upload/coupon_1.png</logo>
+		<title>SPECIAL OFFER</title>
+		<text>BUY ONE MEAL, GET THE SECOND HALF OFF!</text> 
+		<agefrom>8</agefrom>
+		<ageto>80</ageto>
+		<sex>Both</sex>
+		<dates>OFFER VALID THROUGH: 9/1</dates>
+		<location>OFFER ONLY VALID AT 4TH AND HOWARD LOCATION</location>
+		<merchant>
+			<id>1</id>
+			<logo>http://72.47.200.205/upload/merchant_1.png</logo>
+			<name>Jollibee</name>
+			<description>A fast-food restaurant chain based in the Philippines. It is an American-style fast-food restaurant with Filipino-influenced dishes specializing in burgers, spaghetti, chicken and some local Filipino dishes. Currently the biggest fast-food chain in the Philippines.</description>
+			<phone>+1 415 904-8615</phone>
+			<site>http://www.jollibeeusa.com</site>
+		</merchant>
+		<stores>
+			<store>
+				<id>1</id>
+				<name>Jollibee</name>
+				<address>200 4th Street - San Francisco</address>
+				<phone>(415) 904-8615</phone>
+				<latitude>37.7831528</latitude>
+				<longitude>-122.4027187</longitude>
+			</store>
+			<store>
+				<id>2</id>
+				<name>Jollibee</name>
+				<address>1150 El Camino Real - San Bruno</address>
+				<phone>(650) 588-6998</phone>
+				<latitude>37.637506</latitude>
+				<longitude>-122.416605</longitude>
+			</store>
+			<store>
+				<id>3</id>
+				<name>Jollibee</name>
+				<address>32460 Dyer St - Union City</address>
+				<phone>(510) 324-2075</phone>
+				<latitude>37.5975784</latitude>
+				<longitude>-122.070946</longitude>
+			</store>
+		</stores>
+	</coupon>
+</coupons>
