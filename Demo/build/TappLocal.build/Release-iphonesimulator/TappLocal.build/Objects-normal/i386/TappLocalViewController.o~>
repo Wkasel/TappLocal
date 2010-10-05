@@ -1,0 +1,10 @@
+In file included from /Users/guilhermecarvalho/TappLocal/Demo/Classes/TappLocal.h:14,
+                 from /Users/guilhermecarvalho/TappLocal/Demo/Classes/HomeView.h:13,
+                 from /Users/guilhermecarvalho/TappLocal/Demo/Classes/TappLocalViewController.h:10,
+                 from /Users/guilhermecarvalho/TappLocal/Demo/Classes/TappLocalViewController.m:9:
+/Users/guilhermecarvalho/TappLocal/Demo/Classes/_TLDealView.h:52: error: expected ')' before 'TappLocal'
+In file included from /Users/guilhermecarvalho/TappLocal/Demo/Classes/TappLocal.h:17,
+                 from /Users/guilhermecarvalho/TappLocal/Demo/Classes/HomeView.h:13,
+                 from /Users/guilhermecarvalho/TappLocal/Demo/Classes/TappLocalViewController.h:10,
+                 from /Users/guilhermecarvalho/TappLocal/Demo/Classes/TappLocalViewController.m:9:
+/Users/guilhermecarvalho/TappLocal/Demo/Classes/_TLConfirmedView.h:34: error: expected ')' before 'TappLocal'

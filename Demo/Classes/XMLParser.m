@@ -7,7 +7,7 @@
 //
 
 #import "XMLParser.h"
-#import "ByteUtils.h"
+#import "_TLByteUtils.h"
 #import "AQXMLParser.h"
 #import "AQXMLParserDelegate.h"
 
@@ -26,7 +26,7 @@
 	self.root.children = [[[NSMutableArray alloc] init] autorelease];
 	[self.stack addObject:self.root];
 	
-	NSData* bytes = [ByteUtils getBytes:string];
+	NSData* bytes = [_TLByteUtils getBytes:string];
 	
 	AQXMLParser* parser2 = [[AQXMLParser alloc]initWithData:bytes];
     [parser2 setDelegate:self];	

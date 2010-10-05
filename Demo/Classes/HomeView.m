@@ -8,6 +8,7 @@
 
 #import "HomeView.h"
 #import "TappLocalViewController.h"
+#import "TappLocal.h"
 
 @implementation HomeView
 
@@ -24,15 +25,15 @@
 		mother.backgroundColor = [UIColor clearColor];
 		
 		bg = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 320, 480)];
-		bg.image = [[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:@"bg.png"]];
+		bg.image = [[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"bg.png"]];
 		[mother addSubview:bg];
 		
 		logo = [[UIImageView alloc] initWithFrame: CGRectMake(5, 20, 309, 66)];
-		logo.image = [[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:@"logo.png"]];
+		logo.image = [[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"logo.png"]];
 		[mother addSubview:logo];
 		
 		text = [[FontLabel alloc] initWithFrame:CGRectMake(10, 100, 300, 70) fontName:@"HelveticaNeue" pointSize:17.0f];
-		text.textColor = [ColorUtils colorFromRGB:@"4B566C"];
+		text.textColor = [_TLColorUtils colorFromRGB:@"4B566C"];
 		text.backgroundColor = nil;
 		text.opaque = NO;
 		text.textAlignment = UITextAlignmentCenter;
@@ -42,7 +43,7 @@
 		[mother addSubview:text];
 			
 		link = [[FontLabel alloc] initWithFrame:CGRectMake(10, 170, 300, 20) fontName:@"HelveticaNeue" pointSize:17.0f];
-		link.textColor = [ColorUtils colorFromRGB:@"4B566C"];
+		link.textColor = [_TLColorUtils colorFromRGB:@"4B566C"];
 		link.backgroundColor = nil;
 		link.opaque = NO;
 		link.textAlignment = UITextAlignmentCenter;
@@ -53,7 +54,7 @@
 		
 		underline = [[UIView alloc]init];
 		underline.frame = CGRectMake(73, 188, 174, 1);
-		underline.backgroundColor = [ColorUtils colorFromRGB:@"4B566C"];
+		underline.backgroundColor = [_TLColorUtils colorFromRGB:@"4B566C"];
 		[mother addSubview:underline];
 		
 		button = [[UIButton alloc]initWithFrame:CGRectMake(10, 170, 300, 20)];
@@ -68,29 +69,8 @@
 		table.scrollEnabled = false;
 		[mother addSubview:table];
 		
-		nearby = [[UIButton alloc] initWithFrame: CGRectMake(320, 115, 65, 39)];
-		[nearby setBackgroundImage:[[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:@"nearby.png"]] forState:UIControlStateNormal];
-		[nearby addTarget:self action:@selector(couponClick) forControlEvents:UIControlEventTouchUpInside];
-		[mother addSubview:nearby];
-		
-		flash = [[UIButton alloc] initWithFrame: CGRectMake(0, 460, 320, 35)];
-		[flash setBackgroundImage:[[UIImage alloc] initWithData:[ResourceManager getResourceBinaryFile:@"flash.png"]] forState:UIControlStateNormal];
-		flash.hidden = true;
-		flash.alpha = 0.6;
-		[flash addTarget:self action:@selector(flashClick) forControlEvents:UIControlEventTouchUpInside];
-		[mother addSubview:flash];
-		
-		flashText = [[FontLabel alloc] initWithFrame:CGRectMake(10, 5, 300, 30) fontName:@"HelveticaNeue" pointSize:12.0f];
-		flashText.textColor = [ColorUtils colorFromRGB:@"000000"];
-		flashText.backgroundColor = nil;
-		flashText.opaque = NO;
-		flashText.numberOfLines = 2;
-		flashText.textAlignment = UITextAlignmentCenter;
-		flashText.text = @"support@tapplocal.com";
-		[flash addSubview:flashText];
-		
 		boxtext = [[FontLabel alloc] initWithFrame:CGRectMake(12, 382, 296, 40) fontName:@"HelveticaNeue" pointSize:7.0f];
-		boxtext.textColor = [ColorUtils colorFromRGB:@"000000"];
+		boxtext.textColor = [_TLColorUtils colorFromRGB:@"000000"];
 		boxtext.backgroundColor = nil;
 		boxtext.opaque = NO;
 		boxtext.textAlignment = UITextAlignmentCenter;
@@ -144,88 +124,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	Coupon* temp = [((TappLocalViewController*)controller) getCurrentCoupon];
-	
-	if (temp != nil)
+	if ([indexPath indexAtPosition:1]  == 0)
 	{
-		if ([indexPath indexAtPosition:1]  == 0)
-		{
-			movingNearbyIn = !movingNearbyIn;
-			
-			[UIView beginAnimations:nil context:NULL]; {
-				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-				[UIView setAnimationDuration:1.0];
-				[UIView setAnimationDelegate:self];
-				if (movingNearbyIn) 
-				{
-					nearby.frame = CGRectMake(255,  115, 65, 39);
-				}
-				else 
-				{
-					nearby.frame = CGRectMake(320,  115, 65, 39);	
-				}
-				
-			} [UIView commitAnimations];
-			
-		}
-		else 
-		{
-			flashText.text = [NSString stringWithFormat:@"%@ - %@", temp.title, temp.text];
-			
-			movingFlashIn = !movingFlashIn;
-			
-			[UIView beginAnimations:nil context:NULL]; {
-				[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-				[UIView setAnimationDuration:1.0];
-				[UIView setAnimationDelegate:self];
-				if (movingFlashIn) 
-				{
-					flash.frame = CGRectMake(0, 425, 320, 35);
-					flash.hidden = FALSE;
-					
-					[UIView setAnimationRepeatCount:2.0];
-					[UIView setAnimationRepeatAutoreverses:YES];
-					
-					flash.alpha = 1.0;
-				}
-				else 
-				{
-					flash.frame = CGRectMake(0, 460, 320, 35);
-					flash.alpha = 0.6;
-					flash.hidden = true;
-				}
-				
-			} [UIView commitAnimations];
-		}
+		[[TappLocal instance] showNearby];
 	}
-}
-
--(void)couponClick
-{
-	//hide stuff
-	nearby.frame = CGRectMake(320,  115, 65, 39);	
-	movingNearbyIn = false;
+	else 
+	{
+		[[TappLocal instance] showFlash];
+		
+		[[TappLocal instance] release];
+	}
 	
-	flash.frame = CGRectMake(0, 460, 320, 35);
-	flash.alpha = 0.6;
-	flash.hidden = true;
-	movingFlashIn = false;
-	
-	[(TappLocalViewController*)controller setScreen:@"SCREEN_DEAL":false];
-}
-
--(void)flashClick
-{
-	//hide stuff
-	nearby.frame = CGRectMake(320,  115, 65, 39);	
-	movingNearbyIn = false;
-	
-	flash.frame = CGRectMake(0, 460, 320, 35);
-	flash.alpha = 0.6;
-	flash.hidden = true;
-	movingFlashIn = false;
-	
-	[(TappLocalViewController*)controller setScreen:@"SCREEN_DEAL":false];
 }
 
 @end

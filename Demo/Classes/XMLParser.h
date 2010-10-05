@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TreeNode.h"
 #import "AQXMLParserDelegate.h"
-#import "TextUtils.h"
+#import "_TLTextUtils.h"
 
 @interface XMLParser : NSObject<AQXMLParserDelegate> {
 	NSMutableArray *stack;

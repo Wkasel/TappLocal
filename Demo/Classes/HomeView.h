@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "FontLabel.h"
-#import "ColorUtils.h"
-#import "ResourceManager.h"
-#import "TappLocalView.h"
+#import "_TLColorUtils.h"
+#import "_TLResourceManager.h"
 
 @interface HomeView : NSObject<UITableViewDelegate,UITableViewDataSource> {
 	UIViewController* controller;
@@ -25,22 +24,13 @@
 	UIButton* button;
 	
 	UITableView* table;
-	
-	UIButton* nearby;
-	UIButton* flash;	
-	FontLabel* flashText;
 
 	FontLabel* boxtext;
 
 	BOOL isBuilt;
-	BOOL movingNearbyIn;
-	BOOL movingFlashIn;
 }
 
 -(void) configure:(UIViewController*) parent;
 -(void) sendEmail;
--(void) couponClick;
--(void) flashClick;
-
 
 @end
