@@ -20,20 +20,23 @@
 	
 	if (!isBuilt)
 	{
+		CLLocationManager* locationManager=[[CLLocationManager alloc]init];
+		locationManager.delegate = self;
+		locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters;
+		[locationManager startUpdatingLocation];
+		
 		isBuilt = true;
 		
 		mother = [[_TLTappLocalView alloc]init];
 		mother.frame = CGRectMake(0, 0, 320, 480);
 		mother.backgroundColor = [UIColor clearColor];
 		
-		map = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
-		map.showsUserLocation = TRUE;
-		map.mapType = MKMapTypeStandard;
-		map.multipleTouchEnabled =TRUE;
-		map.userInteractionEnabled = TRUE;
-		map.delegate = self;
-		[mother addSubview:map];
+		wv = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
+		[mother addSubview:wv];
 		
+		plate  = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 320, 43)];
+		plate.backgroundColor = [UIColor blackColor];
+		[mother addSubview:plate];	
 		
 		top = [[UINavigationBar alloc] initWithFrame: CGRectMake(0, 0, 320, 43)];
 		top.barStyle = UIBarStyleBlackTranslucent;
@@ -57,28 +60,14 @@
 		[mother addSubview:button];
 	}
 	
-	for (int i=[[map annotations] count]-1; i>=0; i--)
-	{
-		_TLMapStoreAnnotation* temp = (_TLMapStoreAnnotation*) [[map annotations] objectAtIndex:i];
-		[map removeAnnotation:temp];
-	}
-	
-	MKCoordinateRegion region;
-	MKCoordinateSpan span;
-	region.center.latitude = ((_TLStore*)[[coupon getStores] objectAtIndex:0]).latitude;
-	region.center.longitude = ((_TLStore*)[[coupon getStores] objectAtIndex:0]).longitude;
-	span.latitudeDelta= 0.01;
-	span.longitudeDelta= 0.01;
-	region.span = span;
-	[map setRegion:region animated: TRUE];
-	
-	CLLocationCoordinate2D location;
-	location.latitude = ((_TLStore*)[[coupon getStores] objectAtIndex:0]).latitude;
-	location.longitude = ((_TLStore*)[[coupon getStores] objectAtIndex:0]).longitude;
-	_TLMapStoreAnnotation* mark = [[_TLMapStoreAnnotation alloc]initWithCoordinate:location title:coupon.title subtitle:coupon.text];
-	[map addAnnotation:mark];
-	
 	[((TappLocal*)tl).vc.view addSubview:mother];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+	NSString* url = [NSString stringWithFormat:@"http://maps.google.com/maps?f=d&source=s_d&saddr=%f+%f&daddr=%f+%f",newLocation.coordinate.latitude,newLocation.coordinate.longitude,38.05,-122.26];
+	NSURLRequest* requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+	[wv loadRequest:requestObj];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -134,7 +123,8 @@
 -(void) dealloc
 {
 	[mother release];
-	[map release];
+	[wv release];
+	[plate release];
 	[top release];
 	[close release];
 	

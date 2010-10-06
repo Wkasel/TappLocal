@@ -105,13 +105,13 @@
 }
 
 
--(void) followClick
+/*-(void) followClick
 {
 	Facebook* facebook = [[Facebook alloc]init];
 	NSArray *permissions = [NSArray arrayWithObjects: @"email", nil];
 	[facebook authorize:@"bbbe5983d6af9dfdd721b34b1f41a020" permissions:permissions delegate:self];
 	[facebook logout:nil];
-}
+}*/
 
 -(void) closeClick
 {

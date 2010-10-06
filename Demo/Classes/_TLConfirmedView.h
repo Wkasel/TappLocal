@@ -10,12 +10,12 @@
 #import "FontLabel.h"
 #import "_TLColorUtils.h"
 #import "_TLResourceManager.h"
-#import "FBConnect.h"
+//#import "FBConnect.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "_TLTappLocalView.h"
 
-@interface _TLConfirmedView : NSObject<FBSessionDelegate,ABPeoplePickerNavigationControllerDelegate> {
+@interface _TLConfirmedView : NSObject</*FBSessionDelegate,*/ABPeoplePickerNavigationControllerDelegate> {
 	id tl;
 	
 	_TLTappLocalView* mother;
@@ -35,7 +35,7 @@
 -(void) seemoreClick;
 -(void) moreoffersClick;
 -(void) sharefriendsClick;
--(void) followClick;
+//-(void) followClick;
 -(void) closeClick;
 
 @end

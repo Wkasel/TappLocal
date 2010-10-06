@@ -131,8 +131,6 @@
 	else 
 	{
 		[[TappLocal instance] showFlash];
-		
-		[[TappLocal instance] release];
 	}
 	
 }

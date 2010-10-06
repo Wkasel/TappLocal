@@ -34,7 +34,6 @@
 		map.userInteractionEnabled = TRUE;
 		[mother addSubview:map];
 		
-		
 		top = [[UINavigationBar alloc] initWithFrame: CGRectMake(0, 0, 320, 43)];
 		top.barStyle = UIBarStyleBlackTranslucent;
 		[mother addSubview:top];	
@@ -91,36 +90,8 @@
 		
 		MKCoordinateRegion region;
 		MKCoordinateSpan span;
-		
-		float maxLat = 0;
-		float maxLong = 0;
-		
-		for (int i=0; i<[[coupon getStores] count]; i++)
-		{
-			_TLStore* store = (_TLStore*)[[coupon getStores] objectAtIndex:i];	
-			
-			float latD = store.latitude-newLocation.coordinate.latitude;
-			float lonD = store.longitude-newLocation.coordinate.longitude;
-			
-			if (latD < 0)
-				latD *= -1.5;
-			else
-				latD *= 1.5;
-			
-			if (lonD < 0)
-				lonD *= -1.5;	
-			else
-				lonD *= 1.5;
-			
-			if (latD > maxLat)
-				maxLat = latD;
-			
-			if (lonD > maxLong)
-				maxLong = lonD;
-		}
-
-		span.latitudeDelta= maxLat;
-		span.longitudeDelta= maxLong;
+		span.latitudeDelta= 0.02;
+		span.longitudeDelta= 0.02;
 		region.center.latitude = newLocation.coordinate.latitude;
 		region.center.longitude = newLocation.coordinate.longitude;
 		region.span = span;

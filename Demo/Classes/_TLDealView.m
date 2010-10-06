@@ -84,20 +84,20 @@
 		text3.text = coupon.location;
 		[mother addSubview:text3];
 		
-		directions = [[UIButton alloc] initWithFrame: CGRectMake(50, 355, 74, 31)];
+		directions = [[UIButton alloc] initWithFrame: CGRectMake(37, 355, 78, 31)];
 		[directions setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"directions.png"]] forState:UIControlStateNormal];
 		[directions addTarget:self action:@selector(directionsClick) forControlEvents:UIControlEventTouchUpInside];
 		[mother addSubview:directions];
 		
-		savedeal = [[UIButton alloc] initWithFrame: CGRectMake(124, 355, 74, 31)];
-		[savedeal setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"save_deal.png"]] forState:UIControlStateNormal];
-		[savedeal addTarget:self action:@selector(likeClick) forControlEvents:UIControlEventTouchUpInside];
-		[mother addSubview:savedeal];
+		nothanks = [[UIButton alloc] initWithFrame: CGRectMake(115, 355, 82, 31)];
+		[nothanks setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"no_thanks.png"]] forState:UIControlStateNormal];
+		[nothanks addTarget:self action:@selector(noThanksClick) forControlEvents:UIControlEventTouchUpInside];
+		[mother addSubview:nothanks];
 		
-		moredetails = [[UIButton alloc] initWithFrame: CGRectMake(198, 355, 74, 31)];
-		[moredetails setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"more_details.png"]] forState:UIControlStateNormal];
-		[moredetails addTarget:self action:@selector(moreDealsClick) forControlEvents:UIControlEventTouchUpInside];
-		[mother addSubview:moredetails];
+		moredeals = [[UIButton alloc] initWithFrame: CGRectMake(197, 355, 84, 31)];
+		[moredeals setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"more_deals.png"]] forState:UIControlStateNormal];
+		[moredeals addTarget:self action:@selector(moreDealsClick) forControlEvents:UIControlEventTouchUpInside];
+		[mother addSubview:moredeals];
 		
 		taptouse = [[UIButton alloc] initWithFrame: CGRectMake(50, 398, 220, 37)];
 		[taptouse setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"tap_to_use.png"]] forState:UIControlStateNormal];
@@ -156,14 +156,51 @@
 	[(TappLocal*)tl setScreen:@"SCREEN_MAP":false];
 }
 
--(void) likeClick
+-(void) noThanksClick
+{
+	[(TappLocal*)tl closeCoupons];	
+}
+
+/*-(void) snoozeClick
+{
+    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+    [dateComps setDay:item.day];
+    [dateComps setMonth:item.month];
+    [dateComps setYear:item.year];
+    [dateComps setHour:item.hour];
+    [dateComps setMinute:item.minute];
+    NSDate *itemDate = [calendar dateFromComponents:dateComps];
+    [dateComps release];
+	
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    if (localNotif == nil)
+        return;
+    localNotif.fireDate = [itemDate addTimeInterval:-(minutesBefore*60)];
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+	
+    localNotif.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ in %i minutes.", nil),
+							item.eventName, minutesBefore];
+    localNotif.alertAction = NSLocalizedString(@"View Details", nil);
+	
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+    localNotif.applicationIconBadgeNumber = 1;
+	
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:item.eventName forKey:ToDoItemKey];
+    localNotif.userInfo = infoDict;
+	
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    [localNotif release];
+}*/
+
+/*-(void) likeClick
 {
 	facebook = [[Facebook alloc]init];
 	NSArray *permissions = [NSArray arrayWithObjects:@"email", nil]; //[NSArray arrayWithObjects:@"publish_stream", @"email", @"offline_access",  @"user_birthday",@"user_events", @"user_groups",  @"user_likes", @"user_location", @"user_online_presence", @"read_stream",  nil];
 	[facebook authorize:@"bbbe5983d6af9dfdd721b34b1f41a020" permissions:permissions delegate:self];
-}
+}*/
 
-- (void)fbDidLogin
+/*- (void)fbDidLogin
 {
 	NSLog(@"logged!");
 	[facebook requestWithGraphPath:@"me" andDelegate:self];
@@ -178,10 +215,10 @@
 - (void)fbDidLogout
 {
 	NSLog(@"logout");	
-}
+}*/
 
 
-- (void)request:(FBRequest*)request didLoad:(id)result;
+/*- (void)request:(FBRequest*)request didLoad:(id)result;
 {
 	NSLog(@"%@",result);
 }
@@ -189,7 +226,7 @@
 - (void)request:(FBRequest*)request didFailWithError:(NSError*)error
 {
 	NSLog(@"%@",error);
-}
+}*/
 
 -(void) closeClick
 {
@@ -228,12 +265,13 @@
 	[text2 release];
 	[text3 release];
 	[directions release];
-	[savedeal release];
-	[moredetails release];
+//	[snooze release];
+	[nothanks release];
+	[moredeals release];
 	[taptouse release];
 	[text4 release];
 	[text5 release];
-	[facebook release];	
+//	[facebook release];	
 	
 	[super dealloc];
 }

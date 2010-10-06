@@ -288,7 +288,7 @@
 		else if ([indexPath indexAtPosition:1]  == 2)
 		{
 			//facebook
-			[self facebookClick];
+		//	[self facebookClick];
 		}
 	}
 }
@@ -335,13 +335,13 @@
 	}
 }
 
--(void) facebookClick
+/*-(void) facebookClick
 {
 	Facebook* facebook = [[Facebook alloc]init];
 	NSArray *permissions = [NSArray arrayWithObjects:@"publish_stream", @"email", @"offline_access",  @"user_birthday",@"user_events", @"user_groups",  @"user_likes", @"user_location", @"user_online_presence", @"read_stream",  nil];
 	[facebook authorize:@"bbbe5983d6af9dfdd721b34b1f41a020" permissions:permissions delegate:self];
 	[facebook logout:nil];
-}
+}*/
 
 -(void) backClick
 {

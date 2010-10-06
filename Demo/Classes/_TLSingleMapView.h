@@ -17,11 +17,13 @@
 #import "_TLCoupon.h"
 #import "_TLTappLocalView.h"
 
-@interface _TLSingleMapView : NSObject<MKMapViewDelegate> {
+@interface _TLSingleMapView : NSObject<CLLocationManagerDelegate> {
 	id tl;
 	
 	_TLTappLocalView* mother;
-	MKMapView* map;
+	
+	UIView* plate;
+	UIWebView* wv;
 	
 	UINavigationBar* top;
 	UIButton* close;

@@ -38,7 +38,7 @@
 		</data>
 		<key>MainWindow.nib</key>
 		<data>
-		Xt70xlHHDvznsHnOMzZmEGxZJZ8=
+		3vCVYW0EfY734dIetRcyjQomvsE=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>directions.png</key>
 		<data>
-		9UXlssm7yEvJl4a8YpKNtoI01YA=
+		CK7H0ARk98izGtbVITR20TaMDW0=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		E8n5YBRuzMsxyQeyTCcME3embeY=
+		Ays0BTOaYXOvdR/uJvJieL50ldw=
 		</data>
 		<key>flash.png</key>
 		<data>
@@ -108,6 +108,10 @@
 		<data>
 		j7f80psARZip14jzAlqBSnEuL+k=
 		</data>
+		<key>more_deals.png</key>
+		<data>
+		0tn5tqBlpC40xbe6JDDjZANV7Vw=
+		</data>
 		<key>more_details.png</key>
 		<data>
 		sP88pYan83W4GQcoSwbGw1aHQ2o=
@@ -119,6 +123,10 @@
 		<key>nearby.png</key>
 		<data>
 		kpWoiFinhVoTPiUcCwVecN46Kr0=
+		</data>
+		<key>no_thanks.png</key>
+		<data>
+		aQg4OcDpA5QDZL1kc5HSaJ5PXNo=
 		</data>
 		<key>offer_bg.png</key>
 		<data>
@@ -139,6 +147,10 @@
 		<key>share.png</key>
 		<data>
 		3w9W9pEWYJIfwUX7UQAzxlWpFzQ=
+		</data>
+		<key>snooze.png</key>
+		<data>
+		kwwRMMtKpuoAaJidQr9psOFtiBo=
 		</data>
 		<key>tap_to_use.png</key>
 		<data>

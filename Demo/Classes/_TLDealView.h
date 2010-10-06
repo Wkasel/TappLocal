@@ -11,11 +11,11 @@
 #import "_TLColorUtils.h"
 #import "_TLResourceManager.h"
 #import "_TLRMSTracker.h"
-#import "FBConnect.h"
+//#import "FBConnect.h"
 #import "_TLCoupon.h"
 #import "_TLTappLocalView.h"
 
-@interface _TLDealView : NSObject<FBSessionDelegate, FBRequestDelegate> {
+@interface _TLDealView : NSObject/*<FBSessionDelegate, FBRequestDelegate>*/ {
 	
 	id tl;
 		
@@ -34,15 +34,16 @@
 	FontLabel* text3;
 	
 	UIButton* directions;
-	UIButton* savedeal;
-	UIButton* moredetails;
+	UIButton* nothanks;
+	UIButton* moredeals;
+//	UIButton* snooze;
 	
 	UIButton* taptouse;
 	
 	FontLabel* text4;
 	FontLabel* text5;
 	
-	Facebook* facebook;
+//	Facebook* facebook;
 	
 	_TLCoupon* coupon;
 	
@@ -53,7 +54,9 @@
 -(void) merchantClick;
 -(void) closeClick;
 -(void) tapToUseClick;
--(void) likeClick;
+//-(void) likeClick;
 -(void) moreDealsClick;
+-(void) noThanksClick;
+//-(void) snoozeClick;
 
 @end
