@@ -12,6 +12,8 @@
 @implementation TappLocal
 
 @synthesize vc;
+@synthesize lastLatitude;
+@synthesize lastLongitude;
 
 static TappLocal *gInstance = nil;
 
@@ -37,6 +39,15 @@ static TappLocal *gInstance = nil;
 		}
 	}
 	return(gInstance);
+}
+
+-(void)turnGpsOn
+{
+	//turn on GPS
+	CLLocationManager* locationManager=[[CLLocationManager alloc]init];
+	locationManager.delegate = self;
+	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+	[locationManager startUpdatingLocation];
 }
 	
 -(TappLocal*) init:(UIViewController*)v
@@ -71,6 +82,9 @@ static TappLocal *gInstance = nil;
 	flashText.numberOfLines = 2;
 	flashText.textAlignment = UITextAlignmentCenter;
 	flashText.text = @"support@tapplocal.com";
+
+	clock = [NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(timer) userInfo:nil repeats:YES];
+	[clock fire];
 	
 	return self;
 }
@@ -123,41 +137,21 @@ static TappLocal *gInstance = nil;
 	}
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+
+-(BOOL)isOpened
 {
-	lastLatitude = newLocation.coordinate.latitude;
-	lastLongitude = newLocation.coordinate.longitude;
-	
-	NSString* server = @"http://72.47.200.205/xml/";
-	
-	NSString* file = [NSString stringWithFormat:@"%.3fi%.3f",newLocation.coordinate.latitude,newLocation.coordinate.longitude];
-	file = [NSString stringWithFormat:@"%@%@.xml", server, [file stringByReplacingOccurrencesOfString:@"." withString:@"_"]];
-	
-	NSURL* url = [NSURL URLWithString:file];
-	NSString* xml = [NSString stringWithContentsOfURL:url];
-	
-	if (xml != nil)
+	//remove every view belonging tapplocal
+	for (int i=[[vc.view subviews] count]-1;i>=0;i--)
 	{
-		NSMutableArray* coupons = [_TLCouponsXmlParser xmlToCoupons:xml];
+		UIView* current = [[vc.view subviews] objectAtIndex:i];
 		
-		int index = rand() % [coupons count]; 
-		
-		currentCoupon = [coupons objectAtIndex:index];
+		if ([current isKindOfClass:[_TLTappLocalView class]])
+		{
+			return true;
+		}
 	}
-}
-
--(_TLCoupon*)getCurrentCoupon
-{
-	return currentCoupon;
-}
-
--(void)turnGpsOn
-{
-	//turn on GPS
-	CLLocationManager* locationManager=[[CLLocationManager alloc]init];
-	locationManager.delegate = self;
-	locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-	[locationManager startUpdatingLocation];
+	
+	return false;
 }
 
 -(void)showNearby
@@ -234,6 +228,72 @@ static TappLocal *gInstance = nil;
 	}
 }
 
+-(void) getNewXml
+{
+	NSLog(@"xml");
+	
+	NSString* server = @"http://72.47.200.205/xml/";
+	
+	[file release];
+	file = [[NSString stringWithFormat:@"%.3fi%.3f",lastLatitude,lastLongitude] retain];
+	NSString* fileTemp = [NSString stringWithFormat:@"%@%@.xml", server, [file stringByReplacingOccurrencesOfString:@"." withString:@"_"]];
+	
+	NSURL* url = [NSURL URLWithString:fileTemp];
+	NSString* xml = [NSString stringWithContentsOfURL:url];
+	
+	if (xml != nil)
+	{
+		NSMutableArray* coupons = [_TLCouponsXmlParser xmlToCoupons:xml];
+		
+		currentCoupon = [coupons objectAtIndex:0];
+		
+		srandom(time(NULL));
+		
+		long i = random();
+		
+		if (i % 2 == 0) 
+			[self showNearby];
+		else
+			[self showFlash];
+	}
+}
+
+
+-(void)timer
+{
+	NSLog(@"timer");
+	
+	if (lastLatitude != 0)
+	{
+		NSString* newFile = [NSString stringWithFormat:@"%.3fi%.3f",lastLatitude,lastLongitude];
+		
+		if ((file == nil) || ![newFile isEqual:file])
+		{
+			if (![self isOpened])
+				[self getNewXml];
+		}
+		else
+			count++;
+	}
+	
+	if (count % 5 == 5)
+		file = nil;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+	lastLatitude = newLocation.coordinate.latitude;
+	lastLongitude = newLocation.coordinate.longitude;
+	
+	[self timer];
+}
+
+-(_TLCoupon*)getCurrentCoupon
+{
+	return currentCoupon;
+}
+
+
 -(void)couponClick
 {
 	//hide stuff
@@ -277,6 +337,23 @@ static TappLocal *gInstance = nil;
 	[cView release];		
 	
 	[super dealloc];
+}
+
+-(double)getDistanceFromStore
+{
+	_TLStore* store = [[currentCoupon getStores] objectAtIndex:0];
+	
+    int nRadius = 6371; // Earth's radius in Kilometers
+    // Get the difference between our two points
+    // then convert the difference into radians
+    double nDLat = (store.latitude - lastLatitude) * (M_PI/180);
+    double nDLon = (store.longitude - lastLongitude) * (M_PI/180);
+    double nA = pow ( sin(nDLat/2), 2 ) + cos(lastLatitude) * cos(store.latitude) * pow ( sin(nDLon/2), 2 );
+	
+    double nC = 2 * atan2( sqrt(nA), sqrt( 1 - nA ));
+    double nD = nRadius * nC;
+	
+    return nD; // Return our calculated distance
 }
 
 @end

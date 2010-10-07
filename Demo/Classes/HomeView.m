@@ -62,13 +62,6 @@
 		[button addTarget:self action:@selector(sendEmail) forControlEvents:UIControlEventTouchUpInside];
 		[mother addSubview:button];	
 		
-		table = [[UITableView alloc] initWithFrame:CGRectMake(10, 200, 300, 100) style:UITableViewStyleGrouped];
-		table.delegate = self;
-		table.dataSource = self;
-		table.backgroundColor = [UIColor clearColor];
-		table.scrollEnabled = false;
-		[mother addSubview:table];
-		
 		boxtext = [[FontLabel alloc] initWithFrame:CGRectMake(12, 382, 296, 40) fontName:@"HelveticaNeue" pointSize:7.0f];
 		boxtext.textColor = [_TLColorUtils colorFromRGB:@"000000"];
 		boxtext.backgroundColor = nil;
@@ -76,63 +69,12 @@
 		boxtext.textAlignment = UITextAlignmentCenter;
 		boxtext.text = @"Private & Confidential. This is a demo meant only for TappLocal Partners, advertisers, and press.";
 		[mother addSubview:boxtext];
+		
+		
 	}
 	
 	[controller.view addSubview:mother];
 }
 
--(void) sendEmail
-{
-	NSString *url = [NSString stringWithString: @"mailto:support@tapplocal.com?subject=TappLocal"];
-	[[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	return 2;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	if ([indexPath indexAtPosition:1]  == 0)
-	{
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"0"];
-		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"0"] autorelease];
-		}
-		
-		cell.textLabel.text = @"Simulate Nearby Offer";
-		cell.textLabel.textAlignment = UITextAlignmentCenter;
-		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		
-		return cell;
-	}
-	else
-	{
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"1"];
-		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"1"] autorelease];
-		}
-		
-		cell.textLabel.text = @"Simulate Flash Deal";
-		cell.textLabel.textAlignment = UITextAlignmentCenter;
-		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		
-		return cell;		
-	}
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	if ([indexPath indexAtPosition:1]  == 0)
-	{
-		[[TappLocal instance] showNearby];
-	}
-	else 
-	{
-		[[TappLocal instance] showFlash];
-	}
-	
-}
 
 @end

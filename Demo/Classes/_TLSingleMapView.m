@@ -16,15 +16,8 @@
 {
 	tl = parent;
 	
-	coupon = [(TappLocal*)tl getCurrentCoupon];
-	
 	if (!isBuilt)
 	{
-		CLLocationManager* locationManager=[[CLLocationManager alloc]init];
-		locationManager.delegate = self;
-		locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters;
-		[locationManager startUpdatingLocation];
-		
 		isBuilt = true;
 		
 		mother = [[_TLTappLocalView alloc]init];
@@ -60,44 +53,13 @@
 		[mother addSubview:button];
 	}
 	
-	[((TappLocal*)tl).vc.view addSubview:mother];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-	NSString* url = [NSString stringWithFormat:@"http://maps.google.com/maps?f=d&source=s_d&saddr=%f+%f&daddr=%f+%f",newLocation.coordinate.latitude,newLocation.coordinate.longitude,38.05,-122.26];
+	_TLStore* store = [[[(TappLocal*)tl getCurrentCoupon] getStores] objectAtIndex:0];
+	
+	NSString* url = [NSString stringWithFormat:@"http://maps.google.com/maps?f=d&source=s_d&saddr=%f+%f&daddr=%f+%f",[(TappLocal*)tl lastLatitude],[(TappLocal*)tl lastLongitude],store.latitude, store.longitude  ];
 	NSURLRequest* requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
 	[wv loadRequest:requestObj];
-}
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
-{
-	NSLog(@"annotation %@",[annotation title]);
 	
-	if (![[annotation title] isEqualToString:@"Current Location"])
-	{
-		MKAnnotationView *annotationView = nil;
-		
-		MKPinAnnotationView *startPin = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"] autorelease];
-		startPin.animatesDrop = YES;
-		
-		UIButton* b = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-		[b addTarget:self action:@selector(merchantClick) forControlEvents:UIControlEventTouchUpInside];
-		
-		startPin.rightCalloutAccessoryView = b;
-		startPin.canShowCallout = YES;
-		startPin.enabled = YES;
-		
-		UIImage *image = [[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"Icon.png"]];
-		UIImageView *imgView = [[UIImageView alloc] initWithImage:image];
-		[imgView setFrame:CGRectMake(0, 0, 30, 30)];
-		startPin.leftCalloutAccessoryView = imgView;
-		
-		annotationView = startPin;
-		return annotationView;
-	}
-	
-	return nil;
+	[((TappLocal*)tl).vc.view addSubview:mother];
 }
 
 -(void) merchantClick

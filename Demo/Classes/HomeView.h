@@ -11,7 +11,7 @@
 #import "_TLColorUtils.h"
 #import "_TLResourceManager.h"
 
-@interface HomeView : NSObject<UITableViewDelegate,UITableViewDataSource> {
+@interface HomeView : NSObject {
 	UIViewController* controller;
 	
 	UIView* mother;
@@ -22,8 +22,6 @@
 	FontLabel* link;
 	UIView* underline;
 	UIButton* button;
-	
-	UITableView* table;
 
 	FontLabel* boxtext;
 
@@ -31,6 +29,5 @@
 }
 
 -(void) configure:(UIViewController*) parent;
--(void) sendEmail;
 
 @end

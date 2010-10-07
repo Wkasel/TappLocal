@@ -10,23 +10,33 @@
 #import "FontLabel.h"
 #import "_TLColorUtils.h"
 #import "_TLResourceManager.h"
-//#import "FBConnect.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "_TLTappLocalView.h"
+#import "_TLCoupon.h"
 
-@interface _TLConfirmedView : NSObject</*FBSessionDelegate,*/ABPeoplePickerNavigationControllerDelegate> {
+@interface _TLConfirmedView : NSObject<ABPeoplePickerNavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
 	id tl;
 	
 	_TLTappLocalView* mother;
 	UIImageView* bg;
 	
-	UIButton* seemore;	
-	UIButton* moreoffers;	
-	UIButton* sharefriends;	
-	UIButton* follow;
+	FontLabel* show;	
+	
+	UIButton* merchantlogo;	
+	
+	FontLabel* title;
+	FontLabel* text1;
+	FontLabel* text2;
+	FontLabel* text3;
+	
+	UIButton* sendMe;	
+	
+	_TLCoupon* coupon;
 	
 	UIButton* close;
+	
+	UITextField* tv;
 	
 	BOOL isBuilt;
 }
@@ -35,7 +45,7 @@
 -(void) seemoreClick;
 -(void) moreoffersClick;
 -(void) sharefriendsClick;
-//-(void) followClick;
 -(void) closeClick;
+-(void) sendMeClick;
 
 @end

@@ -1,0 +1,4 @@
+/Users/guilhermecarvalho/TappLocal/Demo/Classes/_TLMapView.m: In function '-[_TLMapView configure:]':
+/Users/guilhermecarvalho/TappLocal/Demo/Classes/_TLMapView.m:19: error: 'coupon' undeclared (first use in this function)
+/Users/guilhermecarvalho/TappLocal/Demo/Classes/_TLMapView.m:19: error: (Each undeclared identifier is reported only once
+/Users/guilhermecarvalho/TappLocal/Demo/Classes/_TLMapView.m:19: error: for each function it appears in.)

@@ -25,15 +25,7 @@
 		mother = [[_TLTappLocalView alloc]init];
 		mother.frame = CGRectMake(0, 0, 320, 480);
 		mother.backgroundColor = [UIColor clearColor];
-		
-		map = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
-		map.showsUserLocation = TRUE;
-		map.mapType = MKMapTypeStandard;
-		map.delegate = self;
-		map.multipleTouchEnabled =TRUE;
-		map.userInteractionEnabled = TRUE;
-		[mother addSubview:map];
-		
+				
 		top = [[UINavigationBar alloc] initWithFrame: CGRectMake(0, 0, 320, 43)];
 		top.barStyle = UIBarStyleBlackTranslucent;
 		[mother addSubview:top];	
@@ -53,20 +45,27 @@
 		[button addSubview:label];
 		[button addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
 		button.frame = CGRectMake(5, 7, 50, 30);
-		[mother addSubview:button];
-		
-		CLLocationManager* locationManager=[[CLLocationManager alloc]init];
-		locationManager.delegate = self;
-		locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters;
-		[locationManager startUpdatingLocation];
+		[mother addSubview:button];		
 	}
+	
+	if (map != nil)
+		[map removeFromSuperview];
+	
+	[map release];
+	
+	map = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
+	map.mapType = MKMapTypeStandard;
+	map.delegate = self;
+	map.multipleTouchEnabled =TRUE;
+	map.userInteractionEnabled = TRUE;
+	map.showsUserLocation = TRUE;
+	[mother addSubview:map];
 	
 	for (int i=[[map annotations] count]-1; i>=0; i--)
 	{
 		_TLMapStoreAnnotation* temp = (_TLMapStoreAnnotation*) [[map annotations] objectAtIndex:i];
 		[map removeAnnotation:temp];
 	}
-	
 	
 	for (int i=0; i<[[coupon getStores] count]; i++)
 	{
@@ -79,24 +78,16 @@
 		[map addAnnotation:mark];
 	}
 	
+	MKCoordinateRegion region;
+	MKCoordinateSpan span;
+	span.latitudeDelta= 0.005;
+	span.longitudeDelta= 0.005;
+	region.center.latitude = [(TappLocal*)tl lastLatitude];
+	region.center.longitude = [(TappLocal*)tl lastLongitude];
+	region.span = span;
+	[map setRegion:region animated: TRUE];
+	
 	[((TappLocal*)tl).vc.view addSubview:mother];
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-	if (!placed)
-	{
-		placed = true;
-		
-		MKCoordinateRegion region;
-		MKCoordinateSpan span;
-		span.latitudeDelta= 0.02;
-		span.longitudeDelta= 0.02;
-		region.center.latitude = newLocation.coordinate.latitude;
-		region.center.longitude = newLocation.coordinate.longitude;
-		region.span = span;
-		[map setRegion:region animated: TRUE];
-	}
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation

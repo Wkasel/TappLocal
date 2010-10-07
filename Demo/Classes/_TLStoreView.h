@@ -10,7 +10,6 @@
 #import "FontLabel.h"
 #import "_TLColorUtils.h"
 #import "_TLResourceManager.h"
-//#import "FBConnect.h"
 #import "TappLocalScreenProtocol.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
@@ -19,7 +18,7 @@
 #import "_TLMerchant.h"
 #import "_TLTappLocalView.h"
 
-@interface _TLStoreView : NSObject<UITableViewDelegate,UITableViewDataSource,/*FBSessionDelegate,*/ABPeoplePickerNavigationControllerDelegate> {
+@interface _TLStoreView : NSObject<UITableViewDelegate,UITableViewDataSource,ABPeoplePickerNavigationControllerDelegate> {
 	id tl;
 	
 	_TLTappLocalView* mother;

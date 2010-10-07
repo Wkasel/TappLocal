@@ -38,9 +38,16 @@
 	UIButton* nearby;
 	UIButton* flash;	
 	FontLabel* flashText;
+	
+	NSString* file;
+	
+	NSTimer* clock;
+	int count;
 }
 
 @property(readonly,retain) UIViewController* vc;
+@property(readonly,assign) float lastLatitude;
+@property(readonly,assign) float lastLongitude;
 
 -(TappLocal*) init:(UIViewController*)v;
 +(TappLocal*) instanceWithController:(UIViewController*) v;
@@ -48,10 +55,7 @@
 -(void)setScreen:(NSString*) newScreen:(bool)isBack;
 -(void)closeCoupons;
 -(_TLCoupon*)getCurrentCoupon;
--(void)turnGpsOn;
--(void)showFlash;
--(void)showNearby;
--(void)couponClick;
--(void)flashClick;
+-(double)getDistanceFromStore;
+-(void)timer;
 
 @end

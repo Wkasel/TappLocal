@@ -17,7 +17,7 @@
 #import "_TLCoupon.h"
 #import "_TLTappLocalView.h"
 
-@interface _TLSingleMapView : NSObject<CLLocationManagerDelegate> {
+@interface _TLSingleMapView : NSObject {
 	id tl;
 	
 	_TLTappLocalView* mother;
@@ -27,8 +27,6 @@
 	
 	UINavigationBar* top;
 	UIButton* close;
-	
-	_TLCoupon* coupon;
 	
 	BOOL isBuilt;
 	

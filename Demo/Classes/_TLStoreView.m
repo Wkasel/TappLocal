@@ -71,6 +71,7 @@
 		table.delegate = self;
 		table.dataSource = self;
 		table.backgroundColor = [UIColor clearColor];
+		table.scrollEnabled = false;
 		[mother addSubview:table];
 	}
 	
@@ -100,7 +101,7 @@
 	else if (section == 2)
 		return 1;
 	else if (section == 3)
-		return 3;
+		return 2;
 	
 	return 0;
 }
@@ -210,22 +211,6 @@
 			invite.text = @"Invite a Friend";
 			[cell addSubview:invite];
 		}
-		else if ([indexPath indexAtPosition:1]  == 2)
-		{
-			//facebook
-			cell = [tableView dequeueReusableCellWithIdentifier:@"3.2"];
-			if (cell == nil) {
-				cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"1"] autorelease];
-			}
-			
-			FontLabel* share = [[FontLabel alloc] initWithFrame:CGRectMake(0, 15, 300, 20) fontName:@"HelveticaNeueBold" pointSize:14.0f];
-			share.textColor = [_TLColorUtils colorFromRGB:@"385487"];
-			share.backgroundColor = nil;
-			share.opaque = NO;
-			share.textAlignment = UITextAlignmentCenter;
-			share.text = @"Share On Facebook";
-			[cell addSubview:share];
-		}
 	}
 	
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -285,11 +270,6 @@
 			[((TappLocal*)tl).vc presentModalViewController:picker animated:YES];
 			[picker release];
 		}
-		else if ([indexPath indexAtPosition:1]  == 2)
-		{
-			//facebook
-		//	[self facebookClick];
-		}
 	}
 }
 
@@ -334,14 +314,6 @@
 		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"following2.png"]] forState:UIControlStateNormal];
 	}
 }
-
-/*-(void) facebookClick
-{
-	Facebook* facebook = [[Facebook alloc]init];
-	NSArray *permissions = [NSArray arrayWithObjects:@"publish_stream", @"email", @"offline_access",  @"user_birthday",@"user_events", @"user_groups",  @"user_likes", @"user_location", @"user_online_presence", @"read_stream",  nil];
-	[facebook authorize:@"bbbe5983d6af9dfdd721b34b1f41a020" permissions:permissions delegate:self];
-	[facebook logout:nil];
-}*/
 
 -(void) backClick
 {

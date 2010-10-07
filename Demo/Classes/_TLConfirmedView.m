@@ -16,6 +16,8 @@
 {
 	tl = parent;
 	
+	coupon = [(TappLocal*)tl getCurrentCoupon];
+	
 	if (!isBuilt)
 	{
 		isBuilt = true;
@@ -28,36 +30,80 @@
 		bg.image = [[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"confirmed.png"]];
 		[mother addSubview:bg];
 		
-		seemore = [[UIButton alloc] initWithFrame: CGRectMake(30, 140, 215, 46)];
-		[seemore setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"seemore.png"]] forState:UIControlStateNormal];
-		[seemore addTarget:self action:@selector(seemoreClick) forControlEvents:UIControlEventTouchUpInside];
-		[mother addSubview:seemore];
+		show = [[FontLabel alloc] initWithFrame:CGRectMake(10, 90, 260, 20) fontName:@"HelveticaNeue" pointSize:16.0f];
+		show.textColor = [_TLColorUtils colorFromRGB:@"747474"];
+		show.backgroundColor = nil;
+		show.opaque = NO;
+		show.textAlignment = UITextAlignmentCenter;
+		show.text = @"Please present this to the merchant!";		
+		[mother addSubview:show];
 		
-		moreoffers = [[UIButton alloc] initWithFrame: CGRectMake(30, 190, 219, 46)];
-		[moreoffers setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"moreoffers.png"]] forState:UIControlStateNormal];
-		[moreoffers addTarget:self action:@selector(moreoffersClick) forControlEvents:UIControlEventTouchUpInside];
-		[mother addSubview:moreoffers];
+		merchantlogo = [[UIButton alloc] initWithFrame: CGRectMake(100, 120, 80, 80)];
+		[merchantlogo addTarget:self action:@selector(merchantClick) forControlEvents:UIControlEventTouchUpInside];
+		[mother addSubview:merchantlogo];		
 		
-		sharefriends = [[UIButton alloc] initWithFrame: CGRectMake(30, 240, 215, 46)];
-		[sharefriends setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"share.png"]] forState:UIControlStateNormal];
-		[sharefriends addTarget:self action:@selector(sharefriendsClick) forControlEvents:UIControlEventTouchUpInside];
-		[mother addSubview:sharefriends];
+		title = [[FontLabel alloc] initWithFrame:CGRectMake(10, 210, 260, 20) fontName:@"HelveticaNeue" pointSize:18.0f];
+		title.textColor = [_TLColorUtils colorFromRGB:@"747474"];
+		title.backgroundColor = nil;
+		title.opaque = NO;
+		title.textAlignment = UITextAlignmentCenter;
+		[mother addSubview:title];
 		
-		follow = [[UIButton alloc] initWithFrame: CGRectMake(30, 290, 215, 46)];
-		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"followmerchant.png"]] forState:UIControlStateNormal];
-		[follow addTarget:self action:@selector(followClick) forControlEvents:UIControlEventTouchUpInside];
-		[mother addSubview:follow];
+		text1 = [[FontLabel alloc] initWithFrame:CGRectMake(10, 226, 260, 70) fontName:@"HelveticaNeue" pointSize:16.0f];
+		text1.textColor = [_TLColorUtils colorFromRGB:@"747474"];
+		text1.backgroundColor = nil;
+		text1.opaque = NO;
+		text1.textAlignment = UITextAlignmentCenter;
+		text1.numberOfLines = 3;
+		[mother addSubview:text1];
+		
+		text2 = [[FontLabel alloc] initWithFrame:CGRectMake(10, 300, 260, 20) fontName:@"HelveticaNeue" pointSize:14.0f];
+		text2.textColor = [_TLColorUtils colorFromRGB:@"747474"];
+		text2.backgroundColor = nil;
+		text2.opaque = NO;
+		text2.textAlignment = UITextAlignmentCenter;
+
+		[mother addSubview:text2];
+		
+		text3 = [[FontLabel alloc] initWithFrame:CGRectMake(10, 322, 260, 20) fontName:@"HelveticaNeue" pointSize:10.0f];
+		text3.textColor = [_TLColorUtils colorFromRGB:@"747474"];
+		text3.backgroundColor = nil;
+		text3.opaque = NO;
+		text3.textAlignment = UITextAlignmentCenter;
+		[mother addSubview:text3];
+		
+		sendMe = [[UIButton alloc] initWithFrame: CGRectMake(30, 360, 220, 37)];
+		[sendMe setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"send_me.png"]] forState:UIControlStateNormal];
+		[sendMe addTarget:self action:@selector(sendMeClick) forControlEvents:UIControlEventTouchUpInside];
+		[mother addSubview:sendMe];		
 		
 		close = [[UIButton alloc] initWithFrame: CGRectMake(220, 0, 60, 40)];
 		[close addTarget:self action:@selector(closeClick) forControlEvents:UIControlEventTouchUpInside];
 		[mother addSubview:close];
+		
+		tv = [[UITextField alloc] initWithFrame:CGRectMake(12,65,260,22)];
+		tv.autocapitalizationType = UITextAutocapitalizationTypeNone;
+		tv.autocorrectionType = UITextAutocorrectionTypeNo;
+		tv.backgroundColor = [UIColor whiteColor];
+		tv.returnKeyType = UIReturnKeyDone;
+		tv.delegate = self;
+		tv.textAlignment = UITextAlignmentCenter;
 	}
 	
+	[merchantlogo setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:coupon.logo]] forState:UIControlStateNormal];
+	title.text = coupon.title;
+	text1.text = coupon.text;
+	text2.text = coupon.dates;
+	text3.text = coupon.location;
+	
 	bg.hidden = true;	
-	seemore.hidden = true;
-	moreoffers.hidden = true;
-	sharefriends.hidden = true;
-	follow.hidden = true;	
+	show.hidden = true;
+	merchantlogo.hidden = true;
+	title.hidden = true;
+	text1.hidden = true;
+	text2.hidden = true;
+	text3.hidden = true;
+	sendMe.hidden = true;
 	
 	mother.frame = CGRectMake(160, 230, 0, 0);
 	
@@ -79,10 +125,13 @@
 - (void) animationDidFinishOpen:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
 {
 	bg.hidden = false;	
-	seemore.hidden = false;
-	moreoffers.hidden = false;
-	sharefriends.hidden = false;
-	follow.hidden = false;	
+	show.hidden = false;
+	merchantlogo.hidden = false;
+	title.hidden = false;
+	text1.hidden = false;
+	text2.hidden = false;
+	text3.hidden = false;
+	sendMe.hidden = false;
 }
 
 -(void) seemoreClick
@@ -104,27 +153,15 @@
 	[picker release];
 }
 
-
-/*-(void) followClick
-{
-	Facebook* facebook = [[Facebook alloc]init];
-	NSArray *permissions = [NSArray arrayWithObjects: @"email", nil];
-	[facebook authorize:@"bbbe5983d6af9dfdd721b34b1f41a020" permissions:permissions delegate:self];
-	[facebook logout:nil];
-}*/
-
 -(void) closeClick
 {
 	[mother removeFromSuperview];
 }
 
-
-
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person
 {
 	return YES;
 }
-
 
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
 {
@@ -181,13 +218,46 @@
 {
 	[mother release];
 	[bg release];
-	[seemore release];
+	[merchantlogo release];
+	[show release];
 	[close release];
-	[moreoffers release];
-	[sharefriends release];	
-	[follow release];	
-
+	[title release];
+	[text1 release];
+	[text2 release];	
+	[text3 release];	
+	[sendMe release];
+	[tv release];
+	
 	[super dealloc];
+}
+
+-(void)sendMeClick
+{
+	UIAlertView* remindView = [[UIAlertView alloc] initWithTitle:@"Type your e-mail to receive more offers from this brand"
+														 message:@"\n"  
+														delegate:self 
+											   cancelButtonTitle:@"Ok"
+											   otherButtonTitles:nil , nil];
+	
+	[remindView addSubview:tv];
+	
+	[remindView show];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)theTextField
+{	
+	[theTextField resignFirstResponder];
+	return YES;
+}
+
+-(void) alertView:(UIAlertView*) alertView clickedButtonAtIndex: (NSInteger) buttonIndex
+{
+	if ([alertView.title isEqual:@"Type your e-mail to receive more offers from this brand"])
+	{
+		NSLog(@"Email: %@",tv.text);
+		[sendMe setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"registered.png"]] forState:UIControlStateNormal];
+		[sendMe removeTarget:self action:@selector(sendMeClick) forControlEvents:UIControlEventTouchUpInside];
+	}
 }
 
 @end

@@ -46,7 +46,6 @@
 		special.backgroundColor = nil;
 		special.opaque = NO;
 		special.textAlignment = UITextAlignmentCenter;
-		special.text = coupon.title;
 		[mother addSubview:special];
 		
 		merchantlogoFrame = [[UIButton alloc] initWithFrame: CGRectMake(103, 95, 112, 120)];
@@ -55,7 +54,6 @@
 		[mother addSubview:merchantlogoFrame];
 		
 		merchantlogo = [[UIButton alloc] initWithFrame: CGRectMake(110, 110, 100, 100)];
-		[merchantlogo setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:coupon.logo]] forState:UIControlStateNormal];
 		[merchantlogo addTarget:self action:@selector(merchantClick) forControlEvents:UIControlEventTouchUpInside];
 		[mother addSubview:merchantlogo];		
 		
@@ -64,7 +62,6 @@
 		text1.backgroundColor = nil;
 		text1.opaque = NO;
 		text1.textAlignment = UITextAlignmentCenter;
-		text1.text = coupon.text;
 		text1.numberOfLines = 3;
 		[mother addSubview:text1];
 		
@@ -73,7 +70,6 @@
 		text2.backgroundColor = nil;
 		text2.opaque = NO;
 		text2.textAlignment = UITextAlignmentCenter;
-		text2.text = coupon.dates;
 		[mother addSubview:text2];
 		
 		text3 = [[FontLabel alloc] initWithFrame:CGRectMake(35, 322, 250, 20) fontName:@"HelveticaNeue" pointSize:10.0f];
@@ -81,7 +77,6 @@
 		text3.backgroundColor = nil;
 		text3.opaque = NO;
 		text3.textAlignment = UITextAlignmentCenter;
-		text3.text = coupon.location;
 		[mother addSubview:text3];
 		
 		directions = [[UIButton alloc] initWithFrame: CGRectMake(37, 355, 78, 31)];
@@ -120,6 +115,12 @@
 		text5.text = @"Ads by TappLocal";
 		[mother addSubview:text5];
 	}
+	
+	[merchantlogo setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:coupon.logo]] forState:UIControlStateNormal];
+	special.text = coupon.title;
+	text1.text = coupon.text;
+	text2.text = coupon.dates;
+	text3.text = coupon.location;
 
 	mother.frame = CGRectMake(0, 480, 320, 480);
 		
@@ -142,8 +143,24 @@
 
 -(void) tapToUseClick
 {
-	[taptouse setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"already_used.png"]] forState:UIControlStateNormal];
-	[(TappLocal*)tl setScreen:@"SCREEN_CONFIRMED":false];
+	double d = [(TappLocal*)tl getDistanceFromStore];
+	
+	if (d < 0.1)
+	{
+		[taptouse setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"already_used.png"]] forState:UIControlStateNormal];
+		[(TappLocal*)tl setScreen:@"SCREEN_CONFIRMED":false];
+	}
+	else
+	{
+		UIAlertView* tooFarView = [[UIAlertView alloc] initWithTitle:@"Too far from the store!"
+															 message:[NSString stringWithFormat:@"You need to get closer to the store to use the coupon.",d]  
+															delegate:self 
+												   cancelButtonTitle:@"Ok"
+												   otherButtonTitles:nil , nil];
+		
+		[tooFarView show];
+		
+	}
 }
 
 -(void) directionsClick
