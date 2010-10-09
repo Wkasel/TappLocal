@@ -7,7 +7,7 @@
 //
 
 #import "TappLocalViewController.h"
-#import "TappLocal.h"
+#import "_TL.h"
 
 
 @implementation TappLocalViewController
@@ -18,8 +18,6 @@
     [super viewDidLoad];
 	
 	hView = [[HomeView alloc] init];
-	
-	[TappLocal instanceWithController: self];
 	
 	[hView configure: self];
 }

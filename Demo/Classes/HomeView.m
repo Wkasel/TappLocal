@@ -8,7 +8,6 @@
 
 #import "HomeView.h"
 #import "TappLocalViewController.h"
-#import "TappLocal.h"
 
 @implementation HomeView
 
@@ -59,7 +58,7 @@
 		
 		button = [[UIButton alloc]initWithFrame:CGRectMake(10, 170, 300, 20)];
 		button.backgroundColor = [UIColor clearColor];
-		[button addTarget:self action:@selector(sendEmail) forControlEvents:UIControlEventTouchUpInside];
+		[button addTarget:self action:@selector(action) forControlEvents:UIControlEventTouchUpInside];
 		[mother addSubview:button];	
 		
 		boxtext = [[FontLabel alloc] initWithFrame:CGRectMake(12, 382, 296, 40) fontName:@"HelveticaNeue" pointSize:7.0f];
@@ -69,12 +68,22 @@
 		boxtext.textAlignment = UITextAlignmentCenter;
 		boxtext.text = @"Private & Confidential. This is a demo meant only for TappLocal Partners, advertisers, and press.";
 		[mother addSubview:boxtext];
-		
-		
 	}
+	
+	[tl release];
+	tl = [[TappLocalAPI alloc] initWithViewController: parent];
+	[tl setRefreshTimeNewAds:60];
+	[tl start];
 	
 	[controller.view addSubview:mother];
 }
 
+-(void) action
+{
+/*	if (tl.running)
+		[tl stop];
+	else
+		[tl start];*/
+}
 
 @end

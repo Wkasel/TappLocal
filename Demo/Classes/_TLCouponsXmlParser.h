@@ -17,6 +17,6 @@
 
 }
 
-+(NSMutableArray*) xmlToCoupons:(NSString*) xml;
++(void) xmlToCoupons:(NSMutableArray*)arr :(NSString*) xml;
 
 @end

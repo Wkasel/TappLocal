@@ -15,7 +15,7 @@
 #import "_TLTappLocalView.h"
 #import "_TLCoupon.h"
 
-@interface _TLConfirmedView : NSObject<ABPeoplePickerNavigationControllerDelegate, UITextFieldDelegate, UIAlertViewDelegate> {
+@interface _TLConfirmedView : NSObject</*ABPeoplePickerNavigationControllerDelegate,*/ UITextFieldDelegate, UIAlertViewDelegate> {
 	id tl;
 	
 	_TLTappLocalView* mother;
@@ -30,7 +30,7 @@
 	FontLabel* text2;
 	FontLabel* text3;
 	
-	UIButton* sendMe;	
+	UIButton* follow;	
 	
 	_TLCoupon* coupon;
 	
@@ -44,8 +44,7 @@
 -(void) configure:(id) parent;
 -(void) seemoreClick;
 -(void) moreoffersClick;
--(void) sharefriendsClick;
 -(void) closeClick;
--(void) sendMeClick;
+-(void) followClick;
 
 @end

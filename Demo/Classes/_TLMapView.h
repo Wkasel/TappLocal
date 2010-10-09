@@ -12,7 +12,6 @@
 #import "_TLResourceManager.h"
 #import <MapKit/MapKit.h>
 #import "_TLMapStoreAnnotation.h"
-#import "TappLocalScreenProtocol.h"
 #import "_TLCoupon.h"
 #import "_TLTappLocalView.h"
 

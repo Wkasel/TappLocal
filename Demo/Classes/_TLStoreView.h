@@ -10,7 +10,6 @@
 #import "FontLabel.h"
 #import "_TLColorUtils.h"
 #import "_TLResourceManager.h"
-#import "TappLocalScreenProtocol.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "_TLStore.h"
@@ -18,7 +17,7 @@
 #import "_TLMerchant.h"
 #import "_TLTappLocalView.h"
 
-@interface _TLStoreView : NSObject<UITableViewDelegate,UITableViewDataSource,ABPeoplePickerNavigationControllerDelegate> {
+@interface _TLStoreView : NSObject<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate, UIAlertViewDelegate/*,ABPeoplePickerNavigationControllerDelegate*/> {
 	id tl;
 	
 	_TLTappLocalView* mother;
@@ -35,6 +34,8 @@
 	
 	_TLCoupon* coupon;
 	
+	UITextField* tv;
+	
 	BOOL isBuilt;
 }
 
@@ -42,5 +43,4 @@
 -(void) backClick;
 -(void) closeClick;
 -(void) followClick;
-//-(void) facebookClick;
 @end

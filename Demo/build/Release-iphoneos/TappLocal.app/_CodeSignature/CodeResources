@@ -84,6 +84,10 @@
 		<data>
 		G72MAH3dQEeysppxRQQA+WZjnss=
 		</data>
+		<key>follow.png</key>
+		<data>
+		+7yRfEClbXwQ12C8EjN3+qjq/70=
+		</data>
 		<key>follow2.png</key>
 		<data>
 		qAz/PFGv5MfeCTDTovdllNmlZaw=
@@ -163,6 +167,10 @@
 		<key>tap_to_use.png</key>
 		<data>
 		hYaTZHxcGH7nLLQyKLucYG6koBc=
+		</data>
+		<key>unfollow.png</key>
+		<data>
+		j4eGIGSuplUnY6i6AAsSe/ca38A=
 		</data>
 	</dict>
 	<key>rules</key>

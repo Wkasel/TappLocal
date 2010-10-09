@@ -10,6 +10,7 @@
 #import "FontLabel.h"
 #import "_TLColorUtils.h"
 #import "_TLResourceManager.h"
+#import "TappLocalAPI.h"
 
 @interface HomeView : NSObject {
 	UIViewController* controller;
@@ -26,6 +27,8 @@
 	FontLabel* boxtext;
 
 	BOOL isBuilt;
+	
+	TappLocalAPI* tl;
 }
 
 -(void) configure:(UIViewController*) parent;

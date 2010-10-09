@@ -8,7 +8,7 @@
 
 #import "_TLStoreView.h"
 #import "TappLocalViewController.h"
-#import "TappLocal.h"
+#import "_TL.h"
 
 @implementation _TLStoreView
 
@@ -16,7 +16,7 @@
 {
 	tl = parent;
 	
-	coupon = [(TappLocal*)tl getCurrentCoupon];
+	coupon = [(_TL*)tl getCurrentCoupon];
 	
 	if (!isBuilt)
 	{
@@ -52,7 +52,6 @@
 		[mother addSubview:button];
 		
 		merchantlogo = [[UIButton alloc] initWithFrame: CGRectMake(21, 56, 71, 71)];
-		[merchantlogo addTarget:self action:@selector(merchantClick) forControlEvents:UIControlEventTouchUpInside];
 		[mother addSubview:merchantlogo];
 		
 		merchantname = [[FontLabel alloc] initWithFrame:CGRectMake(100, 72, 200, 20) fontName:@"HelveticaNeueBold" pointSize:18.0f];
@@ -73,6 +72,14 @@
 		table.backgroundColor = [UIColor clearColor];
 		table.scrollEnabled = false;
 		[mother addSubview:table];
+		
+		tv = [[UITextField alloc] initWithFrame:CGRectMake(12,65,260,22)];
+		tv.autocapitalizationType = UITextAutocapitalizationTypeNone;
+		tv.autocorrectionType = UITextAutocorrectionTypeNo;
+		tv.backgroundColor = [UIColor whiteColor];
+		tv.returnKeyType = UIReturnKeyDone;
+		tv.delegate = self;
+		tv.textAlignment = UITextAlignmentCenter;
 	}
 	
 	if ([coupon getMerchant].logo != nil)
@@ -80,16 +87,17 @@
 	
 	merchantname.text = [coupon getMerchant].name;
 	
-	if ([_TLRMSTracker load:[coupon getMerchant].name] != nil)
+	if ([_TLRMSTracker load:[NSString stringWithFormat:@"%i",[coupon getMerchant].idmerchant]] != nil)
 	{
-		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"following2.png"]] forState:UIControlStateNormal];		
+		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"following2.png"]] forState:UIControlStateNormal];	
+		tv.text = [_TLRMSTracker loadSafeString:[NSString stringWithFormat:@"%i",[coupon getMerchant].idmerchant]];
 	}
 	else
 	{
 		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"follow2.png"]] forState:UIControlStateNormal];
 	}
 	
-	[((TappLocal*)tl).vc.view addSubview:mother];
+	[((_TL*)tl).vc.view addSubview:mother];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -101,9 +109,17 @@
 	else if (section == 2)
 		return 1;
 	else if (section == 3)
-		return 2;
+		return 1;
 	
 	return 0;
+}
+
+-  (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	if (indexPath.section != 1)
+		return 40;
+	else
+		return 170;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,22 +152,25 @@
 	{
 		//site
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"1"] autorelease];
-				
+		
 		FontLabel* homepage = [[FontLabel alloc] initWithFrame:CGRectMake(20, 15, 100, 20) fontName:@"HelveticaNeue" pointSize:14.0f];
 		homepage.textColor = [_TLColorUtils colorFromRGB:@"385487"];
 		homepage.backgroundColor = nil;
 		homepage.opaque = NO;
 		homepage.textAlignment = UITextAlignmentLeft;
-		homepage.text = @"home page";
+		homepage.text = @"description";
 		[cell addSubview:homepage];
 		
-		FontLabel* url = [[FontLabel alloc] initWithFrame:CGRectMake(100, 15, 180, 20) fontName:@"HelveticaNeueBold" pointSize:13.0f];
-		url.textColor = [_TLColorUtils colorFromRGB:@"000000"];
-		url.backgroundColor = nil;
-		url.opaque = NO;
-		url.textAlignment = UITextAlignmentLeft;
-		url.text = [coupon getMerchant].site;
-		[cell addSubview:url];
+		FontLabel* desc = [[FontLabel alloc] initWithFrame:CGRectMake(100, 15, 180, 150) fontName:@"HelveticaNeueBold" pointSize:13.0f];
+		desc.textColor = [_TLColorUtils colorFromRGB:@"000000"];
+		desc.backgroundColor = nil;
+		desc.opaque = NO;
+		desc.numberOfLines = 0;
+		desc.textAlignment = UITextAlignmentLeft;
+		desc.text = [coupon getMerchant].description;
+		[cell addSubview:desc];
+		
+		cell.autoresizesSubviews = TRUE;
 		
 	}
 	else if ([indexPath indexAtPosition:0]  == 2)
@@ -195,7 +214,7 @@
 			directions.text = @"Directions To Here";
 			[cell addSubview:directions];
 		}
-		else if ([indexPath indexAtPosition:1]  == 1)
+	/*	else if ([indexPath indexAtPosition:1]  == 1)
 		{
 			//invite
 			cell = [tableView dequeueReusableCellWithIdentifier:@"3.1"];
@@ -210,7 +229,7 @@
 			invite.textAlignment = UITextAlignmentCenter;
 			invite.text = @"Invite a Friend";
 			[cell addSubview:invite];
-		}
+		}*/
 	}
 	
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -221,7 +240,7 @@
 {
 	if ([indexPath indexAtPosition:0]  == 0)
 	{
-		//phone
+/*		//phone
 		NSMutableString *phone = [[[coupon getMerchant].phone mutableCopy] autorelease];
 		[phone replaceOccurrencesOfString:@" " 
 							   withString:@"" 
@@ -240,36 +259,36 @@
 								  options:NSLiteralSearch 
 									range:NSMakeRange(0, [phone length])];
 		NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", phone]];
-		[[UIApplication sharedApplication] openURL:url];
+		[[UIApplication sharedApplication] openURL:url];*/
 	}
 	else if ([indexPath indexAtPosition:0]  == 1)
 	{
-		//site
+/*		//site
 		NSString *stringURL = [coupon getMerchant].site;
 		NSURL *url = [NSURL URLWithString:stringURL];
-		[[UIApplication sharedApplication] openURL:url];
+		[[UIApplication sharedApplication] openURL:url];*/
 	}
 	else if ([indexPath indexAtPosition:0]  == 2)
 	{
 		//address
-		[(TappLocal*)tl setScreen:@"SCREEN_SINGLEMAP":false];
+		[(_TL*)tl setScreen:@"SCREEN_SINGLEMAP":false];
 	}
 	else if ([indexPath indexAtPosition:0]  == 3)
 	{
 		if ([indexPath indexAtPosition:1]  == 0)
 		{
 			//directions
-			[(TappLocal*)tl setScreen:@"SCREEN_SINGLEMAP":false];
+			[(_TL*)tl setScreen:@"SCREEN_SINGLEMAP":false];
 
 		}
-		else if ([indexPath indexAtPosition:1]  == 1)
+	/*	else if ([indexPath indexAtPosition:1]  == 1)
 		{
 			//invite
 			ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
 			picker.peoplePickerDelegate = self;
-			[((TappLocal*)tl).vc presentModalViewController:picker animated:YES];
+			[((_TL*)tl).vc presentModalViewController:picker animated:YES];
 			[picker release];
-		}
+		}*/
 	}
 }
 
@@ -303,15 +322,23 @@
 
 -(void) followClick
 {
-	if ([_TLRMSTracker load:[coupon getMerchant].name] != nil)
+	if ([_TLRMSTracker load:[NSString stringWithFormat:@"%i",[coupon getMerchant].idmerchant]] != nil)
 	{
-		[_TLRMSTracker deleteRecordstore:[coupon getMerchant].name];
-		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"follow2.png"]] forState:UIControlStateNormal];		
+		[_TLRMSTracker deleteRecordstore:[NSString stringWithFormat:@"%i",[coupon getMerchant].idmerchant]];
+		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"follow2.png"]] forState:UIControlStateNormal];
+		[(_TL*)tl sendLog:TL_ACTION_UNFOLLOW:nil];
 	}
 	else
 	{
-		[_TLRMSTracker saveString:[coupon getMerchant].name :@"yes"];
-		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"following2.png"]] forState:UIControlStateNormal];
+		UIAlertView* remindView = [[UIAlertView alloc] initWithTitle:@"Type your e-mail to receive more offers from this brand"
+															 message:@"\n"  
+															delegate:self 
+												   cancelButtonTitle:@"Ok"
+												   otherButtonTitles:nil , nil];
+		
+		[remindView addSubview:tv];
+		
+		[remindView show];
 	}
 }
 
@@ -322,7 +349,8 @@
 
 -(void) closeClick
 {
-	[(TappLocal*)tl closeCoupons];
+	[(_TL*)tl sendLog:TL_ACTION_CLOSE:nil];
+	[(_TL*)tl closeCoupons];
 }
 
 -(void) removeFromSuperview
@@ -330,7 +358,7 @@
 	[mother removeFromSuperview];
 }
 
-- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person
+/*- (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person
 {
 	return YES;
 }
@@ -364,7 +392,7 @@
 		NSString* url = [NSString stringWithFormat:@"sms:%@",phone];
 		[[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
 		
-		[((TappLocal*)tl).vc dismissModalViewControllerAnimated:YES];
+		[((_TL*)tl).vc dismissModalViewControllerAnimated:YES];
 		return NO;
 	}
 	else
@@ -383,7 +411,23 @@
 
 - (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker
 {
-	[((TappLocal*)tl).vc dismissModalViewControllerAnimated:true];
+	[((_TL*)tl).vc dismissModalViewControllerAnimated:true];
+}*/
+
+-(BOOL)textFieldShouldReturn:(UITextField *)theTextField
+{	
+	[theTextField resignFirstResponder];
+	return YES;
+}
+
+-(void) alertView:(UIAlertView*) alertView clickedButtonAtIndex: (NSInteger) buttonIndex
+{
+	if ([alertView.title isEqual:@"Type your e-mail to receive more offers from this brand"])
+	{
+		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"following2.png"]] forState:UIControlStateNormal];
+		[_TLRMSTracker saveString:[NSString stringWithFormat:@"%i",[coupon getMerchant].idmerchant]:tv.text];
+		[(_TL*)tl sendLog:TL_ACTION_FOLLOW:tv.text];
+	}
 }
 
 -(void) dealloc

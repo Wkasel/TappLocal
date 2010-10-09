@@ -11,12 +11,17 @@
 
 @implementation _TLCouponsXmlParser
 
-+(NSMutableArray*) xmlToCoupons:(NSString*) xml
++(void) xmlToCoupons:(NSMutableArray*)result :(NSString*) xml;
 {
+	//release the old coupons
+	for (int i=[result count]-1;i>=0;i--)
+		[[result objectAtIndex:i] release];
+	
+	//clean the array
+	[result removeAllObjects];
+	
 	XMLParser* parser = [[XMLParser alloc]init];
 	TreeNode* node = [parser parseXMLfromString:xml];
-	
-	NSMutableArray* result = [[NSMutableArray alloc] init];
 	
 	//varre os filhos
 	for (int i=0; i<[[node children] count]; i++)
@@ -104,8 +109,6 @@
 			
 		[result addObject:coupon];
 	}
-	
-	return result;		
 }
 
 @end

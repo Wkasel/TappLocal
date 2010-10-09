@@ -8,7 +8,7 @@
 
 #import "_TLMapView.h"
 #import "TappLocalViewController.h"
-#import "TappLocal.h"
+#import "_TL.h"
 
 @implementation _TLMapView
 
@@ -16,42 +16,23 @@
 {
 	tl = parent;
 	
-	coupon = [(TappLocal*)tl getCurrentCoupon];
+	coupon = [(_TL*)tl getCurrentCoupon];
 	
-	if (!isBuilt)
+	if (mother != nil)
 	{
-		isBuilt = true;
-		
-		mother = [[_TLTappLocalView alloc]init];
-		mother.frame = CGRectMake(0, 0, 320, 480);
-		mother.backgroundColor = [UIColor clearColor];
-				
-		top = [[UINavigationBar alloc] initWithFrame: CGRectMake(0, 0, 320, 43)];
-		top.barStyle = UIBarStyleBlackTranslucent;
-		[mother addSubview:top];	
-		
-		UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(closeClick)];
-		UINavigationItem* item = [[UINavigationItem alloc] initWithTitle:@"Stores"];
-		item.rightBarButtonItem = rightButton;
-		[top pushNavigationItem:item animated:NO];
-		
-		UIButton* button = [UIButton buttonWithType:101];
-		UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(10, 5, 35, 20)];
-		label.textColor = [_TLColorUtils colorFromRGB:@"FFFFFF"];
-		label.backgroundColor = [UIColor clearColor];
-		label.textAlignment = UITextAlignmentCenter;
-		label.text = @"Back";
-		label.font = [UIFont fontWithName:@"Arial-BoldMT" size:13.0f];
-		[button addSubview:label];
-		[button addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
-		button.frame = CGRectMake(5, 7, 50, 30);
-		[mother addSubview:button];		
-	}
-	
-	if (map != nil)
 		[map removeFromSuperview];
-	
-	[map release];
+		[map release];
+		
+		[top removeFromSuperview];
+		[top release];	
+		
+		[mother removeFromSuperview];
+		[mother release];	
+	}
+
+	mother = [[_TLTappLocalView alloc]init];
+	mother.frame = CGRectMake(0, 0, 320, 480);
+	mother.backgroundColor = [UIColor clearColor];
 	
 	map = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
 	map.mapType = MKMapTypeStandard;
@@ -60,6 +41,27 @@
 	map.userInteractionEnabled = TRUE;
 	map.showsUserLocation = TRUE;
 	[mother addSubview:map];
+	
+	top = [[UINavigationBar alloc] initWithFrame: CGRectMake(0, 0, 320, 43)];
+	top.barStyle = UIBarStyleBlackTranslucent;
+	[mother addSubview:top];
+	
+	UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(closeClick)];
+	UINavigationItem* item = [[UINavigationItem alloc] initWithTitle:@"Stores"];
+	item.rightBarButtonItem = rightButton;
+	[top pushNavigationItem:item animated:NO];
+	
+	UIButton* button = [UIButton buttonWithType:101];
+	UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(10, 5, 35, 20)];
+	label.textColor = [_TLColorUtils colorFromRGB:@"FFFFFF"];
+	label.backgroundColor = [UIColor clearColor];
+	label.textAlignment = UITextAlignmentCenter;
+	label.text = @"Back";
+	label.font = [UIFont fontWithName:@"Arial-BoldMT" size:13.0f];
+	[button addSubview:label];
+	[button addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+	button.frame = CGRectMake(5, 7, 50, 30);
+	[mother addSubview:button];		
 	
 	for (int i=[[map annotations] count]-1; i>=0; i--)
 	{
@@ -82,12 +84,12 @@
 	MKCoordinateSpan span;
 	span.latitudeDelta= 0.005;
 	span.longitudeDelta= 0.005;
-	region.center.latitude = [(TappLocal*)tl lastLatitude];
-	region.center.longitude = [(TappLocal*)tl lastLongitude];
+	region.center.latitude = [(_TL*)tl lastLatitude];
+	region.center.longitude = [(_TL*)tl lastLongitude];
 	region.span = span;
 	[map setRegion:region animated: TRUE];
 	
-	[((TappLocal*)tl).vc.view addSubview:mother];
+	[((_TL*)tl).vc.view addSubview:mother];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -122,7 +124,7 @@
 
 -(void) merchantClick
 {
-	[(TappLocal*)tl setScreen:@"SCREEN_STORE":false];
+	[(_TL*)tl setScreen:@"SCREEN_STORE":false];
 }
 
 -(void) backClick
@@ -132,7 +134,8 @@
 
 -(void) closeClick
 {
-	[(TappLocal*)tl closeCoupons];
+	[(_TL*)tl sendLog:TL_ACTION_CLOSE:nil];
+	[(_TL*)tl closeCoupons];
 }
 
 -(void) removeFromSuperview

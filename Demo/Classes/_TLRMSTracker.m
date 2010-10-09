@@ -70,16 +70,27 @@
 	[data writeToFile:filePath atomically:YES];
 }
 
++(NSString*) getFullFileName:(NSString*) name
+{
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:name];
+	return filePath;
+}
+
 +(void) clearRMS
 {
-	/*NSMutableArray* recordstores = [Constants getALL_RECORDSTORE_KEYS];
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSArray *files = [[NSFileManager defaultManager] directoryContentsAtPath:documentsDirectory];
 	
-	for (int i=0; i<[recordstores count];i++)
+	// Get pointer to file manager.
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	
+	for (int i=0; i<[files count];i++)
 	{
-		NSString* fileName = (NSString*)[recordstores objectAtIndex:i];
-		
-		[self deleteRecordstore:fileName];
-	}*/
+		[fileManager removeItemAtPath:[self getFullFileName:[files objectAtIndex:i]] error:NULL];
+	}
 }
 
 +(void) deleteRecordstore:(NSString*) recordstoreName
@@ -103,14 +114,6 @@
 	
 	// If the file does not exist, copy it from the app bundle.
 	return [fileManager fileExistsAtPath:filePath];
-}
-
-+(NSString*) getFullFileName:(NSString*) name
-{
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:name];
-	return filePath;
 }
 
 @end

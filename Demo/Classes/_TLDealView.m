@@ -8,7 +8,7 @@
 
 #import "_TLDealView.h"
 #import "TappLocalViewController.h"
-#import "TappLocal.h"
+#import "_TL.h"
 
 @implementation _TLDealView
 
@@ -17,7 +17,7 @@
 {
 	tl = parent;
 	
-	coupon = [(TappLocal*)tl getCurrentCoupon];
+	coupon = [(_TL*)tl getCurrentCoupon];
 	
 	if (!isBuilt)
 	{
@@ -133,25 +133,26 @@
 			
 	} [UIView commitAnimations];
 	
-	[((TappLocal*)tl).vc.view addSubview:mother];
+	[((_TL*)tl).vc.view addSubview:mother];
 }
 
 -(void) merchantClick
 {
-	[(TappLocal*)tl setScreen:@"SCREEN_STORE":false];
+	[(_TL*)tl setScreen:@"SCREEN_STORE":false];
 }
 
 -(void) tapToUseClick
 {
-	double d = [(TappLocal*)tl getDistanceFromStore];
+	double d = [(_TL*)tl getDistanceFromStore];
 	
 	if (d < 0.1)
 	{
 		[taptouse setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"already_used.png"]] forState:UIControlStateNormal];
-		[(TappLocal*)tl setScreen:@"SCREEN_CONFIRMED":false];
+		[(_TL*)tl setScreen:@"SCREEN_CONFIRMED":false];
 	}
 	else
 	{
+		[(_TL*)tl sendLog:TL_ACTION_USED_FAR:nil];
 		UIAlertView* tooFarView = [[UIAlertView alloc] initWithTitle:@"Too far from the store!"
 															 message:[NSString stringWithFormat:@"You need to get closer to the store to use the coupon.",d]  
 															delegate:self 
@@ -165,88 +166,25 @@
 
 -(void) directionsClick
 {
-	[(TappLocal*)tl setScreen:@"SCREEN_SINGLEMAP":false];
+	[(_TL*)tl setScreen:@"SCREEN_SINGLEMAP":false];
 }
 
 -(void) moreDealsClick
 {
-	[(TappLocal*)tl setScreen:@"SCREEN_MAP":false];
+	[(_TL*)tl setScreen:@"SCREEN_MAP":false];
 }
 
 -(void) noThanksClick
 {
-	[(TappLocal*)tl closeCoupons];	
+	[_TLRMSTracker saveString:[NSString stringWithFormat:@"coupon_%i",coupon.idcoupon] :@"no"];
+	[(_TL*)tl sendLog:TL_ACTION_NO_THANKS:nil];
+	[(_TL*)tl closeCoupons];	
 }
-
-/*-(void) snoozeClick
-{
-    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
-    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-    [dateComps setDay:item.day];
-    [dateComps setMonth:item.month];
-    [dateComps setYear:item.year];
-    [dateComps setHour:item.hour];
-    [dateComps setMinute:item.minute];
-    NSDate *itemDate = [calendar dateFromComponents:dateComps];
-    [dateComps release];
-	
-    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-    if (localNotif == nil)
-        return;
-    localNotif.fireDate = [itemDate addTimeInterval:-(minutesBefore*60)];
-    localNotif.timeZone = [NSTimeZone defaultTimeZone];
-	
-    localNotif.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ in %i minutes.", nil),
-							item.eventName, minutesBefore];
-    localNotif.alertAction = NSLocalizedString(@"View Details", nil);
-	
-    localNotif.soundName = UILocalNotificationDefaultSoundName;
-    localNotif.applicationIconBadgeNumber = 1;
-	
-    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:item.eventName forKey:ToDoItemKey];
-    localNotif.userInfo = infoDict;
-	
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-    [localNotif release];
-}*/
-
-/*-(void) likeClick
-{
-	facebook = [[Facebook alloc]init];
-	NSArray *permissions = [NSArray arrayWithObjects:@"email", nil]; //[NSArray arrayWithObjects:@"publish_stream", @"email", @"offline_access",  @"user_birthday",@"user_events", @"user_groups",  @"user_likes", @"user_location", @"user_online_presence", @"read_stream",  nil];
-	[facebook authorize:@"bbbe5983d6af9dfdd721b34b1f41a020" permissions:permissions delegate:self];
-}*/
-
-/*- (void)fbDidLogin
-{
-	NSLog(@"logged!");
-	[facebook requestWithGraphPath:@"me" andDelegate:self];
-	[facebook logout:nil];
-}
-
-- (void)fbDidNotLogin
-{
-	NSLog(@"not logged");	
-}
-
-- (void)fbDidLogout
-{
-	NSLog(@"logout");	
-}*/
-
-
-/*- (void)request:(FBRequest*)request didLoad:(id)result;
-{
-	NSLog(@"%@",result);
-}
-
-- (void)request:(FBRequest*)request didFailWithError:(NSError*)error
-{
-	NSLog(@"%@",error);
-}*/
 
 -(void) closeClick
 {
+	[(_TL*)tl sendLog:TL_ACTION_CLOSE:nil];
+	
 	[UIView beginAnimations:nil context:NULL]; 
 	{
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -261,7 +199,7 @@
 
 - (void) animationDidStopClose:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
 {
-	[(TappLocal*)tl closeCoupons];	
+	[(_TL*)tl closeCoupons];	
 }
 
 -(void) removeFromSuperview
@@ -282,13 +220,11 @@
 	[text2 release];
 	[text3 release];
 	[directions release];
-//	[snooze release];
 	[nothanks release];
 	[moredeals release];
 	[taptouse release];
 	[text4 release];
 	[text5 release];
-//	[facebook release];	
 	
 	[super dealloc];
 }

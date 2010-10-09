@@ -8,7 +8,7 @@
 
 #import "_TLConfirmedView.h"
 #import "TappLocalViewController.h"
-#import "TappLocal.h"
+#import "_TL.h"
 
 @implementation _TLConfirmedView
 
@@ -16,7 +16,7 @@
 {
 	tl = parent;
 	
-	coupon = [(TappLocal*)tl getCurrentCoupon];
+	coupon = [(_TL*)tl getCurrentCoupon];
 	
 	if (!isBuilt)
 	{
@@ -72,10 +72,9 @@
 		text3.textAlignment = UITextAlignmentCenter;
 		[mother addSubview:text3];
 		
-		sendMe = [[UIButton alloc] initWithFrame: CGRectMake(30, 360, 220, 37)];
-		[sendMe setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"send_me.png"]] forState:UIControlStateNormal];
-		[sendMe addTarget:self action:@selector(sendMeClick) forControlEvents:UIControlEventTouchUpInside];
-		[mother addSubview:sendMe];		
+		follow = [[UIButton alloc] initWithFrame: CGRectMake(30, 360, 220, 37)];
+		[follow addTarget:self action:@selector(followClick) forControlEvents:UIControlEventTouchUpInside];
+		[mother addSubview:follow];		
 		
 		close = [[UIButton alloc] initWithFrame: CGRectMake(220, 0, 60, 40)];
 		[close addTarget:self action:@selector(closeClick) forControlEvents:UIControlEventTouchUpInside];
@@ -103,7 +102,7 @@
 	text1.hidden = true;
 	text2.hidden = true;
 	text3.hidden = true;
-	sendMe.hidden = true;
+	follow.hidden = true;
 	
 	mother.frame = CGRectMake(160, 230, 0, 0);
 	
@@ -118,8 +117,17 @@
 		
 	} [UIView commitAnimations];
 	
+	if ([_TLRMSTracker load:[NSString stringWithFormat:@"%i",[coupon getMerchant].idmerchant]] != nil)
+	{
+		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"unfollow.png"]] forState:UIControlStateNormal];
+		tv.text = [_TLRMSTracker loadSafeString:[NSString stringWithFormat:@"%i",[coupon getMerchant].idmerchant]];
+	}
+	else
+	{
+		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"follow.png"]] forState:UIControlStateNormal];
+	}
 	
-	[((TappLocal*)tl).vc.view addSubview:mother];
+	[((_TL*)tl).vc.view addSubview:mother];
 }
 
 - (void) animationDidFinishOpen:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
@@ -131,7 +139,7 @@
 	text1.hidden = false;
 	text2.hidden = false;
 	text3.hidden = false;
-	sendMe.hidden = false;
+	follow.hidden = false;
 }
 
 -(void) seemoreClick
@@ -144,14 +152,14 @@
 	[tl setScreen:@"SCREEN_MAP":false];	
 }
 
--(void) sharefriendsClick
+/*-(void) sharefriendsClick
 {
 	//invite
 	ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
 	picker.peoplePickerDelegate = self;
 	[tl presentModalViewController:picker animated:YES];
 	[picker release];
-}
+}*/
 
 -(void) closeClick
 {
@@ -225,23 +233,32 @@
 	[text1 release];
 	[text2 release];	
 	[text3 release];	
-	[sendMe release];
+	[follow release];
 	[tv release];
 	
 	[super dealloc];
 }
 
--(void)sendMeClick
+-(void)followClick
 {
-	UIAlertView* remindView = [[UIAlertView alloc] initWithTitle:@"Type your e-mail to receive more offers from this brand"
-														 message:@"\n"  
-														delegate:self 
-											   cancelButtonTitle:@"Ok"
-											   otherButtonTitles:nil , nil];
-	
-	[remindView addSubview:tv];
-	
-	[remindView show];
+	if ([_TLRMSTracker load:[NSString stringWithFormat:@"%i",[coupon getMerchant].idmerchant]] != nil)
+	{
+		[_TLRMSTracker deleteRecordstore:[NSString stringWithFormat:@"%i",[coupon getMerchant].idmerchant]];
+		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"follow.png"]] forState:UIControlStateNormal];
+		[(_TL*)tl sendLog:TL_ACTION_UNFOLLOW:nil];
+	}
+	else
+	{
+		UIAlertView* remindView = [[UIAlertView alloc] initWithTitle:@"Type your e-mail to receive more offers from this brand"
+															 message:@"\n"  
+															delegate:self 
+												   cancelButtonTitle:@"Ok"
+												   otherButtonTitles:nil , nil];
+		
+		[remindView addSubview:tv];
+		
+		[remindView show];
+	}
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)theTextField
@@ -254,9 +271,9 @@
 {
 	if ([alertView.title isEqual:@"Type your e-mail to receive more offers from this brand"])
 	{
-		NSLog(@"Email: %@",tv.text);
-		[sendMe setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"registered.png"]] forState:UIControlStateNormal];
-		[sendMe removeTarget:self action:@selector(sendMeClick) forControlEvents:UIControlEventTouchUpInside];
+		[follow setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"unfollow.png"]] forState:UIControlStateNormal];
+		[_TLRMSTracker saveString:[NSString stringWithFormat:@"%i",[coupon getMerchant].idmerchant]:tv.text];
+		[(_TL*)tl sendLog:TL_ACTION_FOLLOW:tv.text];
 	}
 }
 

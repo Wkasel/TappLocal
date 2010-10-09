@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		142C3D4A125A7D0600F865D7 /* TappLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = 142C3D49125A7D0600F865D7 /* TappLocal.m */; };
+		142C3D4A125A7D0600F865D7 /* _TL.m in Sources */ = {isa = PBXBuildFile; fileRef = 142C3D49125A7D0600F865D7 /* _TL.m */; };
 		142C3FE2125ACFC800F865D7 /* directions.png in Resources */ = {isa = PBXBuildFile; fileRef = 142C3FDE125ACFC800F865D7 /* directions.png */; };
 		142C3FE3125ACFC800F865D7 /* more_deals.png in Resources */ = {isa = PBXBuildFile; fileRef = 142C3FDF125ACFC800F865D7 /* more_deals.png */; };
 		142C3FE4125ACFC800F865D7 /* no_thanks.png in Resources */ = {isa = PBXBuildFile; fileRef = 142C3FE0125ACFC800F865D7 /* no_thanks.png */; };
@@ -61,6 +61,9 @@
 		1497A3BE1221D05B001FD040 /* confirmed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A3B91221D05B001FD040 /* confirmed.png */; };
 		1497A3BF1221D05B001FD040 /* follow2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A3BA1221D05B001FD040 /* follow2.png */; };
 		1497A3C01221D05B001FD040 /* following2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A3BB1221D05B001FD040 /* following2.png */; };
+		14994A65125E93A100CA042C /* TappLocalAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 14994A64125E93A100CA042C /* TappLocalAPI.m */; };
+		14994B5D125FC80700CA042C /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 14994B5B125FC80700CA042C /* follow.png */; };
+		14994B5E125FC80700CA042C /* unfollow.png in Resources */ = {isa = PBXBuildFile; fileRef = 14994B5C125FC80700CA042C /* unfollow.png */; };
 		14A0E44F124170D600525707 /* _TLTappLocalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A0E4261241702400525707 /* _TLTappLocalView.m */; };
 		14A53A0211F9F7DA00A2097E /* _TLCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A539FD11F9F7DA00A2097E /* _TLCacheManager.m */; };
 		14A53A0311F9F7DA00A2097E /* _TLResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A539FF11F9F7DA00A2097E /* _TLResourceManager.m */; };
@@ -71,7 +74,6 @@
 		14A53B1311FA2E5A00A2097E /* _TLColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A53B1211FA2E5A00A2097E /* _TLColorUtils.m */; };
 		14ABE791124053D10031D489 /* _TLCouponsXmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ABE74F124052040031D489 /* _TLCouponsXmlParser.m */; };
 		14ABE8AB124062730031D489 /* _TLMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ABE690124009610031D489 /* _TLMerchant.m */; };
-		14C4147F125D38D900BA87C7 /* send_me.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C4147E125D38D900BA87C7 /* send_me.png */; };
 		14C414D6125D434500BA87C7 /* registered.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C414D5125D434500BA87C7 /* registered.png */; };
 		1D3623260D0F684500981E51 /* TappLocalAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TappLocalAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -83,8 +85,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		142C3D48125A7D0600F865D7 /* TappLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TappLocal.h; sourceTree = "<group>"; };
-		142C3D49125A7D0600F865D7 /* TappLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TappLocal.m; sourceTree = "<group>"; };
+		142C3D48125A7D0600F865D7 /* _TL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TL.h; sourceTree = "<group>"; };
+		142C3D49125A7D0600F865D7 /* _TL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TL.m; sourceTree = "<group>"; };
 		142C3FDE125ACFC800F865D7 /* directions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = directions.png; path = Resources/directions.png; sourceTree = "<group>"; };
 		142C3FDF125ACFC800F865D7 /* more_deals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = more_deals.png; path = Resources/more_deals.png; sourceTree = "<group>"; };
 		142C3FE0125ACFC800F865D7 /* no_thanks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no_thanks.png; path = Resources/no_thanks.png; sourceTree = "<group>"; };
@@ -159,6 +161,10 @@
 		1497A3B91221D05B001FD040 /* confirmed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = confirmed.png; path = Resources/confirmed.png; sourceTree = "<group>"; };
 		1497A3BA1221D05B001FD040 /* follow2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = follow2.png; path = Resources/follow2.png; sourceTree = "<group>"; };
 		1497A3BB1221D05B001FD040 /* following2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = following2.png; path = Resources/following2.png; sourceTree = "<group>"; };
+		14994A63125E93A100CA042C /* TappLocalAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TappLocalAPI.h; sourceTree = "<group>"; };
+		14994A64125E93A100CA042C /* TappLocalAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TappLocalAPI.m; sourceTree = "<group>"; };
+		14994B5B125FC80700CA042C /* follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = follow.png; path = Resources/follow.png; sourceTree = "<group>"; };
+		14994B5C125FC80700CA042C /* unfollow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unfollow.png; path = Resources/unfollow.png; sourceTree = "<group>"; };
 		14A0E4251241702400525707 /* _TLTappLocalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLTappLocalView.h; sourceTree = "<group>"; };
 		14A0E4261241702400525707 /* _TLTappLocalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLTappLocalView.m; sourceTree = "<group>"; };
 		14A539FC11F9F7DA00A2097E /* _TLCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLCacheManager.h; sourceTree = "<group>"; };
@@ -179,7 +185,6 @@
 		14ABE690124009610031D489 /* _TLMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLMerchant.m; sourceTree = "<group>"; };
 		14ABE74E124052040031D489 /* _TLCouponsXmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLCouponsXmlParser.h; sourceTree = "<group>"; };
 		14ABE74F124052040031D489 /* _TLCouponsXmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLCouponsXmlParser.m; sourceTree = "<group>"; };
-		14C4147E125D38D900BA87C7 /* send_me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = send_me.png; path = Resources/send_me.png; sourceTree = "<group>"; };
 		14C414D5125D434500BA87C7 /* registered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = registered.png; path = Resources/registered.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TappLocalAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TappLocalAppDelegate.h; sourceTree = "<group>"; };
@@ -286,8 +291,10 @@
 				1473038D121C5ADD00D34F53 /* _TLStoreView.m */,
 				14A0E4251241702400525707 /* _TLTappLocalView.h */,
 				14A0E4261241702400525707 /* _TLTappLocalView.m */,
-				142C3D48125A7D0600F865D7 /* TappLocal.h */,
-				142C3D49125A7D0600F865D7 /* TappLocal.m */,
+				142C3D48125A7D0600F865D7 /* _TL.h */,
+				142C3D49125A7D0600F865D7 /* _TL.m */,
+				14994A63125E93A100CA042C /* TappLocalAPI.h */,
+				14994A64125E93A100CA042C /* TappLocalAPI.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -371,8 +378,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				14994B5B125FC80700CA042C /* follow.png */,
+				14994B5C125FC80700CA042C /* unfollow.png */,
 				14C414D5125D434500BA87C7 /* registered.png */,
-				14C4147E125D38D900BA87C7 /* send_me.png */,
 				142C3FDE125ACFC800F865D7 /* directions.png */,
 				142C3FDF125ACFC800F865D7 /* more_deals.png */,
 				142C3FE0125ACFC800F865D7 /* no_thanks.png */,
@@ -491,8 +499,9 @@
 				142C3FE3125ACFC800F865D7 /* more_deals.png in Resources */,
 				142C3FE4125ACFC800F865D7 /* no_thanks.png in Resources */,
 				142C3FE5125ACFC800F865D7 /* snooze.png in Resources */,
-				14C4147F125D38D900BA87C7 /* send_me.png in Resources */,
 				14C414D6125D434500BA87C7 /* registered.png in Resources */,
+				14994B5D125FC80700CA042C /* follow.png in Resources */,
+				14994B5E125FC80700CA042C /* unfollow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +544,8 @@
 				1497A1C81221AA77001FD040 /* _TLConfirmedView.m in Sources */,
 				147ED6E312223B280040349B /* _TLCoupon.m in Sources */,
 				147ED781122247380040349B /* _TLStore.m in Sources */,
-				142C3D4A125A7D0600F865D7 /* TappLocal.m in Sources */,
+				142C3D4A125A7D0600F865D7 /* _TL.m in Sources */,
+				14994A65125E93A100CA042C /* TappLocalAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

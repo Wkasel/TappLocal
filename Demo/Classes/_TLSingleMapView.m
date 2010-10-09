@@ -8,7 +8,7 @@
 
 #import "_TLSingleMapView.h"
 #import "TappLocalViewController.h"
-#import "TappLocal.h"
+#import "_TL.h"
 
 @implementation _TLSingleMapView
 
@@ -53,18 +53,18 @@
 		[mother addSubview:button];
 	}
 	
-	_TLStore* store = [[[(TappLocal*)tl getCurrentCoupon] getStores] objectAtIndex:0];
+	_TLStore* store = [[[(_TL*)tl getCurrentCoupon] getStores] objectAtIndex:0];
 	
-	NSString* url = [NSString stringWithFormat:@"http://maps.google.com/maps?f=d&source=s_d&saddr=%f+%f&daddr=%f+%f",[(TappLocal*)tl lastLatitude],[(TappLocal*)tl lastLongitude],store.latitude, store.longitude  ];
+	NSString* url = [NSString stringWithFormat:@"http://maps.google.com/maps?f=d&source=s_d&saddr=%f+%f&daddr=%f+%f",[(_TL*)tl lastLatitude],[(_TL*)tl lastLongitude],store.latitude, store.longitude  ];
 	NSURLRequest* requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
 	[wv loadRequest:requestObj];
 	
-	[((TappLocal*)tl).vc.view addSubview:mother];
+	[((_TL*)tl).vc.view addSubview:mother];
 }
 
 -(void) merchantClick
 {
-	[(TappLocal*)tl setScreen:@"SCREEN_STORE":false];
+	[(_TL*)tl setScreen:@"SCREEN_STORE":false];
 }
 
 -(void) backClick
@@ -74,7 +74,8 @@
 
 -(void) closeClick
 {
-	[(TappLocal*)tl closeCoupons];
+	[(_TL*)tl sendLog:TL_ACTION_CLOSE:nil];
+	[(_TL*)tl closeCoupons];
 }
 
 -(void) removeFromSuperview
