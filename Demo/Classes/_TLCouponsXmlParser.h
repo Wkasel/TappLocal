@@ -17,6 +17,6 @@
 
 }
 
-+(void) xmlToCoupons:(NSMutableArray*)arr :(NSString*) xml;
++(void) xmlToCoupons:(NSMutableArray*)arr :(NSString*) xml: (float) lastLatitude: (float) lastLongitude;
 
 @end

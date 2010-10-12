@@ -94,8 +94,6 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-	NSLog(@"annotation %@",[annotation title]);
-	
 	if (![[annotation title] isEqualToString:@"Current Location"])
 	{
 		MKAnnotationView *annotationView = nil;

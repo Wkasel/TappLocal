@@ -17,6 +17,7 @@
 @synthesize description;
 @synthesize phone;
 @synthesize site;
+@synthesize idrepresentative;
 
 -(void) dealloc
 {

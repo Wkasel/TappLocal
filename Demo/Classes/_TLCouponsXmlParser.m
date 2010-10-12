@@ -11,8 +11,26 @@
 
 @implementation _TLCouponsXmlParser
 
-+(void) xmlToCoupons:(NSMutableArray*)result :(NSString*) xml;
+
++(double)getDistanceFromStore:(_TLStore*) store: (float) lastLatitude: (float) lastLongitude
 {
+	int nRadius = 6371; // Earth's radius in Kilometers
+    // Get the difference between our two points
+    // then convert the difference into radians
+    double nDLat = (store.latitude - lastLatitude) * (M_PI/180);
+    double nDLon = (store.longitude - lastLongitude) * (M_PI/180);
+    double nA = pow ( sin(nDLat/2), 2 ) + cos(lastLatitude) * cos(store.latitude) * pow ( sin(nDLon/2), 2 );
+	
+    double nC = 2 * atan2( sqrt(nA), sqrt( 1 - nA ));
+    double nD = nRadius * nC;
+	
+    return nD; // Return our calculated distance
+}
+
++(void) xmlToCoupons:(NSMutableArray*)result :(NSString*) xml: (float) lastLatitude: (float) lastLongitude;
+{
+	//NSLog(@"%@",xml);
+	
 	//release the old coupons
 	for (int i=[result count]-1;i>=0;i--)
 		[[result objectAtIndex:i] release];
@@ -72,6 +90,8 @@
 						merchant.site = pmerchant.text;
 					else if ([pmerchant.key isEqual:@"id"] && pmerchant.text != nil)
 						merchant.idmerchant = [pmerchant.text intValue];
+					else if ([pmerchant.key isEqual:@"representative"] && pmerchant.text != nil)
+						merchant.idrepresentative = [pmerchant.text intValue];
 				}
 				
 				[coupon setMerchant:merchant];
@@ -101,9 +121,14 @@
 						else if ([propstore.key isEqual:@"longitude"] && propstore.text != nil)
 							store.longitude = [propstore.text floatValue];						
 					}
+					
+					store.distance = [self getDistanceFromStore:store :lastLatitude :lastLongitude];
 						
 					[coupon addStore:store];
 				}
+				
+				//order stores by distance
+				[[coupon getStores] sortUsingSelector:@selector(compare:)];
 			}
 		}
 			

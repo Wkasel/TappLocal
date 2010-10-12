@@ -16,6 +16,7 @@
 	NSString* description;
 	NSString* phone;
 	NSString* site;
+	int idrepresentative;
 }
 
 @property(nonatomic, assign) int idmerchant;
@@ -24,5 +25,6 @@
 @property(nonatomic, retain) NSString* description;
 @property(nonatomic, retain) NSString* phone;
 @property(nonatomic, retain) NSString* site;
+@property(nonatomic, assign) int idrepresentative;
 
 @end

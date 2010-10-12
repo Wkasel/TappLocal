@@ -17,7 +17,18 @@
 @synthesize name;
 @synthesize phone;
 @synthesize address;
+@synthesize distance;
 
+-(NSComparisonResult)compare:(_TLStore *)t
+{
+	if (distance > t.distance)
+		return NSOrderedDescending;
+	else if (distance < t.distance)
+		return NSOrderedAscending;
+	else
+		return NSOrderedSame;
+}
+	
 
 -(void) dealloc
 {

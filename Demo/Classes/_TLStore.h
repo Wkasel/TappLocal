@@ -16,6 +16,7 @@
 	NSString* name;
 	NSString* phone;
 	NSString* address;
+	double distance;
 }
 
 @property(nonatomic, assign) int idstore;
@@ -24,7 +25,8 @@
 @property(nonatomic, retain) NSString* name;
 @property(nonatomic, retain) NSString* phone;
 @property(nonatomic, retain) NSString* address;
+@property(nonatomic, assign) double distance;
 
-
+-(NSComparisonResult)compare:(_TLStore *)t;
 
 @end

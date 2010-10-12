@@ -71,7 +71,7 @@
 	}
 	
 	[tl release];
-	tl = [[TappLocalAPI alloc] initWithViewController: parent];
+	tl = [[TappLocalAPI alloc] initWithViewController: parent: @"526772_1"];
 	[tl setRefreshTimeNewAds:60];
 	[tl start];
 	
