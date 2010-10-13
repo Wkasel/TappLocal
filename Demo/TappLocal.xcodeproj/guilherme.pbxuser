@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	142C3D48125A7D0600F865D7 /* _TL.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 1079}}";
+			sepNavSelRange = "{823, 14}";
+			sepNavVisRange = "{273, 888}";
+		};
+	};
+	142C3D49125A7D0600F865D7 /* _TL.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 4537}}";
+			sepNavSelRange = "{4994, 0}";
+			sepNavVisRange = "{4577, 414}";
+		};
+	};
+	146ABEF811FF1D3F00E4BC44 /* XMLParser.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 360}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 523}";
+		};
+	};
+	146ABEF911FF1D3F00E4BC44 /* XMLParser.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 1170}}";
+			sepNavSelRange = "{136, 0}";
+			sepNavVisRange = "{0, 632}";
+		};
+	};
+	1473038D121C5ADD00D34F53 /* _TLStoreView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {712, 5655}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 293}";
+		};
+	};
+	14858CB1121E57C2005EAB19 /* _TLSingleMapView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1482, 1131}}";
+			sepNavSelRange = "{1201, 0}";
+			sepNavVisRange = "{727, 1599}";
+		};
+	};
+	14994A63125E93A100CA042C /* TappLocalAPI.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 360}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 452}";
+		};
+	};
+	14A0E4261241702400525707 /* _TLTappLocalView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {519, 222}}";
+			sepNavSelRange = "{203, 0}";
+			sepNavVisRange = "{0, 203}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* TappLocal */ = {
+		activeExec = 0;
+		executables = (
+			7916F83512551DBE00592492 /* TappLocal */,
+		);
+	};
+	28D7ACF70DDB3853001CB0EB /* TappLocalViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 572}}";
+			sepNavSelRange = "{505, 0}";
+			sepNavVisRange = "{339, 463}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecturePreference = armv7;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 7916F83512551DBE00592492 /* TappLocal */;
+		activeSDKPreference = iphonesimulator3.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* TappLocal */;
+		breakpoints = (
+			79065FE5125526400092D30D /* TappLocalViewController.m:45 */,
+		);
+		codeSenseManager = 7916F86612551DF000592492 /* Code sense */;
+		executables = (
+			7916F83512551DBE00592492 /* TappLocal */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					833,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					793,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 308628369;
+			PBXWorkspaceStateSaveDate = 308628369;
+		};
+		perUserProjectItems = {
+			7916F89412551FE900592492 /* PlistBookmark */ = 7916F89412551FE900592492 /* PlistBookmark */;
+			7916F8A1125523B100592492 /* PlistBookmark */ = 7916F8A1125523B100592492 /* PlistBookmark */;
+			7916F8A2125523B100592492 /* PBXTextBookmark */ = 7916F8A2125523B100592492 /* PBXTextBookmark */;
+			7916F8A3125523B100592492 /* PBXTextBookmark */ = 7916F8A3125523B100592492 /* PBXTextBookmark */;
+			793296A712654DBE00B46271 /* PBXTextBookmark */ = 793296A712654DBE00B46271 /* PBXTextBookmark */;
+			793296A812654DBE00B46271 /* PBXTextBookmark */ = 793296A812654DBE00B46271 /* PBXTextBookmark */;
+			793296A912654DBE00B46271 /* PBXTextBookmark */ = 793296A912654DBE00B46271 /* PBXTextBookmark */;
+			793296AA12654DBE00B46271 /* PBXTextBookmark */ = 793296AA12654DBE00B46271 /* PBXTextBookmark */;
+			793296AB12654DBE00B46271 /* PBXTextBookmark */ = 793296AB12654DBE00B46271 /* PBXTextBookmark */;
+			793296BC1265591200B46271 /* PBXTextBookmark */ = 793296BC1265591200B46271 /* PBXTextBookmark */;
+			793296BD1265591200B46271 /* PBXTextBookmark */ = 793296BD1265591200B46271 /* PBXTextBookmark */;
+			793296BE1265591200B46271 /* PBXTextBookmark */ = 793296BE1265591200B46271 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 7916F86512551DF000592492 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	79065FE5125526400092D30D /* TappLocalViewController.m:45 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* TappLocalViewController.m */;
+		functionName = "-locationManager:didUpdateToLocation:fromLocation:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 45;
+		location = TappLocal;
+		modificationTime = 308631820.435143;
+		originalNumberOfMultipleMatches = 1;
+		state = 0;
+	};
+	7916F83512551DBE00592492 /* TappLocal */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = TappLocal;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	7916F86512551DF000592492 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	7916F86612551DF000592492 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	7916F89412551FE900592492 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 1485C23412021BCA009FA21A /* Entitlements.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			"get-task-allow",
+		);
+		name = /Users/guilherme/Git/TappLocal/Demo/Entitlements.plist;
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	7916F8A1125523B100592492 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* TappLocal-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleInfoDictionaryVersion,
+		);
+		name = "/Users/guilherme/Git/TappLocal/Demo/TappLocal-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
+	};
+	7916F8A2125523B100592492 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 14A0E4261241702400525707 /* _TLTappLocalView.m */;
+		name = "TappLocalView.m: 15";
+		rLen = 0;
+		rLoc = 203;
+		rType = 0;
+		vrLen = 203;
+		vrLoc = 0;
+	};
+	7916F8A3125523B100592492 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1473038D121C5ADD00D34F53 /* _TLStoreView.m */;
+		name = "StoreView.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 293;
+		vrLoc = 0;
+	};
+	793296A712654DBE00B46271 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* TappLocalViewController.m */;
+		name = "TappLocalViewController.m: 26";
+		rLen = 0;
+		rLoc = 505;
+		rType = 0;
+		vrLen = 463;
+		vrLoc = 339;
+	};
+	793296A812654DBE00B46271 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 146ABEF811FF1D3F00E4BC44 /* XMLParser.h */;
+		name = "XMLParser.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 523;
+		vrLoc = 0;
+	};
+	793296A912654DBE00B46271 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 146ABEF911FF1D3F00E4BC44 /* XMLParser.m */;
+		name = "XMLParser.m: 8";
+		rLen = 0;
+		rLoc = 136;
+		rType = 0;
+		vrLen = 632;
+		vrLoc = 0;
+	};
+	793296AA12654DBE00B46271 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 14994A63125E93A100CA042C /* TappLocalAPI.h */;
+		name = "TappLocalAPI.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 452;
+		vrLoc = 0;
+	};
+	793296AB12654DBE00B46271 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 142C3D48125A7D0600F865D7 /* _TL.h */;
+		name = "_TL.h: 37";
+		rLen = 14;
+		rLoc = 823;
+		rType = 0;
+		vrLen = 888;
+		vrLoc = 273;
+	};
+	793296BC1265591200B46271 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 142C3D49125A7D0600F865D7 /* _TL.m */;
+		name = "_TL.m: 331";
+		rLen = 0;
+		rLoc = 7446;
+		rType = 0;
+		vrLen = 1621;
+		vrLoc = 6747;
+	};
+	793296BD1265591200B46271 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 14858CB1121E57C2005EAB19 /* _TLSingleMapView.m */;
+		name = "_TLSingleMapView.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1037;
+		vrLoc = 0;
+	};
+	793296BE1265591200B46271 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 14858CB1121E57C2005EAB19 /* _TLSingleMapView.m */;
+		name = "_TLSingleMapView.m: 41";
+		rLen = 0;
+		rLoc = 1201;
+		rType = 0;
+		vrLen = 1599;
+		vrLoc = 727;
+	};
+}

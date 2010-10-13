@@ -55,7 +55,7 @@
 	
 	_TLStore* store = [[[(_TL*)tl getCurrentCoupon] getStores] objectAtIndex:0];
 	
-	NSString* url = [NSString stringWithFormat:@"http://maps.google.com/maps?f=d&source=s_d&saddr=%f+%f&daddr=%f+%f",[(_TL*)tl lastLatitude],[(_TL*)tl lastLongitude],store.latitude, store.longitude  ];
+	NSString* url = [NSString stringWithFormat:@"http://maps.google.com/maps?f=d&source=s_d&saddr=%f+%f&daddr=%f+%f&dirflg=w",[(_TL*)tl lastLatitude],[(_TL*)tl lastLongitude],store.latitude, store.longitude  ];
 	NSURLRequest* requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
 	[wv loadRequest:requestObj];
 	

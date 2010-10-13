@@ -16,6 +16,7 @@
 @synthesize lastLongitude;
 @synthesize refreshTime;
 
+int const TL_ACTION_FLAG = 0;
 int const TL_ACTION_VIEW = 1;
 int const TL_ACTION_DIRECTIONS = 2;
 int const TL_ACTION_NO_THANKS = 3;
@@ -65,20 +66,6 @@ int const TL_ACTION_UNFOLLOW = 10;
 	nearby = [[UIButton alloc] initWithFrame: CGRectMake(320, 115, 65, 39)];
 	[nearby setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"nearby.png"]] forState:UIControlStateNormal];
 	[nearby addTarget:self action:@selector(couponClick) forControlEvents:UIControlEventTouchUpInside];
-	
-	flash = [[UIButton alloc] initWithFrame: CGRectMake(0, 460, 320, 35)];
-	[flash setBackgroundImage:[[UIImage alloc] initWithData:[_TLResourceManager getResourceBinaryFile:@"flash.png"]] forState:UIControlStateNormal];
-	flash.hidden = true;
-	flash.alpha = 0.6;
-	[flash addTarget:self action:@selector(flashClick) forControlEvents:UIControlEventTouchUpInside];
-	
-	flashText = [[FontLabel alloc] initWithFrame:CGRectMake(10, 5, 300, 30) fontName:@"HelveticaNeue" pointSize:12.0f];
-	flashText.textColor = [_TLColorUtils colorFromRGB:@"000000"];
-	flashText.backgroundColor = nil;
-	flashText.opaque = NO;
-	flashText.numberOfLines = 2;
-	flashText.textAlignment = UITextAlignmentCenter;
-	flashText.text = @"support@tapplocal.com";
 	
 	coupons = [[NSMutableArray alloc] init];
 	
@@ -171,12 +158,6 @@ int const TL_ACTION_UNFOLLOW = 10;
 		[nearby removeFromSuperview];
 		[vc.view addSubview:nearby];
 		
-		[flash removeFromSuperview];
-		[vc.view addSubview:flash];
-		
-		[flashText removeFromSuperview];
-		[flash addSubview:flashText];
-		
 		movingNearbyIn = !movingNearbyIn;
 		
 		[UIView beginAnimations:nil context:NULL]; {
@@ -186,6 +167,7 @@ int const TL_ACTION_UNFOLLOW = 10;
 			if (movingNearbyIn) 
 			{
 				nearby.frame = CGRectMake(255,  115, 65, 39);
+				[self sendLog:TL_ACTION_FLAG:nil];
 			}
 			else 
 			{
@@ -198,49 +180,6 @@ int const TL_ACTION_UNFOLLOW = 10;
 	}
 }
 
--(void)showFlash
-{
-	if (currentCoupon != nil)
-	{
-		flashText.text = [NSString stringWithFormat:@"%@ - %@", currentCoupon.title, currentCoupon.text];
-		
-		movingFlashIn = !movingFlashIn;
-		
-		[nearby removeFromSuperview];
-		[vc.view addSubview:nearby];
-		
-		[flash removeFromSuperview];
-		[vc.view addSubview:flash];
-		
-		[flashText removeFromSuperview];
-		[flash addSubview:flashText];
-		
-		[UIView beginAnimations:nil context:NULL]; {
-			[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-			[UIView setAnimationDuration:1.0];
-			[UIView setAnimationDelegate:self];
-			if (movingFlashIn) 
-			{
-				flash.frame = CGRectMake(0, 425, 320, 35);
-				flash.hidden = FALSE;
-				
-				[UIView setAnimationRepeatCount:2.0];
-				[UIView setAnimationRepeatAutoreverses:YES];
-				
-				flash.alpha = 1.0;
-			}
-			else 
-			{
-				flash.frame = CGRectMake(0, 460, 320, 35);
-				flash.alpha = 0.6;
-				flash.hidden = true;
-			}
-			
-		} [UIView commitAnimations];
-		
-		[NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(hide) userInfo:nil repeats:NO];
-	}
-}
 
 -(void)removeDismissed:(NSMutableArray*) arr
 {
@@ -267,7 +206,7 @@ int const TL_ACTION_UNFOLLOW = 10;
 	NSString* server = @"http://72.47.200.205/xml/";
 	
 	NSString* file = [[NSString stringWithFormat:@"%.3fi%.3f",lastLatitude,lastLongitude] retain];
-	NSString* fileTemp = [NSString stringWithFormat:@"%@%@.xml", server, [file stringByReplacingOccurrencesOfString:@"." withString:@"_"]];
+	NSString* fileTemp = [NSString stringWithFormat:@"%@%@.xml?udid=%@", server, [file stringByReplacingOccurrencesOfString:@"." withString:@"_"],udid];
 	
 	NSURL* url = [NSURL URLWithString:fileTemp];
 	
@@ -288,15 +227,8 @@ int const TL_ACTION_UNFOLLOW = 10;
 								
 				[currentCoupon release];
 				currentCoupon = [cp retain];
-					
-				srandom(time(NULL));
-					
-				long i = random();
-					
-				if (i % 2 == 0) 
-					[self showNearby];
-				else
-					[self showFlash];
+					 
+				[self showNearby];
 			}
 		}
 	}
@@ -309,7 +241,7 @@ int const TL_ACTION_UNFOLLOW = 10;
 	
 	if (lastLatitude != 0)
 	{
-		if (![self isOpened])
+		if (![self isOpened] && (!movingNearbyIn) && (nearby.frame.origin.x == 320))
 			[self getNewXml];
 	}
 }
@@ -328,12 +260,7 @@ int const TL_ACTION_UNFOLLOW = 10;
 }
 
 -(void)hide
-{
-	if (movingFlashIn)
-	{
-		[self showFlash];
-	}
-	
+{	
 	if (movingNearbyIn)
 	{
 		[self showNearby];
@@ -360,8 +287,6 @@ int const TL_ACTION_UNFOLLOW = 10;
 {
 	[locationManager release];
 	[nearby release];
-	[flash release];
-	[flashText release];
 
 	for (int i=[coupons count]-1;i>=0;i--)
 		[[coupons objectAtIndex:i] release];

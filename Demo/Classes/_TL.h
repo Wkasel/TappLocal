@@ -35,10 +35,7 @@
 	UIViewController* vc;
 	
 	BOOL movingNearbyIn;
-	BOOL movingFlashIn;
 	UIButton* nearby;
-	UIButton* flash;	
-	FontLabel* flashText;
 
 	NSTimer* clock;
 	
@@ -54,6 +51,7 @@
 @property(readonly,assign) float lastLongitude;
 @property(readwrite,assign) int refreshTime;
 
+extern int const TL_ACTION_FLAG;
 extern int const TL_ACTION_VIEW;
 extern int const TL_ACTION_DIRECTIONS;
 extern int const TL_ACTION_NO_THANKS;
