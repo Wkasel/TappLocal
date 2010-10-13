@@ -1,0 +1,278 @@
+/* 
+ *  Tabela mais externa. Utilizada nas tags listagem, entrada, tela
+ */
+.outterTable {		
+ 	width: 100%;
+ 	background-color: white;
+}
+
+.outterTableHeader{
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 11px;
+	height: 16px;
+}
+
+.outterTableHeaderLeft{
+	float: left;
+	color: #565656;	
+	background: #E9E9E9 url(../images/header-table.gif) top right no-repeat;
+	padding: 4px 28px 0 8px;
+	line-height: 1.22;
+	font-weight: bold;
+}
+.outterTableHeaderRight{
+	float:right;
+	padding-right: 5px;	
+}
+
+/*
+ * Janela. Utilizando em JanelaFiltro, JanelaResultados, JanelaEntrada
+ */
+.window {
+	width: 100%;
+	background-color: #E9E9E9;
+	padding: 4px;
+}
+.window TD, INPUT, SELECT, BUTTON {
+	font-size:   11px;
+}
+
+Input
+{
+    width: 300px;
+}
+
+.window BUTTON {
+	background-color: #E9E9E9; 
+	border: 0px;
+}
+
+.inputWindow {
+}
+
+.resultWindow {
+	background-color: white;
+	padding: 0px;
+}
+
+/*
+ * Utilizados em PanelGrids que são tabelas de entrada de dados.
+ */
+.inputTable {
+	padding: 3px;
+}
+ 
+.labelColumn {
+	white-space: nowrap;
+	width: 1%;
+	padding-right: 20px;
+	padding-left: 3px;
+	font-weight: bold;
+	font-size: 10px;
+}
+.labelColumn SPAN{
+	font-weight: bold;
+	font-size: 10px;
+}
+
+.actionBar {
+	padding: 3px;
+}
+
+
+/**
+ * Estilo padrão para o dataGrid
+ */ 
+.dataGrid {	
+	color: #000000;
+	background-color: #FFFFFF;
+}
+.dataGridHeader {
+	background-color: #E9E9E9;
+	color: #565656;
+	font-weight: bold;	
+	text-align: left;
+}
+
+.dataGridHeader A{
+	color: #565656;
+	font-weight: bold;	
+}
+.dataGridHeader TD{
+	color: #565656;
+	font-weight: bold;	
+}
+
+.dataGridBody1 {
+	background-color: transparent;	
+	line-height: 15px;
+}
+
+.dataGridBody2 {
+	background-color: #eeeeee;	
+	line-height: 15px;
+}
+
+.dataGridBody1 td:first-child{
+	text-align: center;
+}
+
+.dataGridBody1 td:first-child a{
+	text-align: center;
+	font-weight: bold;
+}
+
+.dataGridBody2 td:first-child a{
+	text-align: center;
+	font-weight: bold;
+}
+
+
+.dataGridBody2 td:first-child{
+	text-align: center;
+}
+
+.dataGridBody1 td:last-child{
+	text-align: center;
+}
+
+.dataGridBody2 td:last-child{
+	text-align: center;
+}
+
+#file_div {
+	display: none;	
+}
+
+.dataGridBody2:hover{
+	background-color: red;	
+}
+.dataGridFooter {
+}
+
+
+/**
+ * Estilo padrão de link
+ */
+a {
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+
+/**
+ * Estilos das abas
+ */
+.tabPanelLink {
+	margin-top:3px;	
+	margin-bottom:3px;	
+	border-bottom: 1px solid gray;
+} 
+ 
+.detailTabSelected {
+	padding-top: 3px;
+	padding-bottom: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 19px;
+	line-height: 15px;
+	vertical-align: middle;
+	border-left: 1px solid #91A7B4;
+	border-right: 1px solid #91A7B4;
+	border-top: 2px solid orange;
+	background-color: #FFFFFF;
+	border-bottom: 0px solid gray;
+}
+
+
+.detailTabSelected:active {
+	text-decoration: none;
+}
+.detailTabSelected:hover {
+	text-decoration: none;
+}
+
+
+.detailTabUnselected {
+	padding-top: 3px;
+	padding-bottom: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 16px;
+	line-height: 16px;
+	vertical-align: middle;
+	border-left: 1px solid #91A7B4;
+	border-right: 1px solid #91A7B4;
+	border-top: 1px solid #91A7B4;
+	background-color: #F1F1F1;
+	border-bottom: 0px solid red;
+}
+
+.detailTabUnselected:hover {
+	padding-top: 2px;
+	text-decoration: none;
+	border-top: 2px solid orange;
+	background-color: #F9F8FE;
+}
+.detailTabUnselected:active {
+	text-decoration: none;
+}
+
+/**
+ * Detalhe
+ */
+.detailBlock {
+	background-color: white;
+}
+
+
+.outterTableHeaderLink{
+		background: transparent url(../images/create.png) no-repeat scroll center left;
+		color: transparent;
+		position: absolute;
+		height: 20px;
+		margin: -3px 0px 0px -50px;
+		text-decoration: none;
+		text-align: center;
+		outline: 0px;
+		width: 53px;
+		line-height: 24px;
+		opacity: 0.5;
+		-moz-opacity: 0.5;
+		filter: alpha(opacity=50); 
+	}	
+	
+.outterTableHeaderLink:hover{ 
+	opacity: 0.9;
+	-moz-opacity: 0.9;
+	filter: alpha(opacity=90); 
+}
+
+.colorPicker {
+	border: 1px solid #000000; 
+	background:#FFFFFF;
+	font-family:Verdana; 
+	font-size:10px; 
+	text-decoration:none;
+	margin:2px;
+	vertical-align: middle;	
+}
+
+#web-buttons-idcu4ja a {	
+	display:block;
+	color:transparent;
+}
+
+#web-buttons-idcu4ja a:hover {	
+	background-position:left bottom;
+}
+#error
+{
+	text-align: center;
+	color: #FF0000;
+}
