@@ -7,7 +7,6 @@
 //
 
 #import "TappLocalViewController.h"
-#import "_TL.h"
 
 
 @implementation TappLocalViewController

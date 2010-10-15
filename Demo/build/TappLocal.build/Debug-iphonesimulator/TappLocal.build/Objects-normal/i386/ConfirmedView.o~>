@@ -1,4 +1,0 @@
-/Users/guilhermecarvalho/TappLocal/Demo/Classes/ConfirmedView.m: In function '-[ConfirmedView configure:]':
-/Users/guilhermecarvalho/TappLocal/Demo/Classes/ConfirmedView.m:23: error: 'TappLocalView' undeclared (first use in this function)
-/Users/guilhermecarvalho/TappLocal/Demo/Classes/ConfirmedView.m:23: error: (Each undeclared identifier is reported only once
-/Users/guilhermecarvalho/TappLocal/Demo/Classes/ConfirmedView.m:23: error: for each function it appears in.)

@@ -16,8 +16,6 @@
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
-	[_TLRMSTracker clearRMS];
 	
     // Override point for customization after app launch    
     [window addSubview:viewController.view];

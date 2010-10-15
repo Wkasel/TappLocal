@@ -7,191 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		142C3D4A125A7D0600F865D7 /* _TL.m in Sources */ = {isa = PBXBuildFile; fileRef = 142C3D49125A7D0600F865D7 /* _TL.m */; };
-		142C3FE2125ACFC800F865D7 /* directions.png in Resources */ = {isa = PBXBuildFile; fileRef = 142C3FDE125ACFC800F865D7 /* directions.png */; };
-		142C3FE3125ACFC800F865D7 /* more_deals.png in Resources */ = {isa = PBXBuildFile; fileRef = 142C3FDF125ACFC800F865D7 /* more_deals.png */; };
-		142C3FE4125ACFC800F865D7 /* no_thanks.png in Resources */ = {isa = PBXBuildFile; fileRef = 142C3FE0125ACFC800F865D7 /* no_thanks.png */; };
-		142C3FE5125ACFC800F865D7 /* snooze.png in Resources */ = {isa = PBXBuildFile; fileRef = 142C3FE1125ACFC800F865D7 /* snooze.png */; };
-		1439D18A11F0FF5C00409DFF /* FontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1439D18011F0FF5C00409DFF /* FontLabel.m */; };
-		1439D18B11F0FF5C00409DFF /* FontLabelStringDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 1439D18211F0FF5C00409DFF /* FontLabelStringDrawing.m */; };
-		1439D18C11F0FF5C00409DFF /* FontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1439D18411F0FF5C00409DFF /* FontManager.m */; };
-		1439D18D11F0FF5C00409DFF /* ZAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1439D18611F0FF5C00409DFF /* ZAttributedString.m */; };
-		1439D18E11F0FF5C00409DFF /* ZFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1439D18911F0FF5C00409DFF /* ZFont.m */; };
-		146ABEF311FF1CF800E4BC44 /* AQXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 146ABEEE11FF1CF800E4BC44 /* AQXMLParser.m */; };
-		146ABEF411FF1CF800E4BC44 /* AQXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 146ABEF011FF1CF800E4BC44 /* AQXMLParserDelegate.m */; };
-		146ABEFA11FF1D3F00E4BC44 /* TreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 146ABEF711FF1D3F00E4BC44 /* TreeNode.m */; };
-		146ABEFB11FF1D3F00E4BC44 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 146ABEF911FF1D3F00E4BC44 /* XMLParser.m */; };
-		146ABFBF11FF202F00E4BC44 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146ABFBE11FF202F00E4BC44 /* QuartzCore.framework */; };
-		146ABFD711FF206400E4BC44 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146ABFD611FF206400E4BC44 /* AudioToolbox.framework */; };
-		146ABFD911FF206400E4BC44 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146ABFD811FF206400E4BC44 /* MediaPlayer.framework */; };
-		146ABFDB11FF206400E4BC44 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146ABFDA11FF206400E4BC44 /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		146AC0AD11FF267900E4BC44 /* _TLStreamUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 146AC0AC11FF267900E4BC44 /* _TLStreamUtils.m */; };
-		1470DE59120130040070A21B /* _TLDealView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470DE58120130040070A21B /* _TLDealView.m */; };
-		1470DEA7120132B40070A21B /* _TLMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470DEA6120132B40070A21B /* _TLMapView.m */; };
 		1470DFD7120140070070A21B /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1470DFD6120140070070A21B /* HomeView.m */; };
-		147278DB121C6DC1001FCBBA /* HelveticaNeue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 147278DA121C6DC1001FCBBA /* HelveticaNeue.ttf */; };
-		14730369121C58FB00D34F53 /* already_used.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730358121C58FB00D34F53 /* already_used.png */; };
-		1473036B121C58FB00D34F53 /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = 1473035A121C58FB00D34F53 /* flash.png */; };
-		1473036C121C58FB00D34F53 /* Helvetica-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1473035B121C58FB00D34F53 /* Helvetica-Bold.ttf */; };
-		1473036D121C58FB00D34F53 /* HelveticaBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1473035C121C58FB00D34F53 /* HelveticaBold.ttf */; };
-		1473036E121C58FB00D34F53 /* HelveticaNeueBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1473035D121C58FB00D34F53 /* HelveticaNeueBold.ttf */; };
-		1473036F121C58FB00D34F53 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1473035E121C58FB00D34F53 /* Icon.png */; };
-		14730371121C58FB00D34F53 /* merchant_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730360121C58FB00D34F53 /* merchant_logo.png */; };
-		14730373121C58FB00D34F53 /* offer_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730362121C58FB00D34F53 /* offer_bg.png */; };
-		14730375121C58FB00D34F53 /* nearby.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730364121C58FB00D34F53 /* nearby.png */; };
-		14730377121C58FB00D34F53 /* tap_to_use.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730366121C58FB00D34F53 /* tap_to_use.png */; };
-		14730378121C58FB00D34F53 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730367121C58FB00D34F53 /* bg.png */; };
-		14730379121C58FB00D34F53 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14730368121C58FB00D34F53 /* logo.png */; };
-		1473038E121C5ADD00D34F53 /* _TLStoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1473038D121C5ADD00D34F53 /* _TLStoreView.m */; };
-		14751B5B121CA53800944076 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 14751B5A121CA53800944076 /* back.png */; };
-		14751BFE121CC8A200944076 /* merchant_logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 14751BFD121CC8A200944076 /* merchant_logo2.png */; };
-		147ED6E312223B280040349B /* _TLCoupon.m in Sources */ = {isa = PBXBuildFile; fileRef = 147ED6E212223B280040349B /* _TLCoupon.m */; };
-		147ED781122247380040349B /* _TLStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 147ED780122247380040349B /* _TLStore.m */; };
-		1485892A121DA745005EAB19 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14858929121DA745005EAB19 /* MapKit.framework */; };
 		14858973121DADAD005EAB19 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14858972121DADAD005EAB19 /* CoreLocation.framework */; };
-		148589C4121DB474005EAB19 /* _TLMapStoreAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 148589C3121DB474005EAB19 /* _TLMapStoreAnnotation.m */; };
-		14858CB2121E57C2005EAB19 /* _TLSingleMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14858CB1121E57C2005EAB19 /* _TLSingleMapView.m */; };
 		1485C23512021BCA009FA21A /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1485C23412021BCA009FA21A /* Entitlements.plist */; };
-		14943601121EE821008C45B7 /* bg_flash.png in Resources */ = {isa = PBXBuildFile; fileRef = 149435FE121EE821008C45B7 /* bg_flash.png */; };
-		14943602121EE821008C45B7 /* bring.png in Resources */ = {isa = PBXBuildFile; fileRef = 149435FF121EE821008C45B7 /* bring.png */; };
-		14943603121EE821008C45B7 /* remind_me.png in Resources */ = {isa = PBXBuildFile; fileRef = 14943600121EE821008C45B7 /* remind_me.png */; };
-		1497A1C81221AA77001FD040 /* _TLConfirmedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1497A1C71221AA77001FD040 /* _TLConfirmedView.m */; };
-		1497A2E41221B9F7001FD040 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1497A2E31221B9F7001FD040 /* AddressBook.framework */; };
-		1497A2E61221B9F7001FD040 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1497A2E51221B9F7001FD040 /* AddressBookUI.framework */; };
-		1497A3BE1221D05B001FD040 /* confirmed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A3B91221D05B001FD040 /* confirmed.png */; };
-		1497A3BF1221D05B001FD040 /* follow2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A3BA1221D05B001FD040 /* follow2.png */; };
-		1497A3C01221D05B001FD040 /* following2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1497A3BB1221D05B001FD040 /* following2.png */; };
-		14994A65125E93A100CA042C /* TappLocalAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 14994A64125E93A100CA042C /* TappLocalAPI.m */; };
-		14994B5D125FC80700CA042C /* follow.png in Resources */ = {isa = PBXBuildFile; fileRef = 14994B5B125FC80700CA042C /* follow.png */; };
-		14994B5E125FC80700CA042C /* unfollow.png in Resources */ = {isa = PBXBuildFile; fileRef = 14994B5C125FC80700CA042C /* unfollow.png */; };
-		14A0E44F124170D600525707 /* _TLTappLocalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A0E4261241702400525707 /* _TLTappLocalView.m */; };
-		14A53A0211F9F7DA00A2097E /* _TLCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A539FD11F9F7DA00A2097E /* _TLCacheManager.m */; };
-		14A53A0311F9F7DA00A2097E /* _TLResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A539FF11F9F7DA00A2097E /* _TLResourceManager.m */; };
-		14A53A0411F9F7DA00A2097E /* _TLRMSTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A53A0111F9F7DA00A2097E /* _TLRMSTracker.m */; };
-		14A53A1011F9F80E00A2097E /* _TLByteUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A53A0711F9F80E00A2097E /* _TLByteUtils.m */; };
-		14A53A1411F9F80E00A2097E /* _TLTextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A53A0F11F9F80E00A2097E /* _TLTextUtils.m */; };
-		14A53A2711F9F84D00A2097E /* NSDataBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A53A2611F9F84D00A2097E /* NSDataBase64.m */; };
-		14A53B1311FA2E5A00A2097E /* _TLColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A53B1211FA2E5A00A2097E /* _TLColorUtils.m */; };
-		14ABE791124053D10031D489 /* _TLCouponsXmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ABE74F124052040031D489 /* _TLCouponsXmlParser.m */; };
-		14ABE8AB124062730031D489 /* _TLMerchant.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ABE690124009610031D489 /* _TLMerchant.m */; };
-		14C414D6125D434500BA87C7 /* registered.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C414D5125D434500BA87C7 /* registered.png */; };
+		14A1367A126821BB00D9A8A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A13679126821BB00D9A8A0 /* CoreGraphics.framework */; };
+		14A1369E126821DD00D9A8A0 /* libTapplocalSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A1369D126821DD00D9A8A0 /* libTapplocalSDK.a */; };
+		14AF726812685ABB00C03B35 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AF726712685ABB00C03B35 /* MapKit.framework */; };
 		1D3623260D0F684500981E51 /* TappLocalAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TappLocalAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* TappLocalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* TappLocalViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		14A137B01268312B00D9A8A0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = l;
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		142C3D48125A7D0600F865D7 /* _TL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TL.h; sourceTree = "<group>"; };
-		142C3D49125A7D0600F865D7 /* _TL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TL.m; sourceTree = "<group>"; };
-		142C3FDE125ACFC800F865D7 /* directions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = directions.png; path = Resources/directions.png; sourceTree = "<group>"; };
-		142C3FDF125ACFC800F865D7 /* more_deals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = more_deals.png; path = Resources/more_deals.png; sourceTree = "<group>"; };
-		142C3FE0125ACFC800F865D7 /* no_thanks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = no_thanks.png; path = Resources/no_thanks.png; sourceTree = "<group>"; };
-		142C3FE1125ACFC800F865D7 /* snooze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = snooze.png; path = Resources/snooze.png; sourceTree = "<group>"; };
-		1439D17F11F0FF5C00409DFF /* FontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FontLabel.h; path = FontLabel/FontLabel.h; sourceTree = "<group>"; };
-		1439D18011F0FF5C00409DFF /* FontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FontLabel.m; path = FontLabel/FontLabel.m; sourceTree = "<group>"; };
-		1439D18111F0FF5C00409DFF /* FontLabelStringDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FontLabelStringDrawing.h; path = FontLabel/FontLabelStringDrawing.h; sourceTree = "<group>"; };
-		1439D18211F0FF5C00409DFF /* FontLabelStringDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FontLabelStringDrawing.m; path = FontLabel/FontLabelStringDrawing.m; sourceTree = "<group>"; };
-		1439D18311F0FF5C00409DFF /* FontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FontManager.h; path = FontLabel/FontManager.h; sourceTree = "<group>"; };
-		1439D18411F0FF5C00409DFF /* FontManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FontManager.m; path = FontLabel/FontManager.m; sourceTree = "<group>"; };
-		1439D18511F0FF5C00409DFF /* ZAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZAttributedString.h; path = FontLabel/ZAttributedString.h; sourceTree = "<group>"; };
-		1439D18611F0FF5C00409DFF /* ZAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZAttributedString.m; path = FontLabel/ZAttributedString.m; sourceTree = "<group>"; };
-		1439D18711F0FF5C00409DFF /* ZAttributedStringPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZAttributedStringPrivate.h; path = FontLabel/ZAttributedStringPrivate.h; sourceTree = "<group>"; };
-		1439D18811F0FF5C00409DFF /* ZFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZFont.h; path = FontLabel/ZFont.h; sourceTree = "<group>"; };
-		1439D18911F0FF5C00409DFF /* ZFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZFont.m; path = FontLabel/ZFont.m; sourceTree = "<group>"; };
-		146ABEED11FF1CF800E4BC44 /* AQXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQXMLParser.h; sourceTree = "<group>"; };
-		146ABEEE11FF1CF800E4BC44 /* AQXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQXMLParser.m; sourceTree = "<group>"; };
-		146ABEEF11FF1CF800E4BC44 /* AQXMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQXMLParserDelegate.h; sourceTree = "<group>"; };
-		146ABEF011FF1CF800E4BC44 /* AQXMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQXMLParserDelegate.m; sourceTree = "<group>"; };
-		146ABEF611FF1D3F00E4BC44 /* TreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
-		146ABEF711FF1D3F00E4BC44 /* TreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeNode.m; sourceTree = "<group>"; };
-		146ABEF811FF1D3F00E4BC44 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
-		146ABEF911FF1D3F00E4BC44 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
-		146ABFBE11FF202F00E4BC44 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		146ABFD611FF206400E4BC44 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		146ABFD811FF206400E4BC44 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		146ABFDA11FF206400E4BC44 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		146AC07811FF253500E4BC44 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
-		146AC0AB11FF267900E4BC44 /* _TLStreamUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLStreamUtils.h; sourceTree = "<group>"; };
-		146AC0AC11FF267900E4BC44 /* _TLStreamUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLStreamUtils.m; sourceTree = "<group>"; };
-		1470DE57120130040070A21B /* _TLDealView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLDealView.h; sourceTree = "<group>"; };
-		1470DE58120130040070A21B /* _TLDealView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLDealView.m; sourceTree = "<group>"; };
-		1470DEA5120132B40070A21B /* _TLMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLMapView.h; sourceTree = "<group>"; };
-		1470DEA6120132B40070A21B /* _TLMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLMapView.m; sourceTree = "<group>"; };
 		1470DFD5120140070070A21B /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
 		1470DFD6120140070070A21B /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
-		147278DA121C6DC1001FCBBA /* HelveticaNeue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HelveticaNeue.ttf; path = Resources/HelveticaNeue.ttf; sourceTree = "<group>"; };
-		14730358121C58FB00D34F53 /* already_used.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = already_used.png; path = Resources/already_used.png; sourceTree = "<group>"; };
-		1473035A121C58FB00D34F53 /* flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flash.png; path = Resources/flash.png; sourceTree = "<group>"; };
-		1473035B121C58FB00D34F53 /* Helvetica-Bold.ttf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Helvetica-Bold.ttf"; path = "Resources/Helvetica-Bold.ttf"; sourceTree = "<group>"; };
-		1473035C121C58FB00D34F53 /* HelveticaBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HelveticaBold.ttf; path = Resources/HelveticaBold.ttf; sourceTree = "<group>"; };
-		1473035D121C58FB00D34F53 /* HelveticaNeueBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HelveticaNeueBold.ttf; path = Resources/HelveticaNeueBold.ttf; sourceTree = "<group>"; };
-		1473035E121C58FB00D34F53 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
-		14730360121C58FB00D34F53 /* merchant_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = merchant_logo.png; path = Resources/merchant_logo.png; sourceTree = "<group>"; };
-		14730362121C58FB00D34F53 /* offer_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = offer_bg.png; path = Resources/offer_bg.png; sourceTree = "<group>"; };
-		14730364121C58FB00D34F53 /* nearby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nearby.png; path = Resources/nearby.png; sourceTree = "<group>"; };
-		14730366121C58FB00D34F53 /* tap_to_use.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tap_to_use.png; path = Resources/tap_to_use.png; sourceTree = "<group>"; };
-		14730367121C58FB00D34F53 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = Resources/bg.png; sourceTree = "<group>"; };
-		14730368121C58FB00D34F53 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Resources/logo.png; sourceTree = "<group>"; };
-		1473038C121C5ADD00D34F53 /* _TLStoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLStoreView.h; sourceTree = "<group>"; };
-		1473038D121C5ADD00D34F53 /* _TLStoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLStoreView.m; sourceTree = "<group>"; };
-		14751B5A121CA53800944076 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = Resources/back.png; sourceTree = "<group>"; };
-		14751BFD121CC8A200944076 /* merchant_logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = merchant_logo2.png; path = Resources/merchant_logo2.png; sourceTree = "<group>"; };
-		147ED6E112223B280040349B /* _TLCoupon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLCoupon.h; sourceTree = "<group>"; };
-		147ED6E212223B280040349B /* _TLCoupon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLCoupon.m; sourceTree = "<group>"; };
-		147ED77F122247380040349B /* _TLStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLStore.h; sourceTree = "<group>"; };
-		147ED780122247380040349B /* _TLStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLStore.m; sourceTree = "<group>"; };
-		14858929121DA745005EAB19 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		14858972121DADAD005EAB19 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		148589C2121DB474005EAB19 /* _TLMapStoreAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLMapStoreAnnotation.h; sourceTree = "<group>"; };
-		148589C3121DB474005EAB19 /* _TLMapStoreAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLMapStoreAnnotation.m; sourceTree = "<group>"; };
-		14858CB0121E57C2005EAB19 /* _TLSingleMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLSingleMapView.h; sourceTree = "<group>"; };
-		14858CB1121E57C2005EAB19 /* _TLSingleMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLSingleMapView.m; sourceTree = "<group>"; };
 		1485C23412021BCA009FA21A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
-		149435FE121EE821008C45B7 /* bg_flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_flash.png; path = Resources/bg_flash.png; sourceTree = "<group>"; };
-		149435FF121EE821008C45B7 /* bring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bring.png; path = Resources/bring.png; sourceTree = "<group>"; };
-		14943600121EE821008C45B7 /* remind_me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = remind_me.png; path = Resources/remind_me.png; sourceTree = "<group>"; };
-		1497A1C61221AA77001FD040 /* _TLConfirmedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLConfirmedView.h; sourceTree = "<group>"; };
-		1497A1C71221AA77001FD040 /* _TLConfirmedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLConfirmedView.m; sourceTree = "<group>"; };
-		1497A2E31221B9F7001FD040 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		1497A2E51221B9F7001FD040 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		1497A3B91221D05B001FD040 /* confirmed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = confirmed.png; path = Resources/confirmed.png; sourceTree = "<group>"; };
-		1497A3BA1221D05B001FD040 /* follow2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = follow2.png; path = Resources/follow2.png; sourceTree = "<group>"; };
-		1497A3BB1221D05B001FD040 /* following2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = following2.png; path = Resources/following2.png; sourceTree = "<group>"; };
-		14994A63125E93A100CA042C /* TappLocalAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TappLocalAPI.h; sourceTree = "<group>"; };
-		14994A64125E93A100CA042C /* TappLocalAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TappLocalAPI.m; sourceTree = "<group>"; };
-		14994B5B125FC80700CA042C /* follow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = follow.png; path = Resources/follow.png; sourceTree = "<group>"; };
-		14994B5C125FC80700CA042C /* unfollow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unfollow.png; path = Resources/unfollow.png; sourceTree = "<group>"; };
-		14A0E4251241702400525707 /* _TLTappLocalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLTappLocalView.h; sourceTree = "<group>"; };
-		14A0E4261241702400525707 /* _TLTappLocalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLTappLocalView.m; sourceTree = "<group>"; };
-		14A539FC11F9F7DA00A2097E /* _TLCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLCacheManager.h; sourceTree = "<group>"; };
-		14A539FD11F9F7DA00A2097E /* _TLCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLCacheManager.m; sourceTree = "<group>"; };
-		14A539FE11F9F7DA00A2097E /* _TLResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLResourceManager.h; sourceTree = "<group>"; };
-		14A539FF11F9F7DA00A2097E /* _TLResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLResourceManager.m; sourceTree = "<group>"; };
-		14A53A0011F9F7DA00A2097E /* _TLRMSTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLRMSTracker.h; sourceTree = "<group>"; };
-		14A53A0111F9F7DA00A2097E /* _TLRMSTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLRMSTracker.m; sourceTree = "<group>"; };
-		14A53A0611F9F80E00A2097E /* _TLByteUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLByteUtils.h; sourceTree = "<group>"; };
-		14A53A0711F9F80E00A2097E /* _TLByteUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLByteUtils.m; sourceTree = "<group>"; };
-		14A53A0E11F9F80E00A2097E /* _TLTextUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLTextUtils.h; sourceTree = "<group>"; };
-		14A53A0F11F9F80E00A2097E /* _TLTextUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLTextUtils.m; sourceTree = "<group>"; };
-		14A53A2511F9F84D00A2097E /* NSDataBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataBase64.h; sourceTree = "<group>"; };
-		14A53A2611F9F84D00A2097E /* NSDataBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataBase64.m; sourceTree = "<group>"; };
-		14A53B1111FA2E5A00A2097E /* _TLColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLColorUtils.h; sourceTree = "<group>"; };
-		14A53B1211FA2E5A00A2097E /* _TLColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLColorUtils.m; sourceTree = "<group>"; };
-		14ABE68F124009610031D489 /* _TLMerchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLMerchant.h; sourceTree = "<group>"; };
-		14ABE690124009610031D489 /* _TLMerchant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLMerchant.m; sourceTree = "<group>"; };
-		14ABE74E124052040031D489 /* _TLCouponsXmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TLCouponsXmlParser.h; sourceTree = "<group>"; };
-		14ABE74F124052040031D489 /* _TLCouponsXmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TLCouponsXmlParser.m; sourceTree = "<group>"; };
-		14C414D5125D434500BA87C7 /* registered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = registered.png; path = Resources/registered.png; sourceTree = "<group>"; };
+		14A1354F1268162800D9A8A0 /* TappLocalAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TappLocalAPI.h; sourceTree = "<group>"; };
+		14A13679126821BB00D9A8A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.1.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
+		14A1369D126821DD00D9A8A0 /* libTapplocalSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTapplocalSDK.a; path = "../tapplocalSDK/build/Debug-universal/libTapplocalSDK.a"; sourceTree = SOURCE_ROOT; };
+		14AF726712685ABB00C03B35 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TappLocalAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TappLocalAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* TappLocalAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TappLocalAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* TappLocal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappLocal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28D7ACF60DDB3853001CB0EB /* TappLocalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TappLocalViewController.h; sourceTree = "<group>"; };
 		28D7ACF70DDB3853001CB0EB /* TappLocalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TappLocalViewController.m; sourceTree = "<group>"; };
@@ -207,15 +62,10 @@
 			files = (
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				146ABFBF11FF202F00E4BC44 /* QuartzCore.framework in Frameworks */,
-				146ABFD711FF206400E4BC44 /* AudioToolbox.framework in Frameworks */,
-				146ABFD911FF206400E4BC44 /* MediaPlayer.framework in Frameworks */,
-				146ABFDB11FF206400E4BC44 /* MessageUI.framework in Frameworks */,
-				1485892A121DA745005EAB19 /* MapKit.framework in Frameworks */,
 				14858973121DADAD005EAB19 /* CoreLocation.framework in Frameworks */,
-				1497A2E41221B9F7001FD040 /* AddressBook.framework in Frameworks */,
-				1497A2E61221B9F7001FD040 /* AddressBookUI.framework in Frameworks */,
+				14A1367A126821BB00D9A8A0 /* CoreGraphics.framework in Frameworks */,
+				14A1369E126821DD00D9A8A0 /* libTapplocalSDK.a in Frameworks */,
+				14AF726812685ABB00C03B35 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,9 +75,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1439D19311F1002D00409DFF /* FontClasses */,
-				14A53A4111FA0C4600A2097E /* TappLocal */,
-				146AC0AA11FF264300E4BC44 /* Utils */,
 				1D3623240D0F684500981E51 /* TappLocalAppDelegate.h */,
 				1D3623250D0F684500981E51 /* TappLocalAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* TappLocalViewController.h */,
@@ -236,113 +83,6 @@
 				1470DFD6120140070070A21B /* HomeView.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		142C3BE3125A732B00F865D7 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				14A53A0711F9F80E00A2097E /* _TLByteUtils.m */,
-				14A53A0611F9F80E00A2097E /* _TLByteUtils.h */,
-				14A539FC11F9F7DA00A2097E /* _TLCacheManager.h */,
-				14A539FD11F9F7DA00A2097E /* _TLCacheManager.m */,
-				14A53B1111FA2E5A00A2097E /* _TLColorUtils.h */,
-				14A53B1211FA2E5A00A2097E /* _TLColorUtils.m */,
-				14ABE74E124052040031D489 /* _TLCouponsXmlParser.h */,
-				14ABE74F124052040031D489 /* _TLCouponsXmlParser.m */,
-				148589C2121DB474005EAB19 /* _TLMapStoreAnnotation.h */,
-				148589C3121DB474005EAB19 /* _TLMapStoreAnnotation.m */,
-				14A539FE11F9F7DA00A2097E /* _TLResourceManager.h */,
-				14A539FF11F9F7DA00A2097E /* _TLResourceManager.m */,
-				14A53A0011F9F7DA00A2097E /* _TLRMSTracker.h */,
-				14A53A0111F9F7DA00A2097E /* _TLRMSTracker.m */,
-				146AC0AB11FF267900E4BC44 /* _TLStreamUtils.h */,
-				146AC0AC11FF267900E4BC44 /* _TLStreamUtils.m */,
-				14A53A0E11F9F80E00A2097E /* _TLTextUtils.h */,
-				14A53A0F11F9F80E00A2097E /* _TLTextUtils.m */,
-			);
-			name = Util;
-			sourceTree = "<group>";
-		};
-		142C3BE4125A734200F865D7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				14ABE68F124009610031D489 /* _TLMerchant.h */,
-				14ABE690124009610031D489 /* _TLMerchant.m */,
-				147ED6E112223B280040349B /* _TLCoupon.h */,
-				147ED6E212223B280040349B /* _TLCoupon.m */,
-				147ED77F122247380040349B /* _TLStore.h */,
-				147ED780122247380040349B /* _TLStore.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		142C3BE5125A737B00F865D7 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				1497A1C61221AA77001FD040 /* _TLConfirmedView.h */,
-				1497A1C71221AA77001FD040 /* _TLConfirmedView.m */,
-				1470DE57120130040070A21B /* _TLDealView.h */,
-				1470DE58120130040070A21B /* _TLDealView.m */,
-				1470DEA5120132B40070A21B /* _TLMapView.h */,
-				1470DEA6120132B40070A21B /* _TLMapView.m */,
-				14858CB0121E57C2005EAB19 /* _TLSingleMapView.h */,
-				14858CB1121E57C2005EAB19 /* _TLSingleMapView.m */,
-				1473038C121C5ADD00D34F53 /* _TLStoreView.h */,
-				1473038D121C5ADD00D34F53 /* _TLStoreView.m */,
-				14A0E4251241702400525707 /* _TLTappLocalView.h */,
-				14A0E4261241702400525707 /* _TLTappLocalView.m */,
-				142C3D48125A7D0600F865D7 /* _TL.h */,
-				142C3D49125A7D0600F865D7 /* _TL.m */,
-				14994A63125E93A100CA042C /* TappLocalAPI.h */,
-				14994A64125E93A100CA042C /* TappLocalAPI.m */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
-		1439D19311F1002D00409DFF /* FontClasses */ = {
-			isa = PBXGroup;
-			children = (
-				1439D18511F0FF5C00409DFF /* ZAttributedString.h */,
-				1439D18611F0FF5C00409DFF /* ZAttributedString.m */,
-				1439D18711F0FF5C00409DFF /* ZAttributedStringPrivate.h */,
-				1439D18811F0FF5C00409DFF /* ZFont.h */,
-				1439D18911F0FF5C00409DFF /* ZFont.m */,
-				1439D17F11F0FF5C00409DFF /* FontLabel.h */,
-				1439D18011F0FF5C00409DFF /* FontLabel.m */,
-				1439D18111F0FF5C00409DFF /* FontLabelStringDrawing.h */,
-				1439D18211F0FF5C00409DFF /* FontLabelStringDrawing.m */,
-				1439D18311F0FF5C00409DFF /* FontManager.h */,
-				1439D18411F0FF5C00409DFF /* FontManager.m */,
-			);
-			name = FontClasses;
-			sourceTree = "<group>";
-		};
-		146AC0AA11FF264300E4BC44 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				146ABEED11FF1CF800E4BC44 /* AQXMLParser.h */,
-				146ABEEE11FF1CF800E4BC44 /* AQXMLParser.m */,
-				146ABEEF11FF1CF800E4BC44 /* AQXMLParserDelegate.h */,
-				146ABEF011FF1CF800E4BC44 /* AQXMLParserDelegate.m */,
-				146AC07811FF253500E4BC44 /* TouchXML.h */,
-				146ABEF611FF1D3F00E4BC44 /* TreeNode.h */,
-				146ABEF711FF1D3F00E4BC44 /* TreeNode.m */,
-				146ABEF811FF1D3F00E4BC44 /* XMLParser.h */,
-				146ABEF911FF1D3F00E4BC44 /* XMLParser.m */,
-				14A53A2511F9F84D00A2097E /* NSDataBase64.h */,
-				14A53A2611F9F84D00A2097E /* NSDataBase64.m */,
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
-		14A53A4111FA0C4600A2097E /* TappLocal */ = {
-			isa = PBXGroup;
-			children = (
-				142C3BE5125A737B00F865D7 /* UI */,
-				142C3BE4125A734200F865D7 /* Model */,
-				142C3BE3125A732B00F865D7 /* Util */,
-			);
-			name = TappLocal;
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -356,6 +96,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				14A1354F1268162800D9A8A0 /* TappLocalAPI.h */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -378,34 +119,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				14994B5B125FC80700CA042C /* follow.png */,
-				14994B5C125FC80700CA042C /* unfollow.png */,
-				14C414D5125D434500BA87C7 /* registered.png */,
-				142C3FDE125ACFC800F865D7 /* directions.png */,
-				142C3FDF125ACFC800F865D7 /* more_deals.png */,
-				142C3FE0125ACFC800F865D7 /* no_thanks.png */,
-				142C3FE1125ACFC800F865D7 /* snooze.png */,
-				147278DA121C6DC1001FCBBA /* HelveticaNeue.ttf */,
-				1473035B121C58FB00D34F53 /* Helvetica-Bold.ttf */,
-				1473035C121C58FB00D34F53 /* HelveticaBold.ttf */,
-				1473035D121C58FB00D34F53 /* HelveticaNeueBold.ttf */,
-				1497A3B91221D05B001FD040 /* confirmed.png */,
-				1497A3BA1221D05B001FD040 /* follow2.png */,
-				1497A3BB1221D05B001FD040 /* following2.png */,
-				149435FE121EE821008C45B7 /* bg_flash.png */,
-				149435FF121EE821008C45B7 /* bring.png */,
-				14943600121EE821008C45B7 /* remind_me.png */,
-				14751B5A121CA53800944076 /* back.png */,
-				14730358121C58FB00D34F53 /* already_used.png */,
-				14730367121C58FB00D34F53 /* bg.png */,
-				1473035A121C58FB00D34F53 /* flash.png */,
-				1473035E121C58FB00D34F53 /* Icon.png */,
-				14730360121C58FB00D34F53 /* merchant_logo.png */,
-				14751BFD121CC8A200944076 /* merchant_logo2.png */,
-				14730362121C58FB00D34F53 /* offer_bg.png */,
-				14730364121C58FB00D34F53 /* nearby.png */,
-				14730366121C58FB00D34F53 /* tap_to_use.png */,
-				14730368121C58FB00D34F53 /* logo.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* TappLocal-Info.plist */,
 			);
@@ -415,17 +128,12 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1497A2E51221B9F7001FD040 /* AddressBookUI.framework */,
-				1497A2E31221B9F7001FD040 /* AddressBook.framework */,
+				14A1369D126821DD00D9A8A0 /* libTapplocalSDK.a */,
+				14AF726712685ABB00C03B35 /* MapKit.framework */,
+				14A13679126821BB00D9A8A0 /* CoreGraphics.framework */,
 				14858972121DADAD005EAB19 /* CoreLocation.framework */,
-				14858929121DA745005EAB19 /* MapKit.framework */,
-				146ABFD611FF206400E4BC44 /* AudioToolbox.framework */,
-				146ABFD811FF206400E4BC44 /* MediaPlayer.framework */,
-				146ABFDA11FF206400E4BC44 /* MessageUI.framework */,
-				146ABFBE11FF202F00E4BC44 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
-				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -440,6 +148,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				14A137B01268312B00D9A8A0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -457,7 +166,6 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TappLocal" */;
 			compatibilityVersion = "Xcode 3.1";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -479,36 +187,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1497A3BE1221D05B001FD040 /* confirmed.png in Resources */,
-				1497A3BF1221D05B001FD040 /* follow2.png in Resources */,
-				1497A3C01221D05B001FD040 /* following2.png in Resources */,
-				14943601121EE821008C45B7 /* bg_flash.png in Resources */,
-				14943602121EE821008C45B7 /* bring.png in Resources */,
-				14943603121EE821008C45B7 /* remind_me.png in Resources */,
-				14751B5B121CA53800944076 /* back.png in Resources */,
-				14730369121C58FB00D34F53 /* already_used.png in Resources */,
-				14730378121C58FB00D34F53 /* bg.png in Resources */,
-				1473036B121C58FB00D34F53 /* flash.png in Resources */,
-				1473036F121C58FB00D34F53 /* Icon.png in Resources */,
-				14730371121C58FB00D34F53 /* merchant_logo.png in Resources */,
-				14751BFE121CC8A200944076 /* merchant_logo2.png in Resources */,
-				14730373121C58FB00D34F53 /* offer_bg.png in Resources */,
-				14730375121C58FB00D34F53 /* nearby.png in Resources */,
-				14730377121C58FB00D34F53 /* tap_to_use.png in Resources */,
-				14730379121C58FB00D34F53 /* logo.png in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				1485C23512021BCA009FA21A /* Entitlements.plist in Resources */,
-				1473036C121C58FB00D34F53 /* Helvetica-Bold.ttf in Resources */,
-				1473036D121C58FB00D34F53 /* HelveticaBold.ttf in Resources */,
-				1473036E121C58FB00D34F53 /* HelveticaNeueBold.ttf in Resources */,
-				147278DB121C6DC1001FCBBA /* HelveticaNeue.ttf in Resources */,
-				142C3FE2125ACFC800F865D7 /* directions.png in Resources */,
-				142C3FE3125ACFC800F865D7 /* more_deals.png in Resources */,
-				142C3FE4125ACFC800F865D7 /* no_thanks.png in Resources */,
-				142C3FE5125ACFC800F865D7 /* snooze.png in Resources */,
-				14C414D6125D434500BA87C7 /* registered.png in Resources */,
-				14994B5D125FC80700CA042C /* follow.png in Resources */,
-				14994B5E125FC80700CA042C /* unfollow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,40 +199,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14A0E44F124170D600525707 /* _TLTappLocalView.m in Sources */,
-				14ABE8AB124062730031D489 /* _TLMerchant.m in Sources */,
-				14ABE791124053D10031D489 /* _TLCouponsXmlParser.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* TappLocalAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* TappLocalViewController.m in Sources */,
-				1439D18A11F0FF5C00409DFF /* FontLabel.m in Sources */,
-				1439D18B11F0FF5C00409DFF /* FontLabelStringDrawing.m in Sources */,
-				1439D18C11F0FF5C00409DFF /* FontManager.m in Sources */,
-				1439D18D11F0FF5C00409DFF /* ZAttributedString.m in Sources */,
-				1439D18E11F0FF5C00409DFF /* ZFont.m in Sources */,
-				14A53A0211F9F7DA00A2097E /* _TLCacheManager.m in Sources */,
-				14A53A0311F9F7DA00A2097E /* _TLResourceManager.m in Sources */,
-				14A53A0411F9F7DA00A2097E /* _TLRMSTracker.m in Sources */,
-				14A53A1011F9F80E00A2097E /* _TLByteUtils.m in Sources */,
-				14A53A1411F9F80E00A2097E /* _TLTextUtils.m in Sources */,
-				14A53A2711F9F84D00A2097E /* NSDataBase64.m in Sources */,
-				14A53B1311FA2E5A00A2097E /* _TLColorUtils.m in Sources */,
-				146ABEF311FF1CF800E4BC44 /* AQXMLParser.m in Sources */,
-				146ABEF411FF1CF800E4BC44 /* AQXMLParserDelegate.m in Sources */,
-				146ABEFA11FF1D3F00E4BC44 /* TreeNode.m in Sources */,
-				146ABEFB11FF1D3F00E4BC44 /* XMLParser.m in Sources */,
-				146AC0AD11FF267900E4BC44 /* _TLStreamUtils.m in Sources */,
-				1470DE59120130040070A21B /* _TLDealView.m in Sources */,
-				1470DEA7120132B40070A21B /* _TLMapView.m in Sources */,
 				1470DFD7120140070070A21B /* HomeView.m in Sources */,
-				1473038E121C5ADD00D34F53 /* _TLStoreView.m in Sources */,
-				148589C4121DB474005EAB19 /* _TLMapStoreAnnotation.m in Sources */,
-				14858CB2121E57C2005EAB19 /* _TLSingleMapView.m in Sources */,
-				1497A1C81221AA77001FD040 /* _TLConfirmedView.m in Sources */,
-				147ED6E312223B280040349B /* _TLCoupon.m in Sources */,
-				147ED781122247380040349B /* _TLStore.m in Sources */,
-				142C3D4A125A7D0600F865D7 /* _TL.m in Sources */,
-				14994A65125E93A100CA042C /* TappLocalAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +221,7 @@
 					"\"$(SRCROOT)/../../Desktop/Objective-XML-5.2/MPWXmlKit/build/Development\"",
 					"$(inherited)",
 					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+					"\"$(SRCROOT)/iphoneos3.2/System/Library/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -580,6 +231,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Desktop\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../SDK/build/Debug-universal\"",
+					"\"$(SRCROOT)/../tapplocalSDK/build/Debug-universal\"",
+					"\"$(SRCROOT)/../tapplocalSDK/build/Release-iphoneos\"",
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = TappLocal;
@@ -600,6 +255,7 @@
 					"\"$(SRCROOT)/../../Desktop/Objective-XML-5.2/MPWXmlKit/build/Development\"",
 					"$(inherited)",
 					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
+					"\"$(SRCROOT)/iphoneos3.2/System/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TappLocal_Prefix.pch;
@@ -607,6 +263,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Desktop\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../SDK/build/Debug-universal\"",
+					"\"$(SRCROOT)/../tapplocalSDK/build/Debug-universal\"",
+					"\"$(SRCROOT)/../tapplocalSDK/build/Release-iphoneos\"",
 				);
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = TappLocal;
@@ -632,7 +292,7 @@
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "CCF35AFE-A48A-447A-AA19-2F5E185330C7";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CCF35AFE-A48A-447A-AA19-2F5E185330C7";
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos3.1.2;
 				USER_HEADER_SEARCH_PATHS = /usr/include/libxml2;
 			};
 			name = Debug;

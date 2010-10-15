@@ -7,9 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FontLabel.h"
-#import "_TLColorUtils.h"
-#import "_TLResourceManager.h"
 #import "TappLocalAPI.h"
 
 @interface HomeView : NSObject {
@@ -19,12 +16,12 @@
 	UIImageView* bg;
 	UIImageView* logo;	
 	
-	FontLabel* text;
-	FontLabel* link;
+	UILabel* text;
+	UILabel* link;
 	UIView* underline;
 	UIButton* button;
 
-	FontLabel* boxtext;
+	UILabel* boxtext;
 
 	BOOL isBuilt;
 	
