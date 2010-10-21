@@ -500,6 +500,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_VARIANTS = (
+					i386,
+					normal,
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -510,6 +514,7 @@
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.2;
 				USER_HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				VALID_ARCHS = "i386 armv6 armv7";
 			};
 			name = Debug;
 		};
@@ -517,6 +522,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_VARIANTS = (
+					i386,
+					normal,
+				);
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -526,6 +535,7 @@
 				PREBINDING = NO;
 				SDKROOT = iphoneos3.1.2;
 				USER_HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				VALID_ARCHS = "i386 armv6 armv7";
 			};
 			name = Release;
 		};

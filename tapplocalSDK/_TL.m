@@ -15,6 +15,7 @@
 @synthesize lastLatitude;
 @synthesize lastLongitude;
 @synthesize refreshTime;
+@synthesize simulationMode;
 
 int const TL_ACTION_FLAG = 0;
 int const TL_ACTION_VIEW = 1;
@@ -201,9 +202,15 @@ int const TL_ACTION_UNFOLLOW = 10;
 {
 	//NSLog(@"xml");
 	
-	NSString* server = @"http://72.47.200.205/xml/";
+	NSString* server = @"http://m.tapplocal.com/xml/";
 	
-	NSString* file = [[NSString stringWithFormat:@"%.3fi%.3f",lastLatitude,lastLongitude] retain];
+	NSString* file = nil;
+	
+	if (!simulationMode)
+		file = [NSString stringWithFormat:@"%.3fi%.3f",lastLatitude,lastLongitude];
+	else
+		file = @"simulation";
+	
 	NSString* fileTemp = [NSString stringWithFormat:@"%@%@.xml?udid=%@", server, [file stringByReplacingOccurrencesOfString:@"." withString:@"_"],udid];
 	
 	NSURL* url = [NSURL URLWithString:fileTemp];
@@ -321,7 +328,7 @@ int const TL_ACTION_UNFOLLOW = 10;
 -(void)sendLog:(int) action:(NSString*)email
 {
 	//avoid to do it twice
-	if ([_TLRMSTracker loadSafeString:[NSString stringWithFormat:@"%i_%i",action,currentCoupon.idcoupon]] == nil)
+	if (([_TLRMSTracker loadSafeString:[NSString stringWithFormat:@"%i_%i",action,currentCoupon.idcoupon]] == nil) && (!simulationMode))
 	{
 		//save
 		[_TLRMSTracker saveString:[NSString stringWithFormat:@"%i_%i",action,currentCoupon.idcoupon]:@"1"];
@@ -330,7 +337,7 @@ int const TL_ACTION_UNFOLLOW = 10;
 			email = @"";
 
 		//mount the url
-		NSString* actionUrl = [NSString stringWithFormat:@"http://72.47.200.205:8080/tapplocaladmin/logger?id_coupon=%i&action=%i&udid=%@&lat=%.7f&lon=%.7f&email=%@&id_merchant=%i&id_representative=%i&id_store=%i&code=%@",
+		NSString* actionUrl = [NSString stringWithFormat:@"http://new.tapplocal.com:8080/tapplocaladmin/logger?id_coupon=%i&action=%i&udid=%@&lat=%.7f&lon=%.7f&email=%@&id_merchant=%i&id_representative=%i&id_store=%i&code=%@",
 							   currentCoupon.idcoupon,action,udid,lastLatitude,lastLongitude,email,[currentCoupon getMerchant].idmerchant,[currentCoupon getMerchant].idrepresentative,((_TLStore*)[[currentCoupon getStores] objectAtIndex:0]).idstore,code ];
 		
 		NSURL* url = [NSURL URLWithString:actionUrl];

@@ -70,8 +70,8 @@
 		[merchantlogo addTarget:self action:@selector(merchantClick) forControlEvents:UIControlEventTouchUpInside];
 		[mother addSubview:merchantlogo];		
 		
-		text1 = [[UILabel alloc] initWithFrame:CGRectMake(35, 226, 250, 70)];
-		text1.font = [UIFont fontWithName:@"HelveticaNeue" size:20.0f];
+		text1 = [[UILabel alloc] initWithFrame:CGRectMake(35, 220, 250, 76)];
+		text1.font = [UIFont fontWithName:@"HelveticaNeue" size:16.0f];
 		text1.textColor = [_TLColorUtils colorFromRGB:@"747474"];
 		text1.backgroundColor = nil;
 		text1.opaque = NO;

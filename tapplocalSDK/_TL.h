@@ -43,12 +43,14 @@
 	CLLocationManager* locationManager;
 	NSString* udid;
 	NSString* code;
+	BOOL simulationMode;
 }
 
 @property(readonly,retain) UIViewController* vc;
 @property(readonly,assign) float lastLatitude;
 @property(readonly,assign) float lastLongitude;
 @property(readwrite,assign) int refreshTime;
+@property(readwrite,assign) BOOL simulationMode;
 
 extern int const TL_ACTION_FLAG;
 extern int const TL_ACTION_VIEW;

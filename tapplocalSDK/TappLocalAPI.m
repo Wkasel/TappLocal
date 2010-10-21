@@ -45,4 +45,10 @@
 	tl.refreshTime = seconds;
 }
 
+-(void)setSimulationMode:(BOOL) s
+{
+	tl.simulationMode = s;	
+}
+
+
 @end

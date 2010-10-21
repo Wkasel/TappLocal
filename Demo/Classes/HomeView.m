@@ -31,6 +31,7 @@
 	[tl release];
 	tl = [[TappLocalAPI alloc] initWithViewController: parent: @"526772_1"];
 	[tl setRefreshTimeNewAds:60];
+	[tl setSimulationMode:TRUE];
 	[tl start];
 	
 	[controller.view addSubview:mother];

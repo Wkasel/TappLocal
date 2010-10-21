@@ -21,5 +21,6 @@
 -(void)start;
 -(void)stop;
 -(void)setRefreshTimeNewAds:(int) seconds;
+-(void)setSimulationMode:(BOOL) s;
 
 @end

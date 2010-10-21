@@ -279,6 +279,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_VARIANTS = (
+					i386,
+					normal,
+				);
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Guilherme Carvalho (694JA9CXNP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Guilherme Carvalho (694JA9CXNP)";
@@ -294,6 +298,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CCF35AFE-A48A-447A-AA19-2F5E185330C7";
 				SDKROOT = iphoneos3.1.2;
 				USER_HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				VALID_ARCHS = "i386 armv6 armv7";
 			};
 			name = Debug;
 		};
@@ -301,6 +306,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUILD_VARIANTS = (
+					i386,
+					normal,
+				);
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Guilherme Carvalho (694JA9CXNP)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Guilherme Carvalho (694JA9CXNP)";
@@ -316,6 +325,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CCF35AFE-A48A-447A-AA19-2F5E185330C7";
 				SDKROOT = iphoneos3.1.2;
 				USER_HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				VALID_ARCHS = "i386 armv6 armv7";
 			};
 			name = Release;
 		};
