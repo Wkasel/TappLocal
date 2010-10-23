@@ -42,8 +42,19 @@
 
     <servlet>
         <servlet-name>logger</servlet-name>
-        <servlet-class>com.tapplocal.admin.servlet.LogReceiverServler</servlet-class>
+        <servlet-class>com.tapplocal.admin.servlet.LogReceiverServlet</servlet-class>
     </servlet>
+    
+    <servlet>
+        <servlet-name>beta</servlet-name>
+        <servlet-class>com.tapplocal.admin.servlet.BetaUsersImporterServler</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>beta</servlet-name>
+        <url-pattern>/beta</url-pattern>
+    </servlet-mapping>  
+
 
     <servlet-mapping>
         <servlet-name>logger</servlet-name>

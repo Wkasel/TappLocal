@@ -13,16 +13,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.nextframework.bean.annotation.DescriptionProperty;
-
 @Entity
 @Table(name="merchant")
 public class Merchant {
 
 	private Long id;
 	private String name;
-	private String email;
-	private String password;	
 	private String site;
 	private String phone;
 	private String logoUrl;	
@@ -43,17 +39,6 @@ public class Merchant {
 	@Column(name="name")
 	public String getName() {
 		return name;
-	}
-
-	@DescriptionProperty
-	@Column(name="email")
-	public String getEmail() {
-		return email;
-	}	
-
-	@Column(name="password")
-	public String getPassword() {
-		return password;
 	}
 
 	@Column(name="site")	
@@ -126,14 +111,6 @@ public class Merchant {
 	
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public void setPassword(String password) {
-		this.password = password;
 	}
 	
 }

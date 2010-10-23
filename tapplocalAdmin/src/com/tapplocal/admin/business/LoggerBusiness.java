@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.meritia.util.DateUtils;
-import com.tapplocal.admin.servlet.LogReceiverServler;
+import com.tapplocal.admin.servlet.LogReceiverServlet;
 import com.tapplocal.admin.vo.LogVO;
 
 public class LoggerBusiness {
@@ -93,7 +93,7 @@ public class LoggerBusiness {
 			representativeVO = getRepresentativeVO(id_representative);
 		}
 		
-		if (action.equals(LogReceiverServler.ACTION_FLAG))
+		if (action.equals(LogReceiverServlet.ACTION_FLAG))
 		{
 			couponVO.flag +=1;
 			merchantVO.flag +=1;
@@ -104,7 +104,7 @@ public class LoggerBusiness {
 			if (representativeVO != null)
 				representativeVO.flag +=1;
 		}		
-		else if (action.equals(LogReceiverServler.ACTION_VIEW))
+		else if (action.equals(LogReceiverServlet.ACTION_VIEW))
 		{
 			couponVO.views +=1;
 			merchantVO.views +=1;
@@ -115,7 +115,7 @@ public class LoggerBusiness {
 			if (representativeVO != null)
 				representativeVO.views +=1;
 		}
-		else if (action.equals(LogReceiverServler.ACTION_CLOSE))
+		else if (action.equals(LogReceiverServlet.ACTION_CLOSE))
 		{
 			couponVO.close +=1;
 			merchantVO.close +=1;
@@ -126,7 +126,7 @@ public class LoggerBusiness {
 			if (representativeVO != null)
 				representativeVO.close +=1;			
 		}
-		else if (action.equals(LogReceiverServler.ACTION_DIRECTIONS))
+		else if (action.equals(LogReceiverServlet.ACTION_DIRECTIONS))
 		{
 			couponVO.directions +=1;
 			merchantVO.directions +=1;
@@ -137,7 +137,7 @@ public class LoggerBusiness {
 			if (representativeVO != null)
 				representativeVO.directions +=1;			
 		}
-		else if (action.equals(LogReceiverServler.ACTION_MERCHANT))
+		else if (action.equals(LogReceiverServlet.ACTION_MERCHANT))
 		{
 			couponVO.merchant +=1;
 			merchantVO.merchant +=1;
@@ -148,7 +148,7 @@ public class LoggerBusiness {
 			if (representativeVO != null)
 				representativeVO.merchant +=1;			
 		}
-		else if (action.equals(LogReceiverServler.ACTION_MORE_DEALS))
+		else if (action.equals(LogReceiverServlet.ACTION_MORE_DEALS))
 		{
 			couponVO.moreDeals +=1;
 			merchantVO.moreDeals +=1;
@@ -159,7 +159,7 @@ public class LoggerBusiness {
 			if (representativeVO != null)
 				representativeVO.moreDeals +=1;			
 		}
-		else if (action.equals(LogReceiverServler.ACTION_NO_THANKS))
+		else if (action.equals(LogReceiverServlet.ACTION_NO_THANKS))
 		{
 			couponVO.noThanks +=1;
 			merchantVO.noThanks +=1;
@@ -170,7 +170,7 @@ public class LoggerBusiness {
 			if (representativeVO != null)
 				representativeVO.noThanks +=1;			
 		}
-		else if (action.equals(LogReceiverServler.ACTION_USED_FAR))
+		else if (action.equals(LogReceiverServlet.ACTION_USED_FAR))
 		{
 			couponVO.usedFar +=1;	
 			merchantVO.usedFar +=1;
@@ -181,7 +181,7 @@ public class LoggerBusiness {
 			if (representativeVO != null)
 				representativeVO.usedFar +=1;			
 		}
-		else if (action.equals(LogReceiverServler.ACTION_USED_OK))
+		else if (action.equals(LogReceiverServlet.ACTION_USED_OK))
 		{
 			couponVO.usedOk +=1;
 			merchantVO.usedOk +=1;
