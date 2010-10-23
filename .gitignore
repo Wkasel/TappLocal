@@ -1,0 +1,7 @@
+Demo/build/**/*
+tapplocalSDK/build/**/*
+*.mode1v3
+*.pbxuser
+.DS_Store
+*.class
+*.war
