@@ -277,7 +277,8 @@ public class CouponService extends GenericService<Coupon>{
 		for (int i=0; i<files.length; i++)
 		{
 			//delete the file
-			files[i].delete();
+			if (files[i].getName().indexOf("simulation") <= 0)
+				files[i].delete();
 		}		
 	}
 
