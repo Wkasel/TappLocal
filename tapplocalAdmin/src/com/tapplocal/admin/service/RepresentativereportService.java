@@ -83,6 +83,11 @@ public class RepresentativereportService extends GenericService<Representativere
 			else
 				rr.setCouponView(vo.views + rr.getCouponView());	
 			
+			if (rr.getBalance() == null)
+				rr.setBalance((vo.centsSpent*1.0D)/100.0D);
+			else
+				rr.setBalance(((vo.centsSpent*1.0D)/100.0D) + rr.getBalance());
+			
 			//the values are already persisted, delete them
 			vo.flag = 0;			
 			vo.close = 0;
@@ -93,6 +98,7 @@ public class RepresentativereportService extends GenericService<Representativere
 			vo.usedOk = 0;
 			vo.usedFar = 0;
 			vo.views = 0;
+			vo.centsSpent = 0;
 			
 			//when the day finishes, remove it
 			if (!vo.date.equals(DateUtils.now().substring(0,8)))

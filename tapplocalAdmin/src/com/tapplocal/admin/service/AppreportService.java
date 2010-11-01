@@ -88,6 +88,11 @@ public class AppreportService extends GenericService<Appreport>{
 			else
 				ar.setCouponView(vo.views + ar.getCouponView());	
 			
+			if (ar.getBalance() == null)
+				ar.setBalance((vo.centsSpent*1.0D)/100.0D);
+			else
+				ar.setBalance(((vo.centsSpent*1.0D)/100.0D) + ar.getBalance());			
+			
 			//the values are already persisted, delete them
 			vo.flag = 0;			
 			vo.close = 0;
@@ -98,6 +103,7 @@ public class AppreportService extends GenericService<Appreport>{
 			vo.usedOk = 0;
 			vo.usedFar = 0;
 			vo.views = 0;
+			vo.centsSpent = 0;
 			
 			//when the day finishes, remove it
 			if (!vo.date.equals(DateUtils.now().substring(0,8)))

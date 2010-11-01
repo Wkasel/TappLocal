@@ -12,4 +12,6 @@ public class LogVO {
 	public long usedFar;
 	public long usedOk;
 	public long merchant;
+	public long centsAvailable;
+	public long centsSpent;
 }

@@ -6,8 +6,10 @@ import org.nextframework.core.standard.Next;
 import org.nextframework.service.GenericService;
 
 import com.meritia.util.DateUtils;
+import com.tapplocal.admin.bean.Coupon;
 import com.tapplocal.admin.bean.Couponreport;
 import com.tapplocal.admin.business.LoggerBusiness;
+import com.tapplocal.admin.dao.CouponDAO;
 import com.tapplocal.admin.dao.CouponreportDAO;
 import com.tapplocal.admin.vo.LogVO;
 
@@ -82,6 +84,18 @@ public class CouponreportService extends GenericService<Couponreport>{
 				cr.setCouponView(vo.views);
 			else
 				cr.setCouponView(vo.views + cr.getCouponView());	
+					
+			if (cr.getBalance() == null)
+				cr.setBalance((vo.centsSpent*1.0D)/100.0D);
+			else
+				cr.setBalance(((vo.centsSpent*1.0D)/100.0D) + cr.getBalance());
+			
+			Next.getObject(CouponreportDAO.class).saveOrUpdate(cr);	
+			
+			//withdraw money from coupon
+			Coupon c = Next.getObject(CouponDAO.class).loadById(idCoupon);
+			c.setMaxBudget(((c.getMaxBudget()*100.0f)-vo.centsSpent)/100.0f);	
+			Next.getObject(CouponDAO.class).saveOrUpdate(c);
 			
 			//the values are already persisted, delete them
 			vo.flag = 0;			
@@ -93,12 +107,12 @@ public class CouponreportService extends GenericService<Couponreport>{
 			vo.usedOk = 0;
 			vo.usedFar = 0;
 			vo.views = 0;
+			vo.centsSpent = 0;
 			
 			//when the day finishes, remove it
 			if (!vo.date.equals(DateUtils.now().substring(0,8)))
 				couponMap.remove(idCoupon);
 						
-			Next.getObject(CouponreportDAO.class).saveOrUpdate(cr);			
 		}
 		
 	}

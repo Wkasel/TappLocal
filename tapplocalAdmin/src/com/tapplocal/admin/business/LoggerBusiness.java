@@ -3,7 +3,17 @@ package com.tapplocal.admin.business;
 import java.util.HashSet;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.jfree.util.Log;
+import org.nextframework.core.standard.Next;
+
 import com.meritia.util.DateUtils;
+import com.tapplocal.admin.bean.Coupon;
+import com.tapplocal.admin.bean.Couponreport;
+import com.tapplocal.admin.constants.TappLocalConstants;
+import com.tapplocal.admin.dao.CouponDAO;
+import com.tapplocal.admin.dao.CouponreportDAO;
+import com.tapplocal.admin.job.LogPersisterJob;
+import com.tapplocal.admin.service.CouponService;
 import com.tapplocal.admin.servlet.LogReceiverServlet;
 import com.tapplocal.admin.vo.LogVO;
 
@@ -87,7 +97,7 @@ public class LoggerBusiness {
 		LogVO appVO = getAppVO(id_app);
 		LogVO developerVO = getDeveloperVO(id_developer);
 		LogVO representativeVO = null;
-		
+						
 		if (id_representative != null)
 		{
 			representativeVO = getRepresentativeVO(id_representative);
@@ -183,6 +193,12 @@ public class LoggerBusiness {
 		}
 		else if (action.equals(LogReceiverServlet.ACTION_USED_OK))
 		{
+			couponVO.centsSpent += TappLocalConstants.priceInCents;
+			merchantVO.centsSpent += TappLocalConstants.priceInCents;
+			storeVO.centsSpent += TappLocalConstants.priceInCents;
+			appVO.centsSpent += TappLocalConstants.developerCutInCents;
+			developerVO.centsSpent += TappLocalConstants.developerCutInCents;			
+			
 			couponVO.usedOk +=1;
 			merchantVO.usedOk +=1;
 			storeVO.usedOk +=1;
@@ -190,9 +206,24 @@ public class LoggerBusiness {
 			developerVO.usedOk +=1;
 			
 			if (representativeVO != null)
-				representativeVO.usedOk +=1;			
+			{
+				representativeVO.usedOk +=1;	
+				representativeVO.centsSpent += TappLocalConstants.representativeCutInCents;
+			}
 		}
+		
+		//decrement the available on the coupon
+		couponVO.centsAvailable -= TappLocalConstants.priceInCents;
+		
+		//if there is no money anymore
+		if (couponVO.centsAvailable  < TappLocalConstants.priceInCents)
+		{
+			//save everybody
+			LogPersisterJob.run();
 			
+			//remove the coupon
+			Next.getObject(CouponService.class).removeCoupon(id_coupon);				
+		}		
 	}
 
 	private synchronized LogVO getStoreVO(Long id_store) {
@@ -227,7 +258,48 @@ public class LoggerBusiness {
 			couponVO = new LogVO();
 			couponVO.date = DateUtils.now().substring(0,8);
 			couponMap.put(id_coupon, couponVO);
+			
+			//load the coupon to set the budget			
+			Coupon c = Next.getObject(CouponDAO.class).loadById(id_coupon);			
+			
+			if (c != null)
+			{
+				Double mB = c.getMaxBudget();
+				Double mDB = c.getMaxDailyBudget();
+				
+				Double available = null;
+				
+				if ((mDB != null) && (mB == null))			
+					available = mDB;
+				else if ((mDB == null) && (mB != null))
+					available = mB;
+				else if ((mDB == null) && (mB == null))
+					Log.error("COUPON WITHOUT MONEY!!! ->" + id_coupon);
+				else 
+				{					
+					Couponreport cr = Next.getObject(CouponreportDAO.class).findCouponReportByDateAndCoupon(id_coupon,couponVO.date);
+					
+					if ((cr != null) && (cr.getBalance() != null))
+						mDB -= cr.getBalance();
+										
+					if (mDB <= mB)
+						available = mDB;
+					else
+						available = mB;					
+				}
+				
+				couponVO.centsAvailable = Math.round(available * 100.0);				
+			}
+			else
+				Log.error("COUPON NOT FOUND!!! ->" + id_coupon);
 		}
+		
+		if (couponVO.centsAvailable  < TappLocalConstants.priceInCents)
+		{
+			//remove the coupon
+			Next.getObject(CouponService.class).removeCoupon(id_coupon);				
+		}		
+		
 		return couponVO;
 	}
 	

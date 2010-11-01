@@ -14,8 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.nextframework.types.Money;
-
 @Entity
 @Table(name="coupon")
 public class Coupon {
@@ -36,8 +34,8 @@ public class Coupon {
 	private Long radius;
 	private Long targetAgeStart; 
 	private Long targetAgeEnd;
-	private Money maxBudget; 
-	private Money maxDailyBudget;
+	private Double maxBudget; 
+	private Double maxDailyBudget;
 	
 	private List<Couponstore> couponstoreList;
 
@@ -107,12 +105,12 @@ public class Coupon {
 	}
 
 	@Column(name="max_budget")
-	public Money getMaxBudget() {
+	public Double getMaxBudget() {
 		return maxBudget;
 	}
 
 	@Column(name="max_daily_budget")
-	public Money getMaxDailyBudget() {
+	public Double getMaxDailyBudget() {
 		return maxDailyBudget;
 	}
 	
@@ -185,11 +183,11 @@ public class Coupon {
 		this.targetAgeEnd = targetAgeEnd;
 	}
 
-	public void setMaxBudget(Money maxBudget) {
+	public void setMaxBudget(Double maxBudget) {
 		this.maxBudget = maxBudget;
 	}
 
-	public void setMaxDailyBudget(Money maxDailyBudget) {
+	public void setMaxDailyBudget(Double maxDailyBudget) {
 		this.maxDailyBudget = maxDailyBudget;
 	}
 

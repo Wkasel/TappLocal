@@ -21,6 +21,12 @@ public class LogPersisterJob implements Job {
 
 		Logger.getRootLogger().debug("started log persister");
 		
+		run();		
+		
+		Logger.getRootLogger().debug("finished log persister");
+	}
+
+	public static void run() {
 		//table merchant_report		
 		Next.getObject(MerchantreportService.class).persistMerchantReport();
 				
@@ -37,9 +43,7 @@ public class LogPersisterJob implements Job {
 		Next.getObject(AppreportService.class).persistAppReport();
 		
 		//table store_report
-		Next.getObject(StorereportService.class).persistStoreReport();		
-		
-		Logger.getRootLogger().debug("finished log persister");
+		Next.getObject(StorereportService.class).persistStoreReport();
 	}
 	
 }

@@ -50,7 +50,7 @@ public class LogReceiverServlet extends HttpServlet
 		Long id_store = new Long(req.getParameter("id_store"));	
 				
 		Long id_representative = null;
-		if ((req.getParameter("id_representative") == null) || (!req.getParameter("id_representative").equals("0"))) 
+		if ((req.getParameter("id_representative") != null) && (!req.getParameter("id_representative").equals("0"))) 
 			id_representative = new Long(req.getParameter("id_representative"));
 		
 		Long action = new Long(req.getParameter("action"));

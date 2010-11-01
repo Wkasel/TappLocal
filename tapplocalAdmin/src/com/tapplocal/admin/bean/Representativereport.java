@@ -23,7 +23,7 @@ public class Representativereport {
 	private Long couponDirections;	
 	private Long couponMerchant;
 	private Long couponMoreDeals;
-	
+	private Double balance;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -84,6 +84,14 @@ public class Representativereport {
 	@Column(name="coupon_flag")
 	public Long getCouponFlag() {
 		return couponFlag;
+	}
+		
+	public Double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(Double balance) {
+		this.balance = balance;
 	}
 
 	public void setCouponFlag(Long couponFlag) {

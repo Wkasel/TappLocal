@@ -83,6 +83,11 @@ public class StorereportService extends GenericService<Storereport>{
 			else
 				sr.setCouponView(vo.views + sr.getCouponView());	
 			
+			if (sr.getBalance() == null)
+				sr.setBalance((vo.centsSpent*1.0D)/100.0D);
+			else
+				sr.setBalance(((vo.centsSpent*1.0D)/100.0D) + sr.getBalance());			
+			
 			//the values are already persisted, delete them
 			vo.flag = 0;			
 			vo.close = 0;
@@ -93,6 +98,7 @@ public class StorereportService extends GenericService<Storereport>{
 			vo.usedOk = 0;
 			vo.usedFar = 0;
 			vo.views = 0;
+			vo.centsSpent = 0;
 			
 			//when the day finishes, remove it
 			if (!vo.date.equals(DateUtils.now().substring(0,8)))
