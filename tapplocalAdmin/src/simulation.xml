@@ -1,0 +1,27 @@
+<coupons>
+ <coupon><id>0</id>
+  <logo>http://new.tapplocal.com/upload/simulation_c.png</logo>
+  <title>50% off Mexican Food</title>
+  <text>When buying two meals tonight!</text>
+  <dates>This is a test!</dates>
+  <location>This is not valid!</location>
+  <merchant>
+   <id>0</id>
+   <logo>http://new.tapplocal.com/upload/simulation_m.png</logo>
+   <name>TappLocal</name>
+   <description>Here the merchants can write a descriptive text about themselves</description>
+   <phone>(555) 555-5555</phone>
+   <site>http://www.tapplocal.com</site>
+  </merchant>
+  <stores>
+   <store>
+    <id>0</id>
+    <name>San Francisco</name>
+    <address>1700, Montgomery</address>
+    <phone>(555) 555-5555</phone>
+    <latitude>37.796325</latitude>
+    <longitude>-122.400654</longitude>
+   </store>
+  </stores>
+ </coupon>
+</coupons>
